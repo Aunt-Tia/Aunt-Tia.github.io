@@ -280,22 +280,36 @@ document.getElementById('hero-email').addEventListener('keydown', function(e) { 
 document.getElementById('banner-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('banner'); });
 
 var DEALS_URL = 'https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
-var NOTES_DOM = ['Cheaper than a tank of gas.','Short hop, big savings.','Weekend getaway material.','Don\'t drive. Fly.','Canada is big - fly it for less.'];
-var NOTES_INT = ['Pack light, spend on experiences.','Your passport has been waiting.','Beach money, not flight money.','Europe for less than you think.','This price will not last.'];
+var NOTES_DOM = ['Cheaper than a tank of gas.','Short hop, big savings.','Weekend getaway material.','Do not drive. Fly.','Canada is big - fly it for less.'];
+var NOTES_INT = ['Pack light, spend on experiences.','Your passport has been waiting.','Beach money, not flight money.','Incredible city, incredible price.','This price will not last.'];
 function getNote(type, i) { return type === 'domestic' ? NOTES_DOM[i % NOTES_DOM.length] : NOTES_INT[i % NOTES_INT.length]; }
 function formatDate(d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateString('en-CA', {month:'short',day:'numeric'}); } catch(e) { return d; } }
 function renderDeals(data) {
   var grid = document.getElementById('deals-grid');
   var upd = document.getElementById('deals-updated');
-  if (!data.deals || !data.deals.length) { grid.innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">No new deals this week - check back Monday!</p></div>'; return; }
+  if (!data.deals || !data.deals.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:#2C7DAE">No new deals this week - check back Monday!</p></div>'; return; }
   var stickers = ['Hot','New','Hot','Deal','Hot','New'];
   grid.innerHTML = data.deals.slice(0,6).map(function(d,i) {
-    return '<div class="deal-card"><div class="deal-sticker">' + stickers[i] + '</div><div class="deal-top"><div class="deal-route">' + d.origin + ' to ' + d.destination + '</div><div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div><div class="deal-price">$' + d.price + ' CAD</div></div><div class="deal-body"><div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span><span>' + (d.type === 'domestic' ? 'Domestic' : 'International') + '</span></div><'<div class="deal-note">' + (d.bubble || getNote(d.type, i)) + '</div><a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
+    var note = d.bubble ? d.bubble : getNote(d.type, i);
+    var tag = d.type === 'domestic' ? 'Domestic' : 'International';
+    return '<div class="deal-card">' +
+      '<div class="deal-sticker">' + stickers[i] + '</div>' +
+      '<div class="deal-top">' +
+        '<div class="deal-route">' + d.origin + ' to ' + d.destination + '</div>' +
+        '<div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div>' +
+        '<div class="deal-price">$' + d.price + ' CAD</div>' +
+      '</div>' +
+      '<div class="deal-body">' +
+        '<div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span><span>' + tag + '</span></div>' +
+        '<div class="deal-note">' + note + '</div>' +
+        '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a>' +
+      '</div>' +
+    '</div>';
   }).join('');
   if (data.updated) upd.textContent = 'Last updated ' + data.updated + '. Deals refresh every Monday.';
 }
 fetch(DEALS_URL).then(function(r){ return r.json(); }).then(renderDeals).catch(function(){
-  document.getElementById('deals-grid').innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">Deals loading - check back shortly!</p></div>';
+  document.getElementById('deals-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:#2C7DAE">Deals loading - check back shortly!</p></div>';
 });
 </script>
 
