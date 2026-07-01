@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyTia — Cheap Canadian Flights, Found Weekly</title>
+<meta name="description" content="Aunt Tia hunts down cheap flights out of Canada every week — domestic hops and international steals — so you never overpay again.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FBF7EF;
+    --sky: #4FA8D8;
+    --sky-deep: #2C7DAE;
+    --teal: #2FAE94;
+    --tan: #E8B45C;
+    --tan-deep: #C98F2E;
+    --ink: #1E3A4A;
+    --charcoal: #2B2420;
+    --shadow: rgba(30,58,74,0.10);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--cream);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(79,168,216,0.08) 0%, transparent 45%),
+      radial-gradient(circle at 85% 60%, rgba(47,174,148,0.07) 0%, transparent 45%);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; }
+  .logo { font-family:'Fraunces',serif; font-weight:700; font-size:1.7rem; color:var(--sky-deep); display:flex; align-items:center; gap:8px; }
+  .logo .plane { color:var(--tan-deep); font-size:1.3rem; transform:rotate(15deg); display:inline-block; }
+  .nav-links { display:flex; gap:28px; align-items:center; font-weight:500; font-size:0.95rem; }
+  .nav-links a:hover { color:var(--sky-deep); }
+  .nav-cta { background:var(--sky-deep); color:#fff !important; padding:10px 22px; border-radius:24px; font-weight:600; transition:background 0.2s; }
+  .nav-cta:hover { background:var(--ink); }
+  .nav-hamburger { display:none; background:none; border:none; cursor:pointer; font-size:1.5rem; color:var(--ink); }
+
+  @media(max-width:760px){
+    .nav-links { display:none; flex-direction:column; position:absolute; top:70px; left:0; right:0; background:var(--cream); padding:20px 24px; gap:16px; z-index:100; box-shadow:0 8px 20px var(--shadow); }
+    .nav-links.open { display:flex; }
+    .nav-hamburger { display:block; }
+  }
+
+  /* HERO */
+  .hero { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:20px; padding:40px 0 60px; }
+  .hero-eyebrow { font-family:'Caveat',cursive; font-size:1.5rem; color:var(--teal); margin-bottom:2px; }
+  .hero h1 { font-family:'Fraunces',serif; font-size:3rem; font-weight:600; color:var(--ink); line-height:1.12; margin-bottom:18px; }
+  .hero h1 .accent { color:var(--sky-deep); }
+  .hero p.sub { font-size:1.08rem; color:var(--charcoal); max-width:480px; margin-bottom:30px; }
+  .hero-form { display:flex; max-width:400px; }
+  .hero-form input { flex:1; padding:15px 18px; border:2px solid var(--ink); border-right:none; border-radius:28px 0 0 28px; font-family:'Inter',sans-serif; font-size:0.95rem; background:#fff; outline:none; }
+  .hero-form input:focus { border-color:var(--sky-deep); }
+  .hero-form button { padding:15px 26px; background:var(--tan-deep); color:#fff; border:2px solid var(--tan-deep); border-radius:0 28px 28px 0; font-weight:700; cursor:pointer; font-size:0.95rem; white-space:nowrap; transition:background 0.2s; }
+  .hero-form button:hover { background:#a8761f; }
+  .hero-note { font-size:0.82rem; color:var(--sky-deep); margin-top:12px; font-weight:500; }
+  .form-success { display:none; background:#e8f7f4; border:2px solid var(--teal); border-radius:12px; padding:14px 18px; color:var(--ink); font-weight:600; margin-top:12px; }
+  .hero-art { position:relative; display:flex; justify-content:center; }
+  .hero-art img { width:100%; max-width:480px; }
+  .speech-bubble { position:absolute; top:0; left:-10px; background:#fff; border:2px solid var(--ink); border-radius:16px; padding:12px 18px; font-family:'Caveat',cursive; font-size:1.25rem; color:var(--ink); max-width:220px; box-shadow:0 6px 14px var(--shadow); }
+  .speech-bubble::after { content:''; position:absolute; bottom:-14px; left:50px; border:8px solid transparent; border-top-color:var(--ink); border-bottom:0; }
+  .speech-bubble::before { content:''; position:absolute; bottom:-10px; left:51px; border:7px solid transparent; border-top-color:#fff; border-bottom:0; z-index:1; }
+
+  @media(max-width:760px){
+    .hero { grid-template-columns:1fr; }
+    .hero h1 { font-size:2.2rem; }
+    .hero-art { order:-1; max-width:300px; margin:0 auto; }
+    .speech-bubble { position:static; margin-bottom:12px; display:inline-block; }
+  }
+
+  /* SECTION */
+  .section { padding:50px 0; }
+  .section-tab { display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:var(--cream); padding:8px 20px; border-radius:24px; font-weight:600; font-size:0.82rem; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:28px; }
+  .section-tab .dot { width:8px; height:8px; border-radius:50%; background:var(--tan); }
+
+  /* DEALS */
+  .deals-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media(max-width:760px){ .deals-grid { grid-template-columns:1fr; } }
+  .deal-card { background:#fff; border-radius:16px; box-shadow:0 8px 22px var(--shadow); position:relative; overflow:hidden; transition:transform 0.2s ease; border:3px solid #fff; }
+  .deal-card:hover { transform:translateY(-4px) rotate(-0.5deg); }
+  .deal-sticker { position:absolute; top:14px; right:14px; background:var(--tan); color:#fff; font-family:'Fraunces',serif; font-weight:700; font-size:0.78rem; padding:5px 12px; border-radius:20px; transform:rotate(8deg); box-shadow:0 3px 6px rgba(0,0,0,0.15); }
+  .deal-top { background:var(--sky); color:#fff; padding:22px 22px 18px; }
+  .deal-route { font-family:'Fraunces',serif; font-size:1.4rem; font-weight:700; }
+  .deal-cities { font-size:0.85rem; opacity:0.85; margin-top:2px; }
+  .deal-price { font-family:'Fraunces',serif; font-size:1.7rem; font-weight:700; margin-top:6px; }
+  .deal-body { padding:18px 22px 22px; }
+  .deal-meta { display:flex; justify-content:space-between; font-size:0.85rem; color:var(--sky-deep); margin-bottom:12px; font-weight:500; }
+  .deal-note { font-family:'Caveat',cursive; font-size:1.2rem; color:var(--tan-deep); margin-bottom:14px; }
+  .deal-link { display:inline-block; font-weight:700; font-size:0.9rem; color:var(--ink); border-bottom:2px solid var(--teal); padding-bottom:2px; transition:color 0.2s; }
+  .deal-link:hover { color:var(--sky-deep); }
+  .deals-note { margin-top:18px; font-size:0.83rem; color:var(--sky-deep); font-style:italic; }
+
+  /* TOOLS */
+  .tools-row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media(max-width:760px){ .tools-row { grid-template-columns:1fr; } }
+  .tool-card { background:#fff; border-radius:16px; padding:28px; box-shadow:0 6px 18px var(--shadow); }
+  .tool-card h3 { font-family:'Fraunces',serif; font-size:1.3rem; color:var(--ink); margin-bottom:8px; }
+  .tool-card p { font-size:0.92rem; color:var(--charcoal); margin-bottom:18px; }
+  .btn-row { display:flex; gap:10px; flex-wrap:wrap; }
+  .pill-btn { display:inline-flex; align-items:center; gap:6px; padding:11px 20px; border-radius:24px; font-weight:700; font-size:0.87rem; color:#fff; transition:opacity 0.2s; }
+  .pill-btn:hover { opacity:0.85; }
+  .pill-ac { background:var(--ink); }
+  .pill-wj { background:var(--teal); }
+  .pill-pd { background:var(--sky-deep); }
+  .pill-search { background:var(--tan-deep); }
+
+  /* EXPLORE */
+  .explore-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media(max-width:760px){ .explore-grid { grid-template-columns:1fr; } }
+  .explore-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 6px 18px var(--shadow); display:flex; align-items:stretch; }
+  .explore-img { background:var(--sky); display:flex; align-items:flex-end; justify-content:center; width:38%; padding-top:16px; }
+  .explore-card.pets .explore-img { background:var(--teal); }
+  .explore-img img { width:100%; max-width:150px; }
+  .explore-text { padding:24px 22px; flex:1; }
+  .explore-text h3 { font-family:'Fraunces',serif; font-size:1.15rem; color:var(--ink); margin-bottom:8px; }
+  .explore-text p { font-size:0.88rem; color:var(--charcoal); margin-bottom:12px; }
+  .explore-text .coming-soon { display:inline-block; font-size:0.8rem; font-weight:600; background:var(--cream); color:var(--sky-deep); padding:4px 12px; border-radius:20px; border:1px solid var(--sky); }
+  @media(max-width:600px){
+    .explore-card { flex-direction:column; }
+    .explore-img { width:100%; padding:20px 0 0; }
+  }
+
+  /* SUBSCRIBE BANNER */
+  .subscribe-banner { background:var(--ink); border-radius:20px; padding:50px 48px; text-align:center; color:var(--cream); }
+  .subscribe-banner h2 { font-family:'Fraunces',serif; font-size:2rem; margin-bottom:10px; }
+  .subscribe-banner p { font-size:1rem; opacity:0.85; margin-bottom:26px; }
+  .subscribe-banner .hero-form { margin:0 auto; }
+  .subscribe-banner .hero-form input { border-color:rgba(255,255,255,0.4); }
+  .subscribe-banner .hero-form button { background:var(--teal); border-color:var(--teal); }
+  .subscribe-banner .hero-form button:hover { background:#258f78; }
+  @media(max-width:600px){ .subscribe-banner { padding:36px 24px; } }
+
+  /* FOOTER */
+  footer { padding:36px 0 50px; font-size:0.85rem; color:var(--sky-deep); }
+  .footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px; align-items:center; }
+  .footer-links { display:flex; gap:20px; }
+  .footer-links a:hover { color:var(--tan-deep); }
+  .footer-disclosure { max-width:660px; line-height:1.6; color:var(--charcoal); opacity:0.7; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <div class="logo"><span class="plane">✈</span> SkyTia</div>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="#deals">Deals</a>
+      <a href="#tools">Check Your Seat</a>
+      <a href="#explore">Luggage & Pets</a>
+      <a href="#subscribe" class="nav-cta">Get Deals ✈️</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">Hi, I'm Aunt Tia 👋</div>
+      <h1>Cheap flights, found by <span class="accent">someone who actually looks.</span></h1>
+      <p class="sub">Every week I dig through flight prices out of Canada — domestic hops and international steals — so you don't overpay for a seat you didn't even like.</p>
+      <div class="hero-form">
+        <input type="email" id="hero-email" placeholder="your@email.com" />
+        <button onclick="handleSubscribe('hero')">Send Me Deals</button>
+      </div>
+      <div class="form-success" id="hero-success">🎉 You're in! Check your inbox for your first deal drop.</div>
+      <div class="hero-note">Free · one email a week · unsubscribe anytime</div>
+    </div>
+    <div class="hero-art">
+      <div class="speech-bubble">Found a $310 flight to Lisbon this week! 🇵🇹</div>
+      <img src="aunt-tia-hero.png" alt="Aunt Tia holding a passport, smiling">
+    </div>
+  </div>
+
+  <!-- DEALS -->
+  <div class="section" id="deals">
+    <div class="section-tab"><span class="dot"></span>This Week's Deals</div>
+    <div class="deals-grid">
+
+      <div class="deal-card">
+        <div class="deal-sticker">Hot 🔥</div>
+        <div class="deal-top">
+          <div class="deal-route">YEG → YVR</div>
+          <div class="deal-cities">Edmonton → Vancouver</div>
+          <div class="deal-price">$125 CAD</div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-meta"><span>Around Jul 23</span><span>🍁 Domestic</span></div>
+          <div class="deal-note">Alberta to the coast for less than a tank of gas.</div>
+          <a href="https://www.aviasales.com/search/YEG2307YVR1?marker=744905&currency=cad" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-sticker">New ✨</div>
+        <div class="deal-top">
+          <div class="deal-route">YYC → YVR</div>
+          <div class="deal-cities">Calgary → Vancouver</div>
+          <div class="deal-price">$133 CAD</div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-meta"><span>Around Aug 9</span><span>🍁 Domestic</span></div>
+          <div class="deal-note">Calgary, the mountains aren't going anywhere — but this price might.</div>
+          <a href="https://www.aviasales.com/search/YYC0908YVR1?marker=744905&currency=cad" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-sticker">Hot 🔥</div>
+        <div class="deal-top">
+          <div class="deal-route">YYZ → CUN</div>
+          <div class="deal-cities">Toronto → Cancún</div>
+          <div class="deal-price">$298 CAD</div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-meta"><span>Around Nov 3</span><span>🌍 International</span></div>
+          <div class="deal-note">Beach money, not flight money.</div>
+          <a href="https://www.aviasales.com/search/YYZ0311CUN1?marker=744905&currency=cad" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="deals-note">✦ Deals update weekly. Prices are approximate — always verify before booking. Booking links are affiliate links.</p>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="section" id="tools">
+    <div class="section-tab"><span class="dot"></span>Before You Book</div>
+    <div class="tools-row">
+      <div class="tool-card">
+        <h3>Check your seat first</h3>
+        <p>See legroom, window alignment, and power ports before you pick a seat you'll regret. Aunt Tia approved.</p>
+        <div class="btn-row">
+          <a href="https://www.aerolopa.com/ac" class="pill-btn pill-ac" target="_blank" rel="noopener">Air Canada</a>
+          <a href="https://www.aerolopa.com/ws" class="pill-btn pill-wj" target="_blank" rel="noopener">WestJet</a>
+          <a href="https://www.aerolopa.com/pd" class="pill-btn pill-pd" target="_blank" rel="noopener">Porter</a>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>Flying somewhere I didn't mention?</h3>
+        <p>Search any route, any date. I can't catch every deal — but you can still find yours here.</p>
+        <div class="btn-row">
+          <a href="https://www.aviasales.com/?marker=744905&currency=cad" class="pill-btn pill-search" target="_blank" rel="noopener">Search Any Flight →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPLORE -->
+  <div class="section" id="explore">
+    <div class="section-tab"><span class="dot"></span>More From Aunt Tia</div>
+    <div class="explore-grid">
+      <div class="explore-card">
+        <div class="explore-img"><img src="aunt-tia-luggage.png" alt="Aunt Tia with luggage"></div>
+        <div class="explore-text">
+          <h3>🧳 Luggage & Baggage Rules</h3>
+          <p>Every airline's baggage allowance is different, and they all hope you won't notice. I keep track so you don't get surprised at the gate.</p>
+          <span class="coming-soon">Guide coming soon</span>
+        </div>
+      </div>
+      <div class="explore-card pets">
+        <div class="explore-img"><img src="aunt-tia-pets.png" alt="Aunt Tia with her dog in a carrier"></div>
+        <div class="explore-text">
+          <h3>🐾 Travelling With Pets</h3>
+          <p>Carrier sizes, airline pet fees, and which routes actually make it easy on your furry travel companion.</p>
+          <span class="coming-soon">Guide coming soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBSCRIBE -->
+  <div class="section" id="subscribe">
+    <div class="subscribe-banner">
+      <h2>Don't miss next week's deals.</h2>
+      <p>One email. Real prices. No nonsense. Aunt Tia does the hunting — you do the booking.</p>
+      <div class="hero-form">
+        <input type="email" id="banner-email" placeholder="your@email.com" />
+        <button onclick="handleSubscribe('banner')">Subscribe Free</button>
+      </div>
+      <div class="form-success" id="banner-success" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.4);color:#fff;">🎉 You're in! Check your inbox for your first deal drop.</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <div class="logo" style="font-size:1.1rem;"><span class="plane" style="font-size:1rem;">✈</span> SkyTia</div>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="mailto:social@skytia.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-disclosure">
+      Some links on SkyTia are affiliate links — if you book through them, I may earn a small commission at no extra cost to you. I only share deals I'd genuinely use myself. Prices shown are approximate and may have changed. Always verify before booking. © 2026 SkyTia.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+function handleSubscribe(formId) {
+  const input = document.getElementById(formId === 'hero' ? 'hero-email' : 'banner-email');
+  const success = document.getElementById(formId === 'hero' ? 'hero-success' : 'banner-success');
+  const email = input.value.trim();
+
+  if (!email || !email.includes('@')) {
+    input.style.borderColor = '#e05c4a';
+    input.focus();
+    return;
+  }
+
+  // Open Beehiiv subscribe page with email pre-filled
+  const url = 'https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email);
+  window.open(url, '_blank');
+
+  // Show success message
+  input.style.display = 'none';
+  input.closest('.hero-form').querySelector('button').style.display = 'none';
+  success.style.display = 'block';
+}
+
+// Allow Enter key on inputs
+document.getElementById('hero-email').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') handleSubscribe('hero');
+});
+document.getElementById('banner-email').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') handleSubscribe('banner');
+});
+</script>
+
+</body>
+</html>
