@@ -181,51 +181,12 @@
   <!-- DEALS -->
   <div class="section" id="deals">
     <div class="section-tab"><span class="dot"></span>This Week's Deals</div>
-    <div class="deals-grid">
-
-      <div class="deal-card">
-        <div class="deal-sticker">Hot 🔥</div>
-        <div class="deal-top">
-          <div class="deal-route">YEG → YVR</div>
-          <div class="deal-cities">Edmonton → Vancouver</div>
-          <div class="deal-price">$125 CAD</div>
-        </div>
-        <div class="deal-body">
-          <div class="deal-meta"><span>Around Jul 23</span><span>🍁 Domestic</span></div>
-          <div class="deal-note">Alberta to the coast for less than a tank of gas.</div>
-          <a href="https://www.aviasales.com/search/YEG2307YVR1?marker=744905&currency=cad" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
-        </div>
+    <div class="deals-grid" id="deals-grid">
+      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">
+        <p style="font-size:1.1rem;">✈️ Loading this week's deals...</p>
       </div>
-
-      <div class="deal-card">
-        <div class="deal-sticker">New ✨</div>
-        <div class="deal-top">
-          <div class="deal-route">YYC → YVR</div>
-          <div class="deal-cities">Calgary → Vancouver</div>
-          <div class="deal-price">$133 CAD</div>
-        </div>
-        <div class="deal-body">
-          <div class="deal-meta"><span>Around Aug 9</span><span>🍁 Domestic</span></div>
-          <div class="deal-note">Calgary, the mountains aren't going anywhere — but this price might.</div>
-          <a href="https://www.aviasales.com/search/YYC0908YVR1?marker=744905&currency=cad" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-sticker">Hot 🔥</div>
-        <div class="deal-top">
-          <div class="deal-route">YYZ → CUN</div>
-          <div class="deal-cities">Toronto → Cancún</div>
-          <div class="deal-price">$298 CAD</div>
-        </div>
-        <div class="deal-body">
-          <div class="deal-meta"><span>Around Nov 3</span><span>🌍 International</span></div>
-          <div class="deal-note">Beach money, not flight money.</div>
-          <a href="https://www.aviasales.com/search/YYZ0311CUN1?marker=744905&currency=cad" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
-        </div>
-      </div>
-
     </div>
+    <p class="deals-note" id="deals-updated"></p>
     <p class="deals-note">✦ Deals update weekly. Prices are approximate — always verify before booking. Booking links are affiliate links.</p>
   </div>
 
@@ -305,34 +266,78 @@
 </div>
 
 <script>
+// ── Subscribe form ──
 function handleSubscribe(formId) {
   const input = document.getElementById(formId === 'hero' ? 'hero-email' : 'banner-email');
   const success = document.getElementById(formId === 'hero' ? 'hero-success' : 'banner-success');
   const email = input.value.trim();
-
-  if (!email || !email.includes('@')) {
-    input.style.borderColor = '#e05c4a';
-    input.focus();
-    return;
-  }
-
-  // Open Beehiiv subscribe page with email pre-filled
-  const url = 'https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email);
-  window.open(url, '_blank');
-
-  // Show success message
+  if (!email || !email.includes('@')) { input.style.borderColor = '#e05c4a'; input.focus(); return; }
+  window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email), '_blank');
   input.style.display = 'none';
   input.closest('.hero-form').querySelector('button').style.display = 'none';
   success.style.display = 'block';
 }
+document.getElementById('hero-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('hero'); });
+document.getElementById('banner-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('banner'); });
 
-// Allow Enter key on inputs
-document.getElementById('hero-email').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') handleSubscribe('hero');
-});
-document.getElementById('banner-email').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') handleSubscribe('banner');
-});
+// ── Load real deals from deals.json ──
+const DEALS_URL = 'https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
+const NOTES = {
+  domestic: [
+    'Cheaper than a tank of gas.',
+    'Short hop, big savings.',
+    'Canada's a big country — fly it for less.',
+    'Weekend getaway material.',
+    'Don't drive. Fly.',
+  ],
+  international: [
+    'Pack light, spend on experiences.',
+    'Your passport has been waiting.',
+    'Beach money, not flight money.',
+    'Europe for less than you think.',
+    'This price won't last — just saying.',
+  ]
+};
+function getNote(type, index) {
+  const arr = NOTES[type] || NOTES.domestic;
+  return arr[index % arr.length];
+}
+function formatDate(dateStr) {
+  try {
+    const d = new Date(dateStr + 'T12:00:00Z');
+    return d.toLocaleDateString('en-CA', { month: 'short', day: 'numeric' });
+  } catch(e) { return dateStr; }
+}
+function renderDeals(data) {
+  const grid = document.getElementById('deals-grid');
+  const updated = document.getElementById('deals-updated');
+  if (!data.deals || !data.deals.length) {
+    grid.innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);"><p>No deals this week — check back Monday!</p></div>';
+    return;
+  }
+  const stickers = ['Hot 🔥','New ✨','Hot 🔥','Deal 💙','Hot 🔥','New ✨','Deal 💙','Hot 🔥','New ✨','Deal 💙'];
+  grid.innerHTML = data.deals.slice(0,6).map((d, i) => `
+    <div class="deal-card">
+      <div class="deal-sticker">${stickers[i]}</div>
+      <div class="deal-top">
+        <div class="deal-route">${d.origin} → ${d.destination}</div>
+        <div class="deal-cities">${d.originCity} → ${d.destinationCity}</div>
+        <div class="deal-price">$${d.price} CAD</div>
+      </div>
+      <div class="deal-body">
+        <div class="deal-meta"><span>Around ${formatDate(d.departDate)}</span><span>${d.type === 'domestic' ? '🍁 Domestic' : '🌍 International'}</span></div>
+        <div class="deal-note">${getNote(d.type, i)}</div>
+        <a href="${d.url}" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
+      </div>
+    </div>`).join('');
+  if (data.updated) updated.textContent = '✦ Last updated ' + data.updated + '. Deals refresh every Monday.';
+}
+fetch(DEALS_URL)
+  .then(r => r.json())
+  .then(renderDeals)
+  .catch(() => {
+    document.getElementById('deals-grid').innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;"><p style="color:var(--sky-deep)">Deals are loading — check back shortly! ✈️</p></div>';
+  });
 </script>
 
 </body>
