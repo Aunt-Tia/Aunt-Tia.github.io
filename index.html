@@ -266,11 +266,10 @@
 </div>
 
 <script>
-// ── Subscribe form ──
 function handleSubscribe(formId) {
-  const input = document.getElementById(formId === 'hero' ? 'hero-email' : 'banner-email');
-  const success = document.getElementById(formId === 'hero' ? 'hero-success' : 'banner-success');
-  const email = input.value.trim();
+  var input = document.getElementById(formId === 'hero' ? 'hero-email' : 'banner-email');
+  var success = document.getElementById(formId === 'hero' ? 'hero-success' : 'banner-success');
+  var email = input.value.trim();
   if (!email || !email.includes('@')) { input.style.borderColor = '#e05c4a'; input.focus(); return; }
   window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email), '_blank');
   input.style.display = 'none';
@@ -280,64 +279,24 @@ function handleSubscribe(formId) {
 document.getElementById('hero-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('hero'); });
 document.getElementById('banner-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('banner'); });
 
-// ── Load real deals from deals.json ──
-const DEALS_URL = 'https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
-const NOTES = {
-  domestic: [
-    'Cheaper than a tank of gas.',
-    'Short hop, big savings.',
-    'Canada's a big country — fly it for less.',
-    'Weekend getaway material.',
-    'Don't drive. Fly.',
-  ],
-  international: [
-    'Pack light, spend on experiences.',
-    'Your passport has been waiting.',
-    'Beach money, not flight money.',
-    'Europe for less than you think.',
-    'This price won't last — just saying.',
-  ]
-};
-function getNote(type, index) {
-  const arr = NOTES[type] || NOTES.domestic;
-  return arr[index % arr.length];
-}
-function formatDate(dateStr) {
-  try {
-    const d = new Date(dateStr + 'T12:00:00Z');
-    return d.toLocaleDateString('en-CA', { month: 'short', day: 'numeric' });
-  } catch(e) { return dateStr; }
-}
+var DEALS_URL = 'https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
+var NOTES_DOM = ['Cheaper than a tank of gas.','Short hop, big savings.','Weekend getaway material.','Don\'t drive. Fly.','Canada is big - fly it for less.'];
+var NOTES_INT = ['Pack light, spend on experiences.','Your passport has been waiting.','Beach money, not flight money.','Europe for less than you think.','This price will not last.'];
+function getNote(type, i) { return type === 'domestic' ? NOTES_DOM[i % NOTES_DOM.length] : NOTES_INT[i % NOTES_INT.length]; }
+function formatDate(d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateString('en-CA', {month:'short',day:'numeric'}); } catch(e) { return d; } }
 function renderDeals(data) {
-  const grid = document.getElementById('deals-grid');
-  const updated = document.getElementById('deals-updated');
-  if (!data.deals || !data.deals.length) {
-    grid.innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);"><p>No deals this week — check back Monday!</p></div>';
-    return;
-  }
-  const stickers = ['Hot 🔥','New ✨','Hot 🔥','Deal 💙','Hot 🔥','New ✨','Deal 💙','Hot 🔥','New ✨','Deal 💙'];
-  grid.innerHTML = data.deals.slice(0,6).map((d, i) => `
-    <div class="deal-card">
-      <div class="deal-sticker">${stickers[i]}</div>
-      <div class="deal-top">
-        <div class="deal-route">${d.origin} → ${d.destination}</div>
-        <div class="deal-cities">${d.originCity} → ${d.destinationCity}</div>
-        <div class="deal-price">$${d.price} CAD</div>
-      </div>
-      <div class="deal-body">
-        <div class="deal-meta"><span>Around ${formatDate(d.departDate)}</span><span>${d.type === 'domestic' ? '🍁 Domestic' : '🌍 International'}</span></div>
-        <div class="deal-note">${getNote(d.type, i)}</div>
-        <a href="${d.url}" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>
-      </div>
-    </div>`).join('');
-  if (data.updated) updated.textContent = '✦ Last updated ' + data.updated + '. Deals refresh every Monday.';
+  var grid = document.getElementById('deals-grid');
+  var upd = document.getElementById('deals-updated');
+  if (!data.deals || !data.deals.length) { grid.innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">No new deals this week - check back Monday!</p></div>'; return; }
+  var stickers = ['Hot','New','Hot','Deal','Hot','New'];
+  grid.innerHTML = data.deals.slice(0,6).map(function(d,i) {
+    return '<div class="deal-card"><div class="deal-sticker">' + stickers[i] + '</div><div class="deal-top"><div class="deal-route">' + d.origin + ' to ' + d.destination + '</div><div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div><div class="deal-price">$' + d.price + ' CAD</div></div><div class="deal-body"><div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span><span>' + (d.type === 'domestic' ? 'Domestic' : 'International') + '</span></div><div class="deal-note">' + getNote(d.type, i) + '</div><a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
+  }).join('');
+  if (data.updated) upd.textContent = 'Last updated ' + data.updated + '. Deals refresh every Monday.';
 }
-fetch(DEALS_URL)
-  .then(r => r.json())
-  .then(renderDeals)
-  .catch(() => {
-    document.getElementById('deals-grid').innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;"><p style="color:var(--sky-deep)">Deals are loading — check back shortly! ✈️</p></div>';
-  });
+fetch(DEALS_URL).then(function(r){ return r.json(); }).then(renderDeals).catch(function(){
+  document.getElementById('deals-grid').innerHTML = '<div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">Deals loading - check back shortly!</p></div>';
+});
 </script>
 
 </body>
