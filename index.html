@@ -14,6 +14,35 @@
       script.src = 'https://tp-em.com/NTQ0NzQ2.js?t=544746';
       document.head.appendChild(script);
   })();
+
+// ── Currency Corner ──
+var CURRENCIES = {
+  USD: { id: 'rate-usd', symbol: '$', decimals: 4 },
+  EUR: { id: 'rate-eur', symbol: '€', decimals: 4 },
+  MXN: { id: 'rate-mxn', symbol: '$', decimals: 2 },
+  GBP: { id: 'rate-gbp', symbol: '£', decimals: 4 },
+  JPY: { id: 'rate-jpy', symbol: '¥', decimals: 2 },
+  AED: { id: 'rate-aed', symbol: 'د.إ', decimals: 4 },
+  BSD: { id: 'rate-bsd', symbol: '$', decimals: 4 },
+  THB: { id: 'rate-thb', symbol: '฿', decimals: 2 }
+};
+fetch('https://api.frankfurter.app/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,BSD,THB')
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    Object.keys(CURRENCIES).forEach(function(code){
+      var el = document.getElementById(CURRENCIES[code].id);
+      if (el && data.rates && data.rates[code]) {
+        var rate = data.rates[code].toFixed(CURRENCIES[code].decimals);
+        el.innerHTML = '1 CAD = <span>' + CURRENCIES[code].symbol + rate + '</span>';
+      }
+    });
+    var upd = document.getElementById('currency-updated');
+    if (upd) upd.textContent = 'Rates from ' + (data.date || 'today') + ' via Frankfurter.app';
+  })
+  .catch(function(){
+    var upd = document.getElementById('currency-updated');
+    if (upd) upd.textContent = 'Rates temporarily unavailable';
+  });
 </script>
 <style>
   :root {
@@ -143,6 +172,22 @@
   .footer-links{display:flex;gap:20px;}
   .footer-links a:hover{color:var(--tan-deep);}
   .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
+
+  /* CURRENCY CORNER */
+  .currency-section { padding:50px 0; }
+  .currency-box { background:var(--ink); border-radius:20px; padding:36px 40px; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+  @media(max-width:760px){ .currency-box { grid-template-columns:1fr; gap:24px; } }
+  .currency-left h2 { font-family:'Fraunces',serif; font-size:1.8rem; color:#fff; margin-bottom:8px; }
+  .currency-left p { color:#94a3b8; font-size:0.9rem; margin-bottom:20px; }
+  .currency-quote { font-family:'Caveat',cursive; font-size:1.3rem; color:var(--teal); line-height:1.5; }
+  .currency-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .currency-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:14px 16px; }
+  .currency-flag { font-size:1.4rem; margin-bottom:4px; }
+  .currency-name { font-size:0.75rem; color:#94a3b8; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.05em; }
+  .currency-rate { font-family:'Fraunces',serif; font-size:1.25rem; color:#fff; font-weight:600; }
+  .currency-rate span { font-size:0.85rem; color:var(--teal); font-family:'Inter',sans-serif; font-weight:400; }
+  .currency-updated { font-size:0.75rem; color:#64748b; margin-top:16px; text-align:right; }
+  .currency-img { width:100%; max-width:300px; border-radius:16px; margin:0 auto; display:block; }
 </style>
 </head>
 <body>
@@ -154,6 +199,7 @@
     <div class="nav-links">
       <a href="#deals">Deals</a>
       <a href="#business">Business Class</a>
+      <a href="#currency">Currency</a>
       <a href="#tools">Check Your Seat</a>
       <a href="#explore">Luggage & Pets</a>
       <a href="#subscribe" class="nav-cta">Get Deals ✈️</a>
@@ -199,6 +245,33 @@
     </div>
     <p class="deals-note" id="deals-updated"></p>
     <p class="deals-note">Deals update every Monday. Prices are approximate — always verify before booking. Booking links are affiliate links.</p>
+  </div>
+
+
+  <!-- CURRENCY CORNER -->
+  <div class="currency-section" id="currency">
+    <div class="section-tab" style="background:var(--tan-deep);"><span class="dot"></span>💱 Currency Corner</div>
+    <div class="currency-box">
+      <div class="currency-left">
+        <h2>How far does your loonie go?</h2>
+        <p>Live CAD exchange rates — updated every time you visit.</p>
+        <div class="currency-grid" id="currency-grid">
+          <div class="currency-card"><div class="currency-flag">🇺🇸</div><div class="currency-name">US Dollar</div><div class="currency-rate" id="rate-usd">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇪🇺</div><div class="currency-name">Euro</div><div class="currency-rate" id="rate-eur">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇲🇽</div><div class="currency-name">Mexican Peso</div><div class="currency-rate" id="rate-mxn">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇬🇧</div><div class="currency-name">British Pound</div><div class="currency-rate" id="rate-gbp">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇯🇵</div><div class="currency-name">Japanese Yen</div><div class="currency-rate" id="rate-jpy">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇦🇪</div><div class="currency-name">UAE Dirham</div><div class="currency-rate" id="rate-aed">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇧🇸</div><div class="currency-name">Bahamian Dollar</div><div class="currency-rate" id="rate-bsd">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇹🇭</div><div class="currency-name">Thai Baht</div><div class="currency-rate" id="rate-thb">Loading...</div></div>
+        </div>
+        <div class="currency-updated" id="currency-updated"></div>
+      </div>
+      <div>
+        <img src="aunt-tia-hero.png" id="currency-img" class="currency-img" alt="Aunt Tia at the currency exchange">
+        <div style="text-align:center;margin-top:16px;" class="currency-quote">"Your loonie goes further than you think, darling." 🐾</div>
+      </div>
+    </div>
   </div>
 
   <!-- BUSINESS CLASS -->
@@ -406,6 +479,35 @@ fetch(DEALS_URL)
     document.getElementById('domestic-grid').innerHTML = noDeals('Deals loading — check back shortly!');
     document.getElementById('intl-grid').innerHTML = noDeals('Deals loading — check back shortly!');
     document.getElementById('biz-grid').innerHTML = noDeals('Deals loading — check back shortly!');
+  });
+
+// ── Currency Corner ──
+var CURRENCIES = {
+  USD: { id: 'rate-usd', symbol: '$', decimals: 4 },
+  EUR: { id: 'rate-eur', symbol: '€', decimals: 4 },
+  MXN: { id: 'rate-mxn', symbol: '$', decimals: 2 },
+  GBP: { id: 'rate-gbp', symbol: '£', decimals: 4 },
+  JPY: { id: 'rate-jpy', symbol: '¥', decimals: 2 },
+  AED: { id: 'rate-aed', symbol: 'د.إ', decimals: 4 },
+  BSD: { id: 'rate-bsd', symbol: '$', decimals: 4 },
+  THB: { id: 'rate-thb', symbol: '฿', decimals: 2 }
+};
+fetch('https://api.frankfurter.app/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,BSD,THB')
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    Object.keys(CURRENCIES).forEach(function(code){
+      var el = document.getElementById(CURRENCIES[code].id);
+      if (el && data.rates && data.rates[code]) {
+        var rate = data.rates[code].toFixed(CURRENCIES[code].decimals);
+        el.innerHTML = '1 CAD = <span>' + CURRENCIES[code].symbol + rate + '</span>';
+      }
+    });
+    var upd = document.getElementById('currency-updated');
+    if (upd) upd.textContent = 'Rates from ' + (data.date || 'today') + ' via Frankfurter.app';
+  })
+  .catch(function(){
+    var upd = document.getElementById('currency-updated');
+    if (upd) upd.textContent = 'Rates temporarily unavailable';
   });
 </script>
 </body>
