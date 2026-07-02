@@ -435,7 +435,21 @@ function buildCard(d, i) {
     '</div>' +
   '</div>';
 }
-
+function buildBizCard(d, i) {
+  var note = d.bubble ? d.bubble : 'Nonstop from Alberta — you deserve the good seat.';
+  return '<div class="deal-card premium">' +
+    '<div class="deal-sticker">' + ['Direct ✈️','Nonstop ✈️','Direct ✈️','Nonstop ✈️'][i % 4] + '</div>' +
+    '<div class="deal-top biz">' +
+      '<div class="deal-route">' + d.origin + ' to ' + d.destination + '</div>' +
+      '<div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div>' +
+      '<div style="font-size:0.9rem;opacity:0.8;margin-top:4px;">' + d.label + '</div>' +
+    '</div>' +
+    '<div class="deal-body">' +
+      '<div class="deal-note">' + note + '</div>' +
+      '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices →</a>' +
+    '</div>' +
+  '</div>';
+}
 function noDeals(msg) {
   return '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">' + msg + '</p></div>';
 }
