@@ -417,19 +417,19 @@ function formatDate(d) {
   catch(e) { return d; }
 }
 
-function buildCard(d, i, premium) {
+function buildCard(d, i) {
   var note = d.bubble ? d.bubble : 'Great price — book it before it disappears!';
-  var topClass = premium ? 'deal-top biz' : (d.type === 'international' ? 'deal-top intl' : 'deal-top');
-  var cardClass = premium ? 'deal-card premium' : 'deal-card';
-  return '<div class="' + cardClass + '">' +
+  var topClass = d.type === 'international' ? 'deal-top intl' : 'deal-top';
+  return '<div class="deal-card">' +
     '<div class="deal-sticker">' + stickers[i % stickers.length] + '</div>' +
     '<div class="' + topClass + '">' +
       '<div class="deal-route">' + d.origin + ' to ' + d.destination + '</div>' +
       '<div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div>' +
       '<div class="deal-price">$' + d.price + ' CAD</div>' +
+      '<div style="font-size:0.75rem;opacity:0.85;margin-top:2px;">roundtrip</div>' +
     '</div>' +
     '<div class="deal-body">' +
-      '<div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span>' + (premium ? '<span>Business Class</span>' : '') + '</div>' +
+      '<div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span></div>' +
       '<div class="deal-note">' + note + '</div>' +
       '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a>' +
     '</div>' +
