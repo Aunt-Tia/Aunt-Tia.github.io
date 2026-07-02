@@ -457,17 +457,17 @@ function renderDeals(data) {
   var intl = data.deals.filter(function(d){ return d.type === 'international'; });
   var biz = data.business || [];
 
-  domGrid.innerHTML = domestic.length
-    ? domestic.map(function(d,i){ return buildCard(d,i,false); }).join('')
+ domGrid.innerHTML = domestic.length
+    ? domestic.map(function(d,i){ return buildCard(d,i); }).join('')
     : noDeals('No domestic deals this week.');
 
   intlGrid.innerHTML = intl.length
-    ? intl.map(function(d,i){ return buildCard(d,i,false); }).join('')
+    ? intl.map(function(d,i){ return buildCard(d,i); }).join('')
     : noDeals('No international deals this week.');
 
   bizGrid.innerHTML = biz.length
-    ? biz.map(function(d,i){ return buildCard(d,i,true); }).join('')
-    : noDeals('No business class deals found this week — check back Monday!');
+    ? biz.map(function(d,i){ return buildBizCard(d,i); }).join('')
+    : noDeals('No business class routes found — check back shortly!');
 
   if (data.updated) updated.textContent = 'Last updated ' + data.updated + '. Deals refresh every Monday.';
 }
