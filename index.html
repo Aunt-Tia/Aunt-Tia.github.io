@@ -31,8 +31,6 @@
   }
   a { color: inherit; text-decoration: none; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-  /* NAV */
   nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; }
   .logo { font-family:'Fraunces',serif; font-weight:700; font-size:1.7rem; color:var(--sky-deep); display:flex; align-items:center; gap:8px; }
   .logo .plane { color:var(--tan-deep); font-size:1.3rem; transform:rotate(15deg); display:inline-block; }
@@ -41,14 +39,11 @@
   .nav-cta { background:var(--sky-deep); color:#fff !important; padding:10px 22px; border-radius:24px; font-weight:600; transition:background 0.2s; }
   .nav-cta:hover { background:var(--ink); }
   .nav-hamburger { display:none; background:none; border:none; cursor:pointer; font-size:1.5rem; color:var(--ink); }
-
   @media(max-width:760px){
     .nav-links { display:none; flex-direction:column; position:absolute; top:70px; left:0; right:0; background:var(--cream); padding:20px 24px; gap:16px; z-index:100; box-shadow:0 8px 20px var(--shadow); }
     .nav-links.open { display:flex; }
     .nav-hamburger { display:block; }
   }
-
-  /* HERO */
   .hero { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:20px; padding:40px 0 60px; }
   .hero-eyebrow { font-family:'Caveat',cursive; font-size:1.5rem; color:var(--teal); margin-bottom:2px; }
   .hero h1 { font-family:'Fraunces',serif; font-size:3rem; font-weight:600; color:var(--ink); line-height:1.12; margin-bottom:18px; }
@@ -66,26 +61,22 @@
   .speech-bubble { position:absolute; top:0; left:-10px; background:#fff; border:2px solid var(--ink); border-radius:16px; padding:12px 18px; font-family:'Caveat',cursive; font-size:1.25rem; color:var(--ink); max-width:220px; box-shadow:0 6px 14px var(--shadow); }
   .speech-bubble::after { content:''; position:absolute; bottom:-14px; left:50px; border:8px solid transparent; border-top-color:var(--ink); border-bottom:0; }
   .speech-bubble::before { content:''; position:absolute; bottom:-10px; left:51px; border:7px solid transparent; border-top-color:#fff; border-bottom:0; z-index:1; }
-
   @media(max-width:760px){
     .hero { grid-template-columns:1fr; }
     .hero h1 { font-size:2.2rem; }
     .hero-art { order:-1; max-width:300px; margin:0 auto; }
     .speech-bubble { position:static; margin-bottom:12px; display:inline-block; }
   }
-
-  /* SECTION */
   .section { padding:50px 0; }
   .section-tab { display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:var(--cream); padding:8px 20px; border-radius:24px; font-weight:600; font-size:0.82rem; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:28px; }
   .section-tab .dot { width:8px; height:8px; border-radius:50%; background:var(--tan); }
-
-  /* DEALS */
   .deals-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   @media(max-width:760px){ .deals-grid { grid-template-columns:1fr; } }
   .deal-card { background:#fff; border-radius:16px; box-shadow:0 8px 22px var(--shadow); position:relative; overflow:hidden; transition:transform 0.2s ease; border:3px solid #fff; }
   .deal-card:hover { transform:translateY(-4px) rotate(-0.5deg); }
   .deal-sticker { position:absolute; top:14px; right:14px; background:var(--tan); color:#fff; font-family:'Fraunces',serif; font-weight:700; font-size:0.78rem; padding:5px 12px; border-radius:20px; transform:rotate(8deg); box-shadow:0 3px 6px rgba(0,0,0,0.15); }
   .deal-top { background:var(--sky); color:#fff; padding:22px 22px 18px; }
+  .deal-top.intl { background:var(--teal); }
   .deal-route { font-family:'Fraunces',serif; font-size:1.4rem; font-weight:700; }
   .deal-cities { font-size:0.85rem; opacity:0.85; margin-top:2px; }
   .deal-price { font-family:'Fraunces',serif; font-size:1.7rem; font-weight:700; margin-top:6px; }
@@ -95,8 +86,6 @@
   .deal-link { display:inline-block; font-weight:700; font-size:0.9rem; color:var(--ink); border-bottom:2px solid var(--teal); padding-bottom:2px; transition:color 0.2s; }
   .deal-link:hover { color:var(--sky-deep); }
   .deals-note { margin-top:18px; font-size:0.83rem; color:var(--sky-deep); font-style:italic; }
-
-  /* TOOLS */
   .tools-row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
   @media(max-width:760px){ .tools-row { grid-template-columns:1fr; } }
   .tool-card { background:#fff; border-radius:16px; padding:28px; box-shadow:0 6px 18px var(--shadow); }
@@ -109,8 +98,6 @@
   .pill-wj { background:var(--teal); }
   .pill-pd { background:var(--sky-deep); }
   .pill-search { background:var(--tan-deep); }
-
-  /* EXPLORE */
   .explore-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
   @media(max-width:760px){ .explore-grid { grid-template-columns:1fr; } }
   .explore-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 6px 18px var(--shadow); display:flex; align-items:stretch; }
@@ -125,8 +112,6 @@
     .explore-card { flex-direction:column; }
     .explore-img { width:100%; padding:20px 0 0; }
   }
-
-  /* SUBSCRIBE BANNER */
   .subscribe-banner { background:var(--ink); border-radius:20px; padding:50px 48px; text-align:center; color:var(--cream); }
   .subscribe-banner h2 { font-family:'Fraunces',serif; font-size:2rem; margin-bottom:10px; }
   .subscribe-banner p { font-size:1rem; opacity:0.85; margin-bottom:26px; }
@@ -135,8 +120,6 @@
   .subscribe-banner .hero-form button { background:var(--teal); border-color:var(--teal); }
   .subscribe-banner .hero-form button:hover { background:#258f78; }
   @media(max-width:600px){ .subscribe-banner { padding:36px 24px; } }
-
-  /* FOOTER */
   footer { padding:36px 0 50px; font-size:0.85rem; color:var(--sky-deep); }
   .footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px; align-items:center; }
   .footer-links { display:flex; gap:20px; }
@@ -145,9 +128,7 @@
 </style>
 </head>
 <body>
-
 <div class="container">
-
   <nav>
     <div class="logo"><span class="plane">✈</span> SkyTia</div>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
@@ -158,8 +139,6 @@
       <a href="#subscribe" class="nav-cta">Get Deals ✈️</a>
     </div>
   </nav>
-
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-copy">
       <div class="hero-eyebrow">Hi, I'm Aunt Tia 👋</div>
@@ -177,17 +156,26 @@
       <img src="aunt-tia-hero.png" alt="Aunt Tia holding a passport, smiling">
     </div>
   </div>
-
-  <!-- DEALS -->
+  <!-- DOMESTIC DEALS -->
   <div class="section" id="deals">
-    <div class="section-tab"><span class="dot"></span>This Week's Deals</div>
-    <div class="deals-grid" id="deals-grid">
+    <div class="section-tab"><span class="dot"></span>🍁 This Week's Domestic Deals</div>
+    <div class="deals-grid" id="domestic-grid">
       <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">
-        <p style="font-size:1.1rem;">✈️ Loading this week's deals...</p>
+        <p style="font-size:1.1rem;">✈️ Loading domestic deals...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERNATIONAL DEALS -->
+  <div class="section" id="intl-deals">
+    <div class="section-tab" style="background:var(--teal);"><span class="dot"></span>🌍 This Week's International Deals</div>
+    <div class="deals-grid" id="intl-grid">
+      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">
+        <p style="font-size:1.1rem;">✈️ Loading international deals...</p>
       </div>
     </div>
     <p class="deals-note" id="deals-updated"></p>
-    <p class="deals-note">✦ Deals update weekly. Prices are approximate — always verify before booking. Booking links are affiliate links.</p>
+    <p class="deals-note">✦ Deals update every Monday. Prices are approximate — always verify before booking. Booking links are affiliate links.</p>
   </div>
 
   <!-- TOOLS -->
@@ -280,38 +268,51 @@ document.getElementById('hero-email').addEventListener('keydown', function(e) { 
 document.getElementById('banner-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('banner'); });
 
 var DEALS_URL = 'https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
-var NOTES_DOM = ['Cheaper than a tank of gas.','Short hop, big savings.','Weekend getaway material.','Do not drive. Fly.','Canada is big - fly it for less.'];
-var NOTES_INT = ['Pack light, spend on experiences.','Your passport has been waiting.','Beach money, not flight money.','Incredible city, incredible price.','This price will not last.'];
-function getNote(type, i) { return type === 'domestic' ? NOTES_DOM[i % NOTES_DOM.length] : NOTES_INT[i % NOTES_INT.length]; }
 function formatDate(d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateString('en-CA', {month:'short',day:'numeric'}); } catch(e) { return d; } }
-function renderDeals(data) {
-  var grid = document.getElementById('deals-grid');
-  var upd = document.getElementById('deals-updated');
-  if (!data.deals || !data.deals.length) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:#2C7DAE">No new deals this week - check back Monday!</p></div>'; return; }
-  var stickers = ['Hot','New','Hot','Deal','Hot','New'];
-  grid.innerHTML = data.deals.slice(0,6).map(function(d,i) {
-    var note = d.bubble ? d.bubble : getNote(d.type, i);
-    var tag = d.type === 'domestic' ? 'Domestic' : 'International';
-    return '<div class="deal-card">' +
-      '<div class="deal-sticker">' + stickers[i] + '</div>' +
-      '<div class="deal-top">' +
-        '<div class="deal-route">' + d.origin + ' to ' + d.destination + '</div>' +
-        '<div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div>' +
-        '<div class="deal-price">$' + d.price + ' CAD</div>' +
-      '</div>' +
-      '<div class="deal-body">' +
-        '<div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span><span>' + tag + '</span></div>' +
-        '<div class="deal-note">' + note + '</div>' +
-        '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a>' +
-      '</div>' +
-    '</div>';
-  }).join('');
-  if (data.updated) upd.textContent = 'Last updated ' + data.updated + '. Deals refresh every Monday.';
+function buildCard(d, i) {
+  var stickers = ['Hot 🔥','New ✨','Deal 💙','Hot 🔥','New ✨'];
+  var note = d.bubble ? d.bubble : 'Great price — book it before it disappears!';
+  var topClass = d.type === 'international' ? 'deal-top intl' : 'deal-top';
+  return '<div class="deal-card">' +
+    '<div class="deal-sticker">' + stickers[i % stickers.length] + '</div>' +
+    '<div class="' + topClass + '">' +
+      '<div class="deal-route">' + d.origin + ' to ' + d.destination + '</div>' +
+      '<div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div>' +
+      '<div class="deal-price">$' + d.price + ' CAD</div>' +
+    '</div>' +
+    '<div class="deal-body">' +
+      '<div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span></div>' +
+      '<div class="deal-note">' + note + '</div>' +
+      '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight →</a>' +
+    '</div>' +
+  '</div>';
 }
-fetch(DEALS_URL).then(function(r){ return r.json(); }).then(renderDeals).catch(function(){
-  document.getElementById('deals-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:#2C7DAE">Deals loading - check back shortly!</p></div>';
-});
+function renderDeals(data) {
+  var domGrid = document.getElementById('domestic-grid');
+  var intlGrid = document.getElementById('intl-grid');
+  var updated = document.getElementById('deals-updated');
+  if (!data.deals || !data.deals.length) {
+    domGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">No deals this week — check back Monday!</p></div>';
+    intlGrid.innerHTML = domGrid.innerHTML;
+    return;
+  }
+  var domestic = data.deals.filter(function(d){ return d.type === 'domestic'; });
+  var intl = data.deals.filter(function(d){ return d.type === 'international'; });
+  domGrid.innerHTML = domestic.length
+    ? domestic.map(function(d,i){ return buildCard(d,i); }).join('')
+    : '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">No domestic deals this week.</p></div>';
+  intlGrid.innerHTML = intl.length
+    ? intl.map(function(d,i){ return buildCard(d,i); }).join('')
+    : '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">No international deals this week.</p></div>';
+  if (data.updated) updated.textContent = 'Last updated ' + data.updated + '. Deals refresh every Monday.';
+}
+fetch(DEALS_URL)
+  .then(function(r){ return r.json(); })
+  .then(renderDeals)
+  .catch(function(){
+    document.getElementById('domestic-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">Deals loading — check back shortly!</p></div>';
+    document.getElementById('intl-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">Deals loading — check back shortly!</p></div>';
+  });
 </script>
-
 </body>
 </html>
