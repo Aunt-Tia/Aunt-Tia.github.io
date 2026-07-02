@@ -26,7 +26,7 @@ var CURRENCIES = {
   BSD: { id: 'rate-bsd', symbol: '$', decimals: 4 },
   THB: { id: 'rate-thb', symbol: '฿', decimals: 2 }
 };
-fetch('https://api.frankfurter.app/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,BSD,THB')
+fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,BSD,THB')
   .then(function(r){ return r.json(); })
   .then(function(data){
     Object.keys(CURRENCIES).forEach(function(code){
