@@ -410,12 +410,15 @@ var stickers=['Hot','New','Deal','Hot','New','Deal'];
 function formatDate(d){try{return new Date(d+'T12:00:00Z').toLocaleDateString('en-CA',{month:'short',day:'numeric'});}catch(e){return d;}}
 function noDeals(msg){return '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">'+msg+'</p></div>';}
 
+var NTK={'LHR':'/needtoknow.html#london','CDG':'/needtoknow.html#paris','AMS':'/needtoknow.html#amsterdam','FRA':'/needtoknow.html#frankfurt','FCO':'/needtoknow.html#rome','BCN':'/needtoknow.html#barcelona','LIS':'/needtoknow.html#lisbon','DUB':'/needtoknow.html#dublin','KEF':'/needtoknow.html#reykjavik','AUH':'/needtoknow.html#abudhabi','IAH':'/needtoknow.html#usa','DEN':'/needtoknow.html#usa','LAX':'/needtoknow.html#usa','LAS':'/needtoknow.html#usa','SFO':'/needtoknow.html#usa','NAS':'/needtoknow.html#nassau','MBJ':'/needtoknow.html#jamaica','HND':'/needtoknow.html#tokyo','NRT':'/needtoknow.html#tokyo','BKK':'/needtoknow.html#bangkok','DXB':'/needtoknow.html#abudhabi'};
+
 function buildCard(d,i){
   var note=d.bubble?d.bubble:'Great price — book it before it disappears!';
   var topClass=d.type==='international'?'deal-top intl':'deal-top';
   var priceHtml=d.price?'<div class="deal-price">$'+d.price+' CAD</div><div style="font-size:0.75rem;opacity:0.85;margin-top:2px;">roundtrip</div>':'<div style="font-size:0.95rem;margin-top:6px;opacity:0.85;">Check live prices</div>';
   var metaHtml=d.departDate?'<div class="deal-meta">Around '+formatDate(d.departDate)+'</div>':'';
-  return '<div class="deal-card"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div>'+priceHtml+'</div><div class="deal-body">'+metaHtml+'<div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
+  var ntkHtml=d.type==='international'&&NTK[d.destination]?'<a href="'+NTK[d.destination]+'" class="deal-link" style="font-size:0.8rem;color:var(--tan-deep);border-bottom-color:var(--tan);margin-top:6px;display:block;" target="_blank">📋 Entry requirements for Canadians →</a>':'';
+  return '<div class="deal-card"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div>'+priceHtml+'</div><div class="deal-body">'+metaHtml+'<div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a>'+ntkHtml+'</div></div>';
 }
 
   function buildBizCard(d,i){
