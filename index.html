@@ -423,7 +423,8 @@ function buildCard(d,i){
 
   function buildBizCard(d,i){
   var note=d.bubble?d.bubble:'Direct from Alberta. You deserve the good seat.';
-  return '<div class="deal-card premium"><div class="deal-top biz"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div style="font-size:0.8rem;color:var(--gold);margin-top:4px;">'+d.label+'</div></div><div class="deal-body"><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices</a></div></div>';
+  var ntkHtml=NTK[d.destination]?'<a href="'+NTK[d.destination]+'" class="deal-link" style="font-size:0.8rem;color:var(--gold);border-bottom-color:var(--gold-deep);margin-top:6px;display:block;">📋 Entry requirements for Canadians →</a>':'';
+  return '<div class="deal-card premium"><div class="deal-top biz"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div style="font-size:0.8rem;color:var(--gold);margin-top:4px;">'+d.label+'</div></div><div class="deal-body"><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices</a>'+ntkHtml+'</div></div>';
 }
   
 setTimeout(function() {
