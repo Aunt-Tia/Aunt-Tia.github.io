@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travelling With Pets on Canadian Airlines | SkyTia</title>
+<meta name="description" content="Everything you need to know about flying with your pet in Canada — Air Canada, WestJet, Porter, Flair pet policies, carrier sizes, fees, and international rules.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;--shadow:rgba(30,58,74,0.10);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.7;}
+  a{color:var(--sky-deep);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .container{max-width:860px;margin:0 auto;padding:0 24px;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;max-width:1100px;margin:0 auto;}
+  .nav-inner{padding:0 24px;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .logo .plane{color:var(--tan-deep);font-size:1.3rem;transform:rotate(15deg);display:inline-block;}
+  .nav-links{display:flex;gap:20px;align-items:center;font-weight:500;font-size:0.9rem;}
+  .nav-cta{background:var(--sky-deep);color:#fff!important;padding:9px 20px;border-radius:24px;font-weight:600;text-decoration:none;}
+
+  /* HERO */
+  .guide-hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:40px 0 50px;}
+  @media(max-width:600px){.guide-hero{grid-template-columns:1fr;}.guide-hero img{max-width:240px;margin:0 auto;}}
+  .guide-eyebrow{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--teal);margin-bottom:6px;}
+  .guide-hero h1{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:16px;}
+  .guide-hero p{font-size:1.05rem;color:var(--charcoal);max-width:520px;margin-bottom:20px;}
+  .guide-hero img{width:220px;border-radius:16px;}
+
+  /* AUNT TIA QUOTE */
+  .tia-quote{background:#fff;border-left:5px solid var(--teal);border-radius:0 16px 16px 0;padding:24px 28px;margin:0 0 40px;box-shadow:0 4px 14px var(--shadow);}
+  .tia-quote p{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--ink);line-height:1.5;}
+  .tia-quote .attribution{font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--sky-deep);margin-top:8px;font-style:normal;font-weight:600;}
+
+  /* SECTIONS */
+  .guide-section{margin-bottom:52px;}
+  .guide-section h2{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--ink);margin-bottom:6px;}
+  .guide-section .section-intro{font-size:0.95rem;color:var(--charcoal);margin-bottom:24px;opacity:0.85;}
+  .guide-section h3{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--sky-deep);margin:24px 0 8px;}
+  .guide-section p{font-size:0.95rem;margin-bottom:12px;}
+  .guide-section ul{padding-left:20px;margin-bottom:12px;}
+  .guide-section ul li{font-size:0.95rem;margin-bottom:6px;}
+
+  /* AIRLINE CARDS */
+  .airline-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:8px;}
+  @media(max-width:600px){.airline-grid{grid-template-columns:1fr;}}
+  .airline-card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 6px 18px var(--shadow);border-top:4px solid var(--sky);}
+  .airline-card.westjet{border-top-color:var(--teal);}
+  .airline-card.porter{border-top-color:var(--ink);}
+  .airline-card.flair{border-top-color:#FF6B35;}
+  .airline-card h3{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);margin:0 0 12px;}
+  .airline-card .fee{font-size:1.1rem;font-weight:700;color:var(--tan-deep);margin-bottom:10px;}
+  .airline-card ul{padding-left:18px;}
+  .airline-card ul li{font-size:0.88rem;margin-bottom:5px;color:var(--charcoal);}
+  .airline-card .policy-link{display:inline-block;margin-top:12px;font-size:0.82rem;font-weight:600;color:var(--sky-deep);}
+
+  /* INFO BOXES */
+  .info-box{border-radius:14px;padding:20px 24px;margin-bottom:20px;}
+  .info-box.warning{background:#fff8e6;border-left:4px solid var(--tan);}
+  .info-box.danger{background:#fff0f0;border-left:4px solid #e05c4a;}
+  .info-box.tip{background:#e8f7f4;border-left:4px solid var(--teal);}
+  .info-box h4{font-family:'Fraunces',serif;font-size:1rem;margin-bottom:6px;}
+  .info-box.warning h4{color:var(--tan-deep);}
+  .info-box.danger h4{color:#c0392b;}
+  .info-box.tip h4{color:var(--teal);}
+  .info-box p,.info-box ul{font-size:0.9rem;}
+  .info-box ul{padding-left:18px;}
+  .info-box ul li{margin-bottom:4px;}
+
+  /* CARRIER SIZE TABLE */
+  .carrier-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:0.9rem;}
+  .carrier-table th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-weight:600;}
+  .carrier-table td{padding:10px 14px;border-bottom:1px solid rgba(30,58,74,0.1);}
+  .carrier-table tr:nth-child(even) td{background:#f8f9fa;}
+  .carrier-table tr:hover td{background:#e8f7f4;}
+
+  /* CHECKLIST */
+  .checklist{background:#fff;border-radius:16px;padding:28px;box-shadow:0 6px 18px var(--shadow);}
+  .checklist h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);margin-bottom:16px;}
+  .checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(30,58,74,0.08);}
+  .checklist-item:last-child{border-bottom:none;}
+  .check{width:20px;height:20px;border-radius:50%;background:var(--cream);border:2px solid var(--teal);flex-shrink:0;margin-top:2px;}
+  .checklist-item p{font-size:0.92rem;color:var(--charcoal);}
+  .checklist-item strong{color:var(--ink);}
+
+  /* INTL SECTION */
+  .intl-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:600px){.intl-grid{grid-template-columns:1fr;}}
+  .intl-card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 6px 18px var(--shadow);}
+  .intl-card h4{font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);margin-bottom:10px;}
+  .intl-card ul{padding-left:18px;}
+  .intl-card ul li{font-size:0.88rem;margin-bottom:5px;}
+
+  /* CTA */
+  .guide-cta{background:var(--ink);border-radius:20px;padding:40px;text-align:center;color:#fff;margin-bottom:50px;}
+  .guide-cta h2{font-family:'Fraunces',serif;font-size:1.8rem;margin-bottom:10px;}
+  .guide-cta p{opacity:0.85;margin-bottom:24px;}
+  .guide-cta .hero-form{display:flex;max-width:380px;margin:0 auto;}
+  .guide-cta input{flex:1;padding:14px 18px;border:2px solid rgba(255,255,255,0.3);border-right:none;border-radius:28px 0 0 28px;font-family:'Inter',sans-serif;font-size:0.95rem;background:rgba(255,255,255,0.1);color:#fff;outline:none;}
+  .guide-cta input::placeholder{color:rgba(255,255,255,0.5);}
+  .guide-cta button{padding:14px 24px;background:var(--teal);color:#fff;border:2px solid var(--teal);border-radius:0 28px 28px 0;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .cta-note{font-size:0.8rem;opacity:0.6;margin-top:10px;}
+
+  footer{padding:36px 0 50px;font-size:0.85rem;color:var(--sky-deep);max-width:1100px;margin:0 auto;padding-left:24px;padding-right:24px;}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
+  .footer-links{display:flex;gap:20px;}
+  .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
+
+  .divider{border:none;border-top:2px solid rgba(30,58,74,0.08);margin:40px 0;}
+</style>
+</head>
+<body>
+
+<div style="max-width:1100px;margin:0 auto;" class="nav-inner">
+  <nav>
+    <a href="/" class="logo"><span class="plane">✈</span> SkyTia</a>
+    <div class="nav-links">
+      <a href="/#deals">Deals</a>
+      <a href="/luggage.html">Luggage</a>
+      <a href="/">All Guides</a>
+      <a href="/#subscribe" class="nav-cta">Get Deals</a>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="guide-hero">
+    <div>
+      <div class="guide-eyebrow">Aunt Tia's Pet Travel Guide</div>
+      <h1>Travelling With Pets on Canadian Airlines</h1>
+      <p>Flying with your pet in Canada is completely doable — but every airline has different rules, fees, and carrier requirements. Get it wrong and your furry travel companion stays home.</p>
+    </div>
+    <img src="aunt-tia-pets.png" alt="Aunt Tia travelling with her pet">
+  </div>
+
+  <!-- AUNT TIA QUOTE -->
+  <div class="tia-quote">
+    <p>"I once watched someone get turned away at the gate because their carrier was two centimetres too wide. Two centimetres. Their dog was fine. They were not. Read this guide. Measure twice. Book once."</p>
+    <div class="attribution">— Aunt Tia 🐾</div>
+  </div>
+
+  <!-- SECTION 1: CAN MY PET FLY -->
+  <div class="guide-section">
+    <h2>Can my pet fly?</h2>
+    <p class="section-intro">Most healthy cats and dogs can fly within Canada. But there are rules around size, age, breed, and health that determine whether your pet rides in the cabin with you or goes as cargo.</p>
+
+    <h3>Cabin vs Cargo</h3>
+    <p>Small pets that fit in an approved carrier under the seat in front of you can typically fly in the cabin. Larger pets must travel as checked baggage or cargo — a completely separate and more complex process.</p>
+
+    <div class="info-box tip">
+      <h4>Aunt Tia's Rule of Thumb</h4>
+      <p>If your pet and carrier together weigh under 10 kg (22 lbs), you're probably fine in cabin on most Canadian airlines. Above that, you're looking at cargo. Always verify with your specific airline before booking.</p>
+    </div>
+
+    <h3>Age Requirements</h3>
+    <ul>
+      <li>Most airlines require pets to be at least <strong>8 weeks old</strong></li>
+      <li>Pets must be weaned and able to eat/drink on their own</li>
+      <li>Senior pets with health conditions may need a vet clearance letter</li>
+    </ul>
+
+    <h3>Breed Restrictions — Read This Carefully</h3>
+    <div class="info-box danger">
+      <h4>Snub-nosed (Brachycephalic) Breeds are Often Banned</h4>
+      <p>Dogs and cats with flat faces have breathing difficulties at altitude. Many airlines restrict or ban them entirely — especially in cargo.</p>
+      <ul>
+        <li><strong>Dogs:</strong> Bulldogs, Pugs, Boxers, Boston Terriers, Shih Tzus, French Bulldogs, Pekingese</li>
+        <li><strong>Cats:</strong> Persians, Himalayans, Exotic Shorthairs, British Shorthairs</li>
+        <li><strong>Always check</strong> your specific airline's breed list before booking</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 2: AIRLINE BY AIRLINE -->
+  <div class="guide-section">
+    <h2>Airline Pet Policies</h2>
+    <p class="section-intro">Every Canadian airline has different fees, carrier size limits, and restrictions. Here's what you need to know for each.</p>
+
+    <div class="airline-grid">
+      <div class="airline-card">
+        <h3>Air Canada</h3>
+        <div class="fee">$50–$118 CAD each way</div>
+        <ul>
+          <li>Cabin: cats + small dogs under 10 kg total</li>
+          <li>Max carrier: 23×40×55 cm (LxWxH)</li>
+          <li>1 pet per passenger in cabin</li>
+          <li>Max 2 pets per flight in cabin</li>
+          <li>Book pet spot when booking flight</li>
+          <li>Health certificate not required for domestic</li>
+          <li>Several brachycephalic breeds restricted</li>
+        </ul>
+        <a href="https://www.aircanada.com/en/ach/travel-info/special-assistance/pets.html" class="policy-link" target="_blank" rel="noopener">Full Air Canada pet policy →</a>
+      </div>
+
+      <div class="airline-card westjet">
+        <h3>WestJet</h3>
+        <div class="fee">$50–$100 CAD each way</div>
+        <ul>
+          <li>Cabin: cats + small dogs under 10 kg total</li>
+          <li>Max carrier: 43×30×22 cm</li>
+          <li>1 pet per passenger in cabin</li>
+          <li>Max 2 pets in cabin per flight</li>
+          <li>Must book pet by phone — not online</li>
+          <li>No snub-nosed breeds in cabin or cargo</li>
+          <li>Carrier must be soft-sided</li>
+        </ul>
+        <a href="https://www.westjet.com/en-ca/travel-info/special-assistance/pets" class="policy-link" target="_blank" rel="noopener">Full WestJet pet policy →</a>
+      </div>
+
+      <div class="airline-card porter">
+        <h3>Porter Airlines</h3>
+        <div class="fee">$75 CAD each way</div>
+        <ul>
+          <li>Cabin: cats + small dogs under 10 kg total</li>
+          <li>Max carrier: 43×33×22 cm</li>
+          <li>1 pet per passenger maximum</li>
+          <li>Must be booked by phone</li>
+          <li>No snub-nosed breeds permitted</li>
+          <li>Pet must remain in carrier entire flight</li>
+          <li>Limited to select routes</li>
+        </ul>
+        <a href="https://www.flyporter.com/en-ca/travel-information/pets" class="policy-link" target="_blank" rel="noopener">Full Porter pet policy →</a>
+      </div>
+
+      <div class="airline-card flair">
+        <h3>Flair Airlines</h3>
+        <div class="fee">$99 CAD each way</div>
+        <ul>
+          <li>Cabin: cats + small dogs only</li>
+          <li>Max carrier: 43×30×22 cm</li>
+          <li>Combined weight under 8 kg</li>
+          <li>1 pet per passenger maximum</li>
+          <li>Must book online at time of booking</li>
+          <li>No snub-nosed breeds</li>
+          <li>Soft-sided carrier required</li>
+        </ul>
+        <a href="https://flyflair.com/en/travel-info/pets" class="policy-link" target="_blank" rel="noopener">Full Flair pet policy →</a>
+      </div>
+    </div>
+
+    <div class="info-box warning">
+      <h4>Always Call to Confirm</h4>
+      <p>Pet policies change frequently. These details were accurate at time of writing but always verify directly with your airline before booking. Pet spots are limited — book as early as possible.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 3: CARRIER SIZES -->
+  <div class="guide-section">
+    <h2>Carrier Size Requirements</h2>
+    <p class="section-intro">Your carrier must fit under the seat in front of you AND meet the airline's size limits. These two things are not always the same. Measure your carrier before you buy it.</p>
+
+    <table class="carrier-table">
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Max Dimensions (L×W×H)</th>
+          <th>Max Weight (pet + carrier)</th>
+          <th>Soft or Hard?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Air Canada</td><td>23 × 40 × 55 cm</td><td>10 kg</td><td>Either</td></tr>
+        <tr><td>WestJet</td><td>43 × 30 × 22 cm</td><td>10 kg</td><td>Soft-sided only</td></tr>
+        <tr><td>Porter</td><td>43 × 33 × 22 cm</td><td>10 kg</td><td>Either</td></tr>
+        <tr><td>Flair</td><td>43 × 30 × 22 cm</td><td>8 kg</td><td>Soft-sided only</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box tip">
+      <h4>Aunt Tia's Carrier Tip</h4>
+      <p>Buy a carrier that meets the STRICTEST requirements across all airlines — 43×30×22 cm — so you can fly any airline without issues. Your pet must also be able to stand up, turn around, and lie down comfortably inside it.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 4: WHAT YOU NEED -->
+  <div class="guide-section">
+    <h2>What You Need to Bring</h2>
+    <p class="section-intro">Getting to the gate is only half the battle. Here's what to have ready on travel day.</p>
+
+    <div class="checklist">
+      <h3>Pet Travel Checklist</h3>
+      <div class="checklist-item"><div class="check"></div><p><strong>Airline-approved carrier</strong> — correct dimensions, labelled with your name and contact info</p></div>
+      <div class="checklist-item"><div class="check"></div><p><strong>Vaccination records</strong> — especially rabies. Not required for all domestic flights but good to have</p></div>
+      <div class="checklist-item"><div class="check"></div><p><strong>Vet health certificate</strong> — required for international flights, recommended for cargo/checked baggage</p></div>
+      <div class="checklist-item"><div class="check"></div><p><strong>Water and absorbent pad</strong> — line the carrier bottom, bring a small collapsible bowl</p></div>
+      <div class="checklist-item"><div class="check"></div><p><strong>Familiar toy or blanket</strong> — something that smells like home reduces anxiety significantly</p></div>
+      <div class="checklist-item"><div class="check"></div><p><strong>Pet's medication</strong> — if prescribed, in original labelled container</p></div>
+      <div class="checklist-item"><div class="check"></div><p><strong>Booking confirmation showing pet</strong> — your pet's spot must be pre-booked and confirmed</p></div>
+      <div class="checklist-item"><div class="check"></div><p><strong>Arrive early</strong> — give yourself extra time at check-in. Pet check-in takes longer</p></div>
+    </div>
+
+    <div class="info-box warning" style="margin-top:20px;">
+      <h4>Do Not Sedate Your Pet</h4>
+      <p>Most vets and airlines advise against sedating pets for flights. Sedation affects balance and can cause breathing problems at altitude. Talk to your vet about anxiety alternatives like pheromone sprays or calming treats instead.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 5: INTERNATIONAL -->
+  <div class="guide-section">
+    <h2>International Pet Travel</h2>
+    <p class="section-intro">Flying internationally with a pet is significantly more complex than domestic travel. Each destination country has its own import rules — some require months of advance preparation.</p>
+
+    <div class="info-box danger" style="margin-bottom:24px;">
+      <h4>Start Planning 6+ Months in Advance</h4>
+      <p>Some countries (UK, Australia, New Zealand, Japan, Hawaii) have strict quarantine requirements or specific health testing timelines that can take months to complete. Do not leave this to the last minute.</p>
+    </div>
+
+    <div class="intl-grid">
+      <div class="intl-card">
+        <h4>USA</h4>
+        <ul>
+          <li>Rabies vaccination required (dogs)</li>
+          <li>No quarantine for vaccinated pets</li>
+          <li>Health certificate from vet (within 10 days)</li>
+          <li>Relatively straightforward</li>
+          <li>Some states have additional rules</li>
+        </ul>
+      </div>
+      <div class="intl-card">
+        <h4>UK & Europe</h4>
+        <ul>
+          <li>EU/UK pet passport or third-country certificate</li>
+          <li>Microchip required (ISO standard)</li>
+          <li>Rabies vaccination (21 days before travel)</li>
+          <li>Tapeworm treatment for UK entry (dogs)</li>
+          <li>Allow 4–8 weeks preparation minimum</li>
+        </ul>
+      </div>
+      <div class="intl-card">
+        <h4>Mexico & Caribbean</h4>
+        <ul>
+          <li>Health certificate (within 10–15 days)</li>
+          <li>Rabies + distemper vaccination proof</li>
+          <li>Some islands have stricter rules</li>
+          <li>Nassau (Bahamas) — health cert required</li>
+          <li>Generally manageable with 4+ weeks notice</li>
+        </ul>
+      </div>
+      <div class="intl-card">
+        <h4>Japan, Australia, NZ</h4>
+        <ul>
+          <li>Extremely strict import rules</li>
+          <li>Quarantine periods of weeks to months</li>
+          <li>Blood titer tests required (months ahead)</li>
+          <li>Approved import permits needed</li>
+          <li>Start planning 6–12 months in advance</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Canadian Export Requirements (CFIA)</h3>
+    <p>When leaving Canada with a pet, the <strong>Canadian Food Inspection Agency (CFIA)</strong> may require an export health certificate endorsed by an accredited vet and CFIA office. This takes time to arrange — don't leave it until the week before travel.</p>
+    <p><a href="https://www.inspection.gc.ca/animal-health/terrestrial-animals/exports/pets/eng/1323553674148/1323553773961" target="_blank" rel="noopener">CFIA pet export requirements →</a></p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SUBSCRIBE CTA -->
+  <div class="guide-cta">
+    <h2>Get weekly flight deals from Aunt Tia.</h2>
+    <p>Free. One email a week. No nonsense. Aunt Tia finds the deals — you do the booking.</p>
+    <div class="hero-form">
+      <input type="email" id="pets-email" placeholder="your@email.com">
+      <button onclick="handleSubscribe()">Subscribe Free</button>
+    </div>
+    <div class="cta-note">Unsubscribe anytime.</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-row">
+    <a href="/" class="logo" style="font-size:1.1rem;"><span class="plane" style="font-size:1rem;">✈</span> SkyTia</a>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:social@skytia.com">Contact</a>
+    </div>
+  </div>
+  <div class="footer-disclosure">Pet policies and fees change frequently. Always verify directly with your airline before booking. This guide is for informational purposes only. Some links may be affiliate links. © 2026 SkyTia.</div>
+</footer>
+
+<script>
+function handleSubscribe() {
+  var input = document.getElementById('pets-email');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) { input.style.borderColor='#e05c4a'; input.focus(); return; }
+  window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email), '_blank');
+  input.value = '';
+  input.placeholder = 'You are in! Check your inbox.';
+}
+document.getElementById('pets-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe(); });
+</script>
+
+</body>
+</html>
