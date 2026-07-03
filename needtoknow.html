@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aunt Tia's Need to Know — Canadian Travel Requirements & Advisories | SkyTia</title>
+<meta name="description" content="Everything Canadians need to know before flying internationally — visa requirements, travel advisories, health requirements, entry rules and what to do before you go. Updated 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;--shadow:rgba(30,58,74,0.10);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.7;}
+  a{color:var(--sky-deep);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .container{max-width:960px;margin:0 auto;padding:0 24px;}
+  .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .logo .plane{color:var(--tan-deep);font-size:1.3rem;transform:rotate(15deg);display:inline-block;}
+  .nav-links{display:flex;gap:20px;align-items:center;font-weight:500;font-size:0.9rem;}
+  .nav-cta{background:var(--sky-deep);color:#fff!important;padding:9px 20px;border-radius:24px;font-weight:600;text-decoration:none;}
+
+  /* HERO */
+  .guide-hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:40px 0 50px;}
+  @media(max-width:700px){.guide-hero{grid-template-columns:1fr;}.guide-hero img{max-width:260px;margin:0 auto;}}
+  .guide-eyebrow{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--teal);margin-bottom:6px;}
+  .guide-hero h1{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:16px;}
+  .guide-hero p{font-size:1.05rem;color:var(--charcoal);max-width:520px;margin-bottom:20px;}
+  .guide-hero img{width:280px;border-radius:16px;}
+
+  .tia-quote{background:#fff;border-left:5px solid var(--teal);border-radius:0 16px 16px 0;padding:24px 28px;margin:0 0 48px;box-shadow:0 4px 14px var(--shadow);}
+  .tia-quote p{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--ink);line-height:1.5;}
+  .tia-quote .attribution{font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--sky-deep);margin-top:8px;font-weight:600;}
+
+  /* DESTINATION CARDS */
+  .dest-section{margin-bottom:60px;}
+  .dest-section h2{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--ink);margin-bottom:6px;}
+  .dest-section .section-intro{font-size:0.95rem;color:var(--charcoal);margin-bottom:28px;opacity:0.85;}
+
+  .dest-card{background:#fff;border-radius:20px;box-shadow:0 6px 22px var(--shadow);margin-bottom:28px;overflow:hidden;}
+  .dest-card-header{padding:24px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;border-bottom:1px solid rgba(30,58,74,0.08);}
+  .dest-card-header:hover{background:rgba(47,174,148,0.04);}
+  .dest-title{display:flex;align-items:center;gap:14px;}
+  .dest-flag{font-size:2rem;}
+  .dest-name{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--ink);}
+  .dest-airports{font-size:0.82rem;color:var(--sky-deep);margin-top:2px;font-weight:500;}
+  .dest-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:0.8rem;font-weight:700;white-space:nowrap;}
+  .badge-green{background:#e8f7f4;color:#1a7a5e;}
+  .badge-yellow{background:#fff8e6;color:#8a5e00;}
+  .badge-red{background:#fff0f0;color:#c0392b;}
+
+  .dest-card-body{padding:24px 28px;}
+  .ntk-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:600px){.ntk-grid{grid-template-columns:1fr;}}
+
+  .ntk-item{border-radius:12px;padding:16px 18px;}
+  .ntk-item.visa{background:#EBF4FB;border-left:4px solid var(--sky-deep);}
+  .ntk-item.advisory{background:#e8f7f4;border-left:4px solid var(--teal);}
+  .ntk-item.health{background:#FFF8E6;border-left:4px solid var(--tan);}
+  .ntk-item.entry{background:#F0EBF8;border-left:4px solid #7B68C8;}
+  .ntk-item.before{background:#FFF0F0;border-left:4px solid #E05C4A;}
+
+  .ntk-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;}
+  .ntk-item.visa .ntk-label{color:var(--sky-deep);}
+  .ntk-item.advisory .ntk-label{color:var(--teal);}
+  .ntk-item.health .ntk-label{color:var(--tan-deep);}
+  .ntk-item.entry .ntk-label{color:#7B68C8;}
+  .ntk-item.before .ntk-label{color:#E05C4A;}
+
+  .ntk-value{font-size:0.92rem;color:var(--charcoal);font-weight:500;line-height:1.5;}
+  .ntk-link{display:inline-block;margin-top:8px;font-size:0.8rem;font-weight:600;color:var(--sky-deep);}
+
+  .ntk-full{grid-column:1/-1;}
+
+  /* IMPORTANT ALERTS */
+  .alert-box{background:linear-gradient(135deg,#fff8e6,#fff3d0);border:2px solid var(--tan);border-radius:16px;padding:24px 28px;margin-bottom:40px;}
+  .alert-box h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--tan-deep);margin-bottom:10px;}
+  .alert-box p{font-size:0.92rem;color:var(--charcoal);margin-bottom:8px;}
+  .alert-box ul{padding-left:20px;font-size:0.92rem;}
+  .alert-box ul li{margin-bottom:6px;}
+
+  .etias-box{background:linear-gradient(135deg,#EBF4FB,#dceef8);border:2px solid var(--sky-deep);border-radius:16px;padding:24px 28px;margin-bottom:40px;}
+  .etias-box h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--sky-deep);margin-bottom:10px;}
+  .etias-box p{font-size:0.92rem;color:var(--charcoal);margin-bottom:8px;}
+  .etias-box ul{padding-left:20px;font-size:0.92rem;}
+  .etias-box ul li{margin-bottom:6px;}
+
+  /* BEFORE YOU GO CHECKLIST */
+  .checklist-section{background:#fff;border-radius:20px;padding:32px;box-shadow:0 6px 22px var(--shadow);margin-bottom:48px;}
+  .checklist-section h2{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--ink);margin-bottom:20px;}
+  .checklist-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(30,58,74,0.07);}
+  .checklist-item:last-child{border-bottom:none;}
+  .check-icon{width:24px;height:24px;border-radius:50%;background:var(--cream);border:2px solid var(--teal);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;}
+  .checklist-item p{font-size:0.92rem;color:var(--charcoal);}
+  .checklist-item strong{color:var(--ink);}
+
+  /* CTA */
+  .guide-cta{background:var(--ink);border-radius:20px;padding:40px;text-align:center;color:#fff;margin-bottom:50px;}
+  .guide-cta h2{font-family:'Fraunces',serif;font-size:1.8rem;margin-bottom:10px;}
+  .guide-cta p{opacity:0.85;margin-bottom:24px;}
+  .cta-form{display:flex;max-width:380px;margin:0 auto;}
+  .cta-form input{flex:1;padding:14px 18px;border:2px solid rgba(255,255,255,0.3);border-right:none;border-radius:28px 0 0 28px;font-family:'Inter',sans-serif;font-size:0.95rem;background:rgba(255,255,255,0.1);color:#fff;outline:none;}
+  .cta-form input::placeholder{color:rgba(255,255,255,0.5);}
+  .cta-form button{padding:14px 24px;background:var(--teal);color:#fff;border:2px solid var(--teal);border-radius:0 28px 28px 0;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .cta-note{font-size:0.8rem;opacity:0.6;margin-top:10px;}
+
+  .divider{border:none;border-top:2px solid rgba(30,58,74,0.08);margin:40px 0;}
+
+  footer{padding:36px 0 50px;font-size:0.85rem;color:var(--sky-deep);}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
+  .footer-links{display:flex;gap:20px;}
+  .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
+</style>
+</head>
+<body>
+
+<div class="nav-inner">
+  <nav>
+    <a href="/" class="logo"><span class="plane">✈</span> SkyTia</a>
+    <div class="nav-links">
+      <a href="/">Deals</a>
+      <a href="/edmonton">YEG</a>
+      <a href="/calgary">YYC</a>
+      <a href="/fortmcmurray">YMM</a>
+      <a href="/#subscribe" class="nav-cta">Get Deals</a>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+
+  <div class="guide-hero">
+    <div>
+      <div class="guide-eyebrow">Aunt Tia's Need to Know</div>
+      <h1>Be Informed. Travel Smart.</h1>
+      <p>Before you book that flight, know what you're walking into. Visa requirements, travel advisories, health rules, and entry requirements — all in one place, written for Canadians.</p>
+    </div>
+    <img src="aunt-tia-needtoknow.png" alt="Aunt Tia's Need to Know guide">
+  </div>
+
+  <div class="tia-quote">
+    <p>"The airline will take your money regardless of whether you have the right documents. Customs won't. Know before you go — it takes ten minutes and saves your entire trip."</p>
+    <div class="attribution">— Aunt Tia 🐾</div>
+  </div>
+
+  <!-- URGENT ALERTS -->
+  <div class="alert-box">
+    <h3>⚠️ Heads Up — New Europe Requirements for Canadians</h3>
+    <p><strong>UK ETA — Already in effect:</strong> Since February 2026, all Canadians visiting the UK must obtain an Electronic Travel Authorisation (ETA) before flying. It costs £10, takes minutes online, and is valid for 2 years. Children need their own ETA.</p>
+    <p><strong>EU ETIAS — Coming Q4 2026:</strong> The European Union's new pre-travel authorization for Canadians is expected to launch in late 2026. Not yet required — but watch for the official launch date.</p>
+    <p><strong>EU Entry/Exit System (EES) — Now in effect:</strong> Since October 2025, European border crossings now scan biometrics (photo + fingerprints) on your first entry. Replaces passport stamping. Expect slightly longer border queues on first entry.</p>
+    <ul>
+      <li><a href="https://www.gov.uk/apply-uk-visa/apply-uk-eta" target="_blank" rel="noopener">Apply for UK ETA →</a></li>
+      <li><a href="https://travel.gc.ca/travelling/travelling-europe" target="_blank" rel="noopener">Government of Canada — Travelling to Europe →</a></li>
+    </ul>
+  </div>
+
+  <!-- USA -->
+  <div class="dest-section">
+    <h2>United States</h2>
+    <p class="section-intro">Direct flights from YEG to Houston, Denver, Los Angeles and Las Vegas.</p>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇺🇸</div>
+          <div>
+            <div class="dest-name">United States</div>
+            <div class="dest-airports">Houston (IAH) · Denver (DEN) · Los Angeles (LAX) · Las Vegas (LAS)</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required for Canadian citizens. Valid Canadian passport required. Stay up to 6 months as a visitor.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Exercise increased caution near the Mexico border states.</div>
+            <a href="https://travel.gc.ca/destinations/united-states" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance strongly recommended — US medical costs are extremely high.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">Declare all food, plants, and goods over $800 USD. US border officers can ask about purpose and duration of stay.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Get travel health insurance — this is non-negotiable in the US. Register with <a href="https://travel.gc.ca/travelling/registration" target="_blank" rel="noopener">Registration of Canadians Abroad</a>. Bring proof of onward travel if asked.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EUROPE SCHENGEN -->
+  <div class="dest-section">
+    <h2>Europe — Schengen Area</h2>
+    <p class="section-intro">Direct flights from YEG and YYC to Amsterdam, Paris, Frankfurt, Rome, Barcelona, Lisbon and Reykjavik.</p>
+
+    <div class="etias-box">
+      <h3>🔵 ETIAS Update — Coming Q4 2026</h3>
+      <p>The EU's new pre-travel authorization (ETIAS) is expected to launch in late 2026. It costs €7, takes 10 minutes online, and is valid for 3 years. Not yet required — watch the official EU site for the launch date.</p>
+      <p>The UK ETA is separate from ETIAS and already required. If your trip combines UK + Europe, you need both.</p>
+      <ul>
+        <li><a href="https://travel.gc.ca/travelling/travelling-europe" target="_blank" rel="noopener">Government of Canada — Europe travel update →</a></li>
+      </ul>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇳🇱</div>
+          <div>
+            <div class="dest-name">Netherlands — Amsterdam</div>
+            <div class="dest-airports">Direct from YEG + YYC via KLM</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required. Stay up to 90 days in any 180-day period in the Schengen Area. Passport valid at least 3 months beyond travel dates.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Amsterdam is generally very safe for tourists.</div>
+            <a href="https://travel.gc.ca/destinations/netherlands" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. EHIC/travel insurance recommended. European healthcare is good but costs money without insurance.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">EES biometric scan now required on first Schengen entry (photo + fingerprints). Expect slightly longer queues. €10,000+ cash must be declared.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Register with <a href="https://travel.gc.ca/travelling/registration" target="_blank" rel="noopener">Registration of Canadians Abroad</a>. Get travel insurance. Track your 90-day Schengen limit if visiting multiple countries. ETIAS coming Q4 2026 — not yet required.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇫🇷</div>
+          <div>
+            <div class="dest-name">France — Paris</div>
+            <div class="dest-airports">Direct from YYC via WestJet</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required. Schengen rules apply — 90 days maximum in any 180-day period across all Schengen countries combined.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟡 Exercise a high degree of caution due to threat of terrorism. Pickpocketing common in tourist areas. Stay alert in crowded spaces.</div>
+            <a href="https://travel.gc.ca/destinations/france" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements for entry. Travel health insurance recommended. French healthcare is excellent.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">EES biometric scan on first Schengen entry. Duty-free allowances apply. Wine and cheese — yes, you can bring some home within limits.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Register trip with Canadian government. Get travel insurance. Learn basic French phrases — Parisians genuinely appreciate the effort. ETIAS coming Q4 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇩🇪</div>
+          <div>
+            <div class="dest-name">Germany — Frankfurt</div>
+            <div class="dest-airports">Direct from YYC via Discover Airlines</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required. Schengen 90-day rule applies. Frankfurt is also one of Europe's major connecting hubs if continuing onward.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Germany is very safe. Elevated terrorism awareness in major cities — standard precautions apply.</div>
+            <a href="https://travel.gc.ca/destinations/germany" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. European Health Insurance Card not applicable for Canadians — get travel insurance.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">EES biometric now in effect. Standard Schengen customs rules. Alcohol limits: 1L spirits or 2L wine duty-free.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Get travel insurance. Frankfurt has excellent transit connections — if connecting to Eastern Europe, check those countries' entry requirements too.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇮🇹</div>
+          <div>
+            <div class="dest-name">Italy — Rome</div>
+            <div class="dest-airports">Direct from YYC via WestJet (seasonal)</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required. Schengen rules apply. Passport must be valid at least 3 months beyond your planned departure from Europe.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Pickpocketing is common around the Colosseum, Vatican and train stations. Watch your belongings.</div>
+            <a href="https://travel.gc.ca/destinations/italy" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance recommended. Italian healthcare is good in cities, more limited in rural areas.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">EES biometric on first Schengen entry. Don't eat or bring food onto Vatican grounds. Dress code enforced at religious sites.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Book Vatican and Colosseum tickets well in advance — they sell out. Get travel insurance. Register with Canadian government. ETIAS coming Q4 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇪🇸</div>
+          <div>
+            <div class="dest-name">Spain — Barcelona</div>
+            <div class="dest-airports">Direct from YYC via WestJet (seasonal)</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required. Schengen 90-day rule applies across all member countries combined.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟡 Exercise a high degree of caution due to terrorism threat and high pickpocketing rates in tourist areas, especially Las Ramblas.</div>
+            <a href="https://travel.gc.ca/destinations/spain" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance recommended. Pharmacies (farmacias) are excellent and widely available.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">EES biometric in effect. Note: Catalonia has its own cultural identity — being respectful of local culture goes a long way.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Book Sagrada Familia and Park Güell tickets in advance — they always sell out. Get travel insurance. ETIAS coming Q4 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇵🇹</div>
+          <div>
+            <div class="dest-name">Portugal — Lisbon</div>
+            <div class="dest-airports">Connecting via YYZ or European hubs</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required. Schengen rules apply. Portugal is one of the most Canadian-friendly destinations in Europe.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Lisbon is very safe. Pickpocketing in Alfama and tourist areas — stay aware.</div>
+            <a href="https://travel.gc.ca/destinations/portugal" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance recommended. Portuguese healthcare is good and generally affordable.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">EES biometric on first Schengen entry. Standard Schengen customs rules. Portugal is in Schengen so your 90 days count across all member countries.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Get travel insurance. Learn a few words of Portuguese — it's not Spanish, and locals appreciate when you try. ETIAS coming Q4 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇮🇸</div>
+          <div>
+            <div class="dest-name">Iceland — Reykjavik</div>
+            <div class="dest-airports">Direct from YEG + YYC via WestJet (seasonal)</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required. Iceland is a Schengen member. Stay up to 90 days in any 180-day period across the Schengen Area.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Iceland is one of the safest countries in the world. Volcanic activity — check Met Office Iceland for updates.</div>
+            <a href="https://travel.gc.ca/destinations/iceland" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance strongly recommended — Iceland is expensive and so is healthcare without insurance.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">EES biometric in effect. Very strict biosecurity — don't bring raw meat, dairy or eggs. Geothermal pools have their own entry codes of conduct.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Book Northern Lights tours and the Blue Lagoon well in advance. Rent a 4x4 if driving the Ring Road. ETIAS coming Q4 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- UK & IRELAND -->
+  <div class="dest-section">
+    <h2>United Kingdom & Ireland</h2>
+    <p class="section-intro">Direct flights from YYC to London and Dublin. NOT in the Schengen Area — separate rules apply.</p>
+
+    <div class="alert-box">
+      <h3>⚠️ UK ETA — Required Since February 2026</h3>
+      <p>All Canadians must obtain a UK Electronic Travel Authorisation (ETA) before flying to the United Kingdom. This includes England, Scotland, Wales and Northern Ireland.</p>
+      <ul>
+        <li>Cost: £10 per person (approximately $17 CAD)</li>
+        <li>Valid for 2 years or until your passport expires</li>
+        <li>Children and infants need their own ETA</li>
+        <li>Apply at least 3 business days before travel</li>
+        <li><a href="https://www.gov.uk/apply-uk-visa/apply-uk-eta" target="_blank" rel="noopener">Official UK ETA application →</a></li>
+      </ul>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇬🇧</div>
+          <div>
+            <div class="dest-name">United Kingdom — London</div>
+            <div class="dest-airports">Direct from YYC via Air Canada + WestJet year-round</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-yellow">⚠️ ETA required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required BUT UK ETA now mandatory. Apply before flying. Stay up to 6 months. UK is NOT Schengen — separate from European 90-day limit.</div>
+            <a href="https://www.gov.uk/apply-uk-visa/apply-uk-eta" class="ntk-link" target="_blank" rel="noopener">Apply for UK ETA →</a>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟡 Exercise a high degree of caution due to terrorism threat. London is generally very safe for tourists but stay alert in crowded areas.</div>
+            <a href="https://travel.gc.ca/destinations/united-kingdom" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements for entry. Travel health insurance recommended — NHS is for UK residents, not tourists.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">ETA linked to your passport electronically — no printout needed. Standard customs limits. £10,000+ cash must be declared.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Get UK ETA before flying — airlines can deny boarding without it. Get travel insurance. Book popular attractions in advance (Tower of London, museums fill up).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇮🇪</div>
+          <div>
+            <div class="dest-name">Ireland — Dublin</div>
+            <div class="dest-airports">Direct from YYC via WestJet (seasonal)</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No ETA required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required and no ETA required. Ireland is EU but NOT Schengen. Stay up to 90 days. Separate from both UK and Schengen rules.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Ireland is very safe and extremely welcoming to Canadians with Irish heritage.</div>
+            <a href="https://travel.gc.ca/destinations/ireland" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance recommended. Irish healthcare is good but can be expensive for non-residents.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">Standard customs rules. Note: crossing the border between Ireland and Northern Ireland (UK) is seamless, but you're technically entering a different country.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Get travel insurance. If visiting both Ireland and the UK on one trip, you need the UK ETA for the UK portion. Book Cliffs of Moher tours in advance.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MIDDLE EAST -->
+  <div class="dest-section">
+    <h2>Middle East</h2>
+    <p class="section-intro">Direct flight from YYC to Abu Dhabi via Etihad year-round.</p>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇦🇪</div>
+          <div>
+            <div class="dest-name">United Arab Emirates — Abu Dhabi</div>
+            <div class="dest-airports">Direct from YYC via Etihad year-round</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 Visa on arrival</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">Visa on arrival available for Canadians — 30 days, free of charge. Can also apply online before travel. Passport must be valid at least 6 months.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟡 Exercise a high degree of caution due to regional tensions. Abu Dhabi is very safe internally but the broader Middle East situation warrants awareness.</div>
+            <a href="https://travel.gc.ca/destinations/united-arab-emirates" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance strongly recommended. Healthcare is excellent but very expensive without insurance.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">Strict laws around drugs, alcohol and public behaviour. Alcohol only in licensed venues. VPN use is restricted. Dress modestly in public areas and religious sites.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Read the UAE laws carefully — what's legal in Canada may not be legal there. Get travel insurance. Book Sheikh Zayed Mosque visit in advance. Dress conservatively.</div>
+            <a href="https://travel.gc.ca/destinations/united-arab-emirates" class="ntk-link" target="_blank" rel="noopener">Full UAE travel advice →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CARIBBEAN -->
+  <div class="dest-section">
+    <h2>Caribbean</h2>
+    <p class="section-intro">Connecting flights to Nassau (Bahamas) and Montego Bay (Jamaica).</p>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇧🇸</div>
+          <div>
+            <div class="dest-name">Bahamas — Nassau</div>
+            <div class="dest-airports">Connecting via YYZ</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required for stays up to 8 months. Valid passport required — must be valid for duration of stay.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟡 Exercise a high degree of caution due to crime. Nassau and resort areas are generally safe. Avoid isolated areas, especially at night.</div>
+            <a href="https://travel.gc.ca/destinations/bahamas" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No mandatory vaccinations. Hepatitis A and Typhoid recommended. Travel health insurance is essential.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">Must show onward/return ticket. Strict drug laws. Customs form required on arrival. $10,000 BSD+ cash must be declared.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Get comprehensive travel insurance including medical evacuation. Stay in well-reviewed resorts or hotels. Register with Canadian government for extended stays.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇯🇲</div>
+          <div>
+            <div class="dest-name">Jamaica — Montego Bay</div>
+            <div class="dest-airports">Connecting via YYZ or YYC</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-yellow">🟡 Exercise caution</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required for stays up to 6 months. Valid passport required. Immigration card completed on arrival.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟡 Exercise a high degree of caution due to high crime rates. Resort areas are generally safer. Avoid traveling outside resort zones after dark.</div>
+            <a href="https://travel.gc.ca/destinations/jamaica" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No mandatory vaccinations. Hepatitis A, Typhoid recommended. Dengue fever present — use insect repellent. Travel health insurance essential.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">Show return ticket on arrival. Cannabis is decriminalized but not fully legal for tourists — exercise caution. Strict customs on food items.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Stay in established resort areas. Get comprehensive travel insurance. Don't venture outside resort at night without guided tour or local knowledge.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ASIA -->
+  <div class="dest-section">
+    <h2>Asia</h2>
+    <p class="section-intro">Connecting flights to Tokyo, Bangkok and Dubai as gateway to Asia.</p>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇯🇵</div>
+          <div>
+            <div class="dest-name">Japan — Tokyo</div>
+            <div class="dest-airports">Connecting via YVR or YYZ</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 No visa required</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">No visa required for stays up to 90 days. Passport must be valid for duration of stay. Japan is one of the easiest countries for Canadians to visit.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟢 Take normal security precautions. Japan is one of the safest countries in the world. Earthquake risk — know what to do.</div>
+            <a href="https://travel.gc.ca/destinations/japan" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No vaccination requirements. Travel health insurance recommended. Japanese healthcare is excellent and reasonably priced but requires insurance for visitors.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">Strict rules on bringing medication — some common Canadian medications (including certain cold medicine ingredients) are illegal in Japan. Check before packing.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Check your medications against Japan's restricted list. Get a Japan Rail Pass before you leave Canada — cheaper than buying there. Get travel insurance. Download Google Translate with Japanese offline.</div>
+            <a href="https://travel.gc.ca/destinations/japan" class="ntk-link" target="_blank" rel="noopener">Full Japan travel advice →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-card">
+      <div class="dest-card-header">
+        <div class="dest-title">
+          <div class="dest-flag">🇹🇭</div>
+          <div>
+            <div class="dest-name">Thailand — Bangkok</div>
+            <div class="dest-airports">Connecting via Dubai, Tokyo or other hubs</div>
+          </div>
+        </div>
+        <div class="dest-badge badge-green">🟢 Visa on arrival</div>
+      </div>
+      <div class="dest-card-body">
+        <div class="ntk-grid">
+          <div class="ntk-item visa">
+            <div class="ntk-label">Passport & Visa</div>
+            <div class="ntk-value">Visa on arrival for Canadians — 30 days. Can also apply for e-Visa online before travel (60 days). Passport must be valid at least 6 months.</div>
+          </div>
+          <div class="ntk-item advisory">
+            <div class="ntk-label">Travel Advisory</div>
+            <div class="ntk-value">🟡 Exercise a high degree of caution due to political instability risk and crime in tourist areas. Bangkok and major tourist areas generally safe for careful travellers.</div>
+            <a href="https://travel.gc.ca/destinations/thailand" class="ntk-link" target="_blank" rel="noopener">Official advisory →</a>
+          </div>
+          <div class="ntk-item health">
+            <div class="ntk-label">Health Requirements</div>
+            <div class="ntk-value">No mandatory vaccinations but Hepatitis A, Typhoid, and Rabies (if in rural areas) are recommended. Dengue fever present. Don't drink tap water.</div>
+          </div>
+          <div class="ntk-item entry">
+            <div class="ntk-label">Entry & Customs</div>
+            <div class="ntk-value">Show onward ticket and proof of funds. Strict lèse-majesté laws — never speak negatively about the Royal Family. Drug laws are extremely strict.</div>
+          </div>
+          <div class="ntk-item before ntk-full">
+            <div class="ntk-label">Before You Go</div>
+            <div class="ntk-value">Get comprehensive travel vaccinations 4-6 weeks before travel. Get travel insurance with medical evacuation. Read Thai cultural norms — especially around temples and the monarchy.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- UNIVERSAL CHECKLIST -->
+  <div class="checklist-section">
+    <h2>Before Every International Trip — Aunt Tia's Checklist</h2>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Passport valid?</strong> Most countries require 3–6 months validity beyond your travel dates. Check before booking.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Travel insurance purchased?</strong> This is non-negotiable. Medical evacuation from Japan or Thailand can cost $100,000+. A good policy costs $50–$150.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Pre-travel authorizations applied for?</strong> UK ETA for London. ETIAS for Europe when it launches (Q4 2026). Check each destination's requirements.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Registered with the Canadian government?</strong> <a href="https://travel.gc.ca/travelling/registration" target="_blank" rel="noopener">Registration of Canadians Abroad</a> is free and lets Ottawa reach you in an emergency.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Medications checked?</strong> Some common Canadian medications are restricted or illegal in certain countries (especially Japan, UAE). Check before packing.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Copies of documents?</strong> Email yourself scanned copies of your passport, insurance, and tickets. Store in the cloud and leave copies with someone at home.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Credit card travel notifications set?</strong> Tell your bank you're travelling or your card may be blocked at the worst possible moment.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Local currency or card sorted?</strong> Some destinations are cash-heavy. Know before you land at midnight with no local currency.</p></div>
+    <div class="checklist-item"><div class="check-icon">✓</div><p><strong>Emergency contacts saved?</strong> Canadian Embassy numbers for your destination. Your insurance provider's 24-hour emergency line. Someone at home who knows your itinerary.</p></div>
+  </div>
+
+  <!-- SUBSCRIBE CTA -->
+  <div class="guide-cta">
+    <h2>Get weekly flight deals from Aunt Tia.</h2>
+    <p>Free. One email a week. Real prices. Alberta first. No nonsense.</p>
+    <div class="cta-form">
+      <input type="email" id="ntk-email" placeholder="your@email.com">
+      <button onclick="handleSubscribe()">Subscribe Free</button>
+    </div>
+    <div class="cta-note">Unsubscribe anytime.</div>
+  </div>
+
+</div>
+
+<div class="nav-inner">
+  <footer>
+    <div class="footer-row">
+      <a href="/" class="logo" style="font-size:1.1rem;"><span class="plane" style="font-size:1rem;">✈</span> SkyTia</a>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="mailto:social@skytia.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-disclosure">Travel requirements change frequently. Always verify with the official Government of Canada travel advisories at travel.gc.ca before booking. This guide is for informational purposes only and is not legal or immigration advice. © 2026 SkyTia.</div>
+  </footer>
+</div>
+
+<script>
+function handleSubscribe() {
+  var input = document.getElementById('ntk-email');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) { input.style.borderColor='#e05c4a'; input.focus(); return; }
+  window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email), '_blank');
+  input.value = '';
+  input.placeholder = 'You are in! Check your inbox.';
+}
+document.getElementById('ntk-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe(); });
+</script>
+
+</body>
+</html>
