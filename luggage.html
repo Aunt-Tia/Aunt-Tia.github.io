@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canadian Airline Baggage Rules & Fees | SkyTia</title>
+<meta name="description" content="Every Canadian airline's baggage allowance, carry-on size limits, and checked bag fees in one place. Air Canada, WestJet, Porter, Flair, Swoop and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;--shadow:rgba(30,58,74,0.10);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.7;}
+  a{color:var(--sky-deep);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .container{max-width:860px;margin:0 auto;padding:0 24px;}
+  .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .logo .plane{color:var(--tan-deep);font-size:1.3rem;transform:rotate(15deg);display:inline-block;}
+  .nav-links{display:flex;gap:20px;align-items:center;font-weight:500;font-size:0.9rem;}
+  .nav-cta{background:var(--sky-deep);color:#fff!important;padding:9px 20px;border-radius:24px;font-weight:600;text-decoration:none;}
+
+  .guide-hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:40px 0 50px;}
+  @media(max-width:600px){.guide-hero{grid-template-columns:1fr;}.guide-hero img{max-width:220px;margin:0 auto;}}
+  .guide-eyebrow{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--teal);margin-bottom:6px;}
+  .guide-hero h1{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:16px;}
+  .guide-hero p{font-size:1.05rem;color:var(--charcoal);max-width:520px;margin-bottom:20px;}
+  .guide-hero img{width:220px;border-radius:16px;}
+
+  .tia-quote{background:#fff;border-left:5px solid var(--teal);border-radius:0 16px 16px 0;padding:24px 28px;margin:0 0 40px;box-shadow:0 4px 14px var(--shadow);}
+  .tia-quote p{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--ink);line-height:1.5;}
+  .tia-quote .attribution{font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--sky-deep);margin-top:8px;font-weight:600;}
+
+  .guide-section{margin-bottom:52px;}
+  .guide-section h2{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--ink);margin-bottom:6px;}
+  .guide-section .section-intro{font-size:0.95rem;color:var(--charcoal);margin-bottom:24px;opacity:0.85;}
+  .guide-section h3{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--sky-deep);margin:24px 0 8px;}
+  .guide-section p{font-size:0.95rem;margin-bottom:12px;}
+  .guide-section ul{padding-left:20px;margin-bottom:12px;}
+  .guide-section ul li{font-size:0.95rem;margin-bottom:6px;}
+
+  .airline-card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 6px 18px var(--shadow);margin-bottom:20px;border-top:4px solid var(--sky);}
+  .airline-card.westjet{border-top-color:var(--teal);}
+  .airline-card.porter{border-top-color:var(--ink);}
+  .airline-card.flair{border-top-color:#FF6B35;}
+  .airline-card h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);margin:0 0 16px;}
+  .airline-card .policy-link{display:inline-block;margin-top:16px;font-size:0.82rem;font-weight:600;color:var(--sky-deep);}
+
+  .bag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
+  @media(max-width:600px){.bag-grid{grid-template-columns:1fr;}}
+  .bag-box{background:var(--cream);border-radius:12px;padding:16px;}
+  .bag-box .label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--sky-deep);margin-bottom:6px;}
+  .bag-box .value{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);font-weight:600;}
+  .bag-box .sub{font-size:0.8rem;color:var(--charcoal);margin-top:3px;}
+
+  .fee-highlight{background:var(--ink);color:#fff;border-radius:8px;padding:4px 10px;font-size:0.85rem;font-weight:700;display:inline-block;margin-bottom:12px;}
+
+  .info-box{border-radius:14px;padding:20px 24px;margin-bottom:20px;}
+  .info-box.warning{background:#fff8e6;border-left:4px solid var(--tan);}
+  .info-box.tip{background:#e8f7f4;border-left:4px solid var(--teal);}
+  .info-box.danger{background:#fff0f0;border-left:4px solid #e05c4a;}
+  .info-box h4{font-family:'Fraunces',serif;font-size:1rem;margin-bottom:6px;}
+  .info-box.warning h4{color:var(--tan-deep);}
+  .info-box.tip h4{color:var(--teal);}
+  .info-box.danger h4{color:#c0392b;}
+  .info-box p,.info-box ul{font-size:0.9rem;}
+  .info-box ul{padding-left:18px;}
+  .info-box ul li{margin-bottom:4px;}
+
+  .compare-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:0.88rem;}
+  .compare-table th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-weight:600;}
+  .compare-table td{padding:10px 14px;border-bottom:1px solid rgba(30,58,74,0.1);}
+  .compare-table tr:nth-child(even) td{background:#f8f9fa;}
+  .compare-table tr:hover td{background:#e8f7f4;}
+  .compare-table .free{color:var(--teal);font-weight:700;}
+  .compare-table .paid{color:var(--tan-deep);font-weight:700;}
+
+  .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:600px){.tips-grid{grid-template-columns:1fr;}}
+  .tip-card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 6px 18px var(--shadow);}
+  .tip-card h4{font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);margin-bottom:8px;}
+  .tip-card p{font-size:0.88rem;color:var(--charcoal);}
+
+  .guide-cta{background:var(--ink);border-radius:20px;padding:40px;text-align:center;color:#fff;margin-bottom:50px;}
+  .guide-cta h2{font-family:'Fraunces',serif;font-size:1.8rem;margin-bottom:10px;}
+  .guide-cta p{opacity:0.85;margin-bottom:24px;}
+  .cta-form{display:flex;max-width:380px;margin:0 auto;}
+  .cta-form input{flex:1;padding:14px 18px;border:2px solid rgba(255,255,255,0.3);border-right:none;border-radius:28px 0 0 28px;font-family:'Inter',sans-serif;font-size:0.95rem;background:rgba(255,255,255,0.1);color:#fff;outline:none;}
+  .cta-form input::placeholder{color:rgba(255,255,255,0.5);}
+  .cta-form button{padding:14px 24px;background:var(--teal);color:#fff;border:2px solid var(--teal);border-radius:0 28px 28px 0;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .cta-note{font-size:0.8rem;opacity:0.6;margin-top:10px;}
+
+  .divider{border:none;border-top:2px solid rgba(30,58,74,0.08);margin:40px 0;}
+
+  footer{padding:36px 0 50px;font-size:0.85rem;color:var(--sky-deep);}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
+  .footer-links{display:flex;gap:20px;}
+  .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
+</style>
+</head>
+<body>
+
+<div class="nav-inner">
+  <nav>
+    <a href="/" class="logo"><span class="plane">✈</span> SkyTia</a>
+    <div class="nav-links">
+      <a href="/">Deals</a>
+      <a href="/edmonton">YEG</a>
+      <a href="/calgary">YYC</a>
+      <a href="/fortmcmurray">YMM</a>
+      <a href="/#subscribe" class="nav-cta">Get Deals</a>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+
+  <div class="guide-hero">
+    <div>
+      <div class="guide-eyebrow">Aunt Tia's Luggage Guide</div>
+      <h1>Canadian Airline Baggage Rules & Fees</h1>
+      <p>Every airline has different rules and they all hope you will not notice until you are at the gate. Aunt Tia keeps track so you do not get surprised — or charged.</p>
+    </div>
+    <img src="aunt-tia-luggage.png" alt="Aunt Tia with luggage">
+  </div>
+
+  <div class="tia-quote">
+    <p>"The airline does not care that you did not know. They will charge you anyway, smile while doing it, and offer you a credit card to soften the blow. Know the rules before you pack."</p>
+    <div class="attribution">— Aunt Tia 🐾</div>
+  </div>
+
+  <!-- QUICK COMPARE -->
+  <div class="guide-section">
+    <h2>Quick Comparison</h2>
+    <p class="section-intro">Here is how the major Canadian airlines compare at a glance. Scroll down for full details on each airline.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Personal Item</th>
+          <th>Carry-On</th>
+          <th>1st Checked Bag</th>
+          <th>2nd Checked Bag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Air Canada</strong></td>
+          <td class="free">Free</td>
+          <td class="free">Free (most fares)</td>
+          <td class="paid">$35–$75</td>
+          <td class="paid">$50–$100</td>
+        </tr>
+        <tr>
+          <td><strong>WestJet</strong></td>
+          <td class="free">Free</td>
+          <td class="free">Free (most fares)</td>
+          <td class="paid">$35–$65</td>
+          <td class="paid">$55–$85</td>
+        </tr>
+        <tr>
+          <td><strong>Porter</strong></td>
+          <td class="free">Free</td>
+          <td class="free">Free</td>
+          <td class="free">Free (most fares)</td>
+          <td class="paid">$50+</td>
+        </tr>
+        <tr>
+          <td><strong>Flair</strong></td>
+          <td class="free">Free (small)</td>
+          <td class="paid">$29–$79</td>
+          <td class="paid">$39–$99</td>
+          <td class="paid">$49–$99</td>
+        </tr>
+        <tr>
+          <td><strong>Swoop</strong></td>
+          <td class="free">Free (small)</td>
+          <td class="paid">$26–$65</td>
+          <td class="paid">$36–$80</td>
+          <td class="paid">$46–$85</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box warning">
+      <h4>Fees Change Frequently</h4>
+      <p>Baggage fees change constantly and vary by route, fare class, and whether you pay online vs at the airport. Always check the airline's website before your flight. Airport fees are always higher than pre-paid fees.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- AIR CANADA -->
+  <div class="guide-section">
+    <h2>Air Canada</h2>
+
+    <div class="airline-card">
+      <h3>Air Canada Baggage Allowance</h3>
+
+      <div class="bag-grid">
+        <div class="bag-box">
+          <div class="label">Personal Item</div>
+          <div class="value">Free</div>
+          <div class="sub">Max 43×33×16 cm</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Carry-On</div>
+          <div class="value">Free*</div>
+          <div class="sub">Max 55×40×23 cm · 10 kg · *Basic fares: not included</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Checked Bag Weight</div>
+          <div class="value">23 kg (50 lbs)</div>
+          <div class="sub">Max size: 158 cm total</div>
+        </div>
+      </div>
+
+      <div class="fee-highlight">1st bag: $35–$75 · 2nd bag: $50–$100 · Overweight: $100+</div>
+
+      <ul>
+        <li><strong>Basic fares</strong> — personal item only. Carry-on costs extra</li>
+        <li><strong>Standard/Flex fares</strong> — personal item + carry-on included</li>
+        <li><strong>Comfort/Latitude fares</strong> — personal item + carry-on + 1 checked bag</li>
+        <li><strong>Business Class</strong> — personal item + carry-on + 2 checked bags included</li>
+        <li>Aeroplan status members get additional free bags</li>
+        <li>Overweight (23–32 kg): $100 fee · Over 32 kg: not accepted</li>
+        <li>Sports equipment has separate rules and fees</li>
+      </ul>
+      <a href="https://www.aircanada.com/en/ach/travel-info/baggage/standard-baggage.html" class="policy-link" target="_blank" rel="noopener">Full Air Canada baggage policy →</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WESTJET -->
+  <div class="guide-section">
+    <h2>WestJet</h2>
+
+    <div class="airline-card westjet">
+      <h3>WestJet Baggage Allowance</h3>
+
+      <div class="bag-grid">
+        <div class="bag-box">
+          <div class="label">Personal Item</div>
+          <div class="value">Free</div>
+          <div class="sub">Max 41×15×33 cm</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Carry-On</div>
+          <div class="value">Free*</div>
+          <div class="sub">Max 53×38×24 cm · 10 kg · *Econo Basic: not included</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Checked Bag Weight</div>
+          <div class="value">23 kg (50 lbs)</div>
+          <div class="sub">Max size: 158 cm total</div>
+        </div>
+      </div>
+
+      <div class="fee-highlight">1st bag: $35–$65 · 2nd bag: $55–$85 · Overweight: $75–$100</div>
+
+      <ul>
+        <li><strong>Econo Basic</strong> — personal item only</li>
+        <li><strong>Econo</strong> — personal item + carry-on included</li>
+        <li><strong>EconoFlex / Premium</strong> — personal item + carry-on + 1 checked bag</li>
+        <li><strong>Business</strong> — personal item + carry-on + 2 checked bags</li>
+        <li>WestJet Rewards members may receive baggage discounts</li>
+        <li>Overweight (23–32 kg): $75–$100 fee · Over 32 kg: not accepted</li>
+      </ul>
+      <a href="https://www.westjet.com/en-ca/travel-info/baggage/fees" class="policy-link" target="_blank" rel="noopener">Full WestJet baggage policy →</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PORTER -->
+  <div class="guide-section">
+    <h2>Porter Airlines</h2>
+
+    <div class="airline-card porter">
+      <h3>Porter Baggage Allowance</h3>
+
+      <div class="bag-grid">
+        <div class="bag-box">
+          <div class="label">Personal Item</div>
+          <div class="value">Free</div>
+          <div class="sub">Max 33×43×16 cm</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Carry-On</div>
+          <div class="value">Free</div>
+          <div class="sub">Max 53×46×25 cm · 10 kg</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Checked Bag Weight</div>
+          <div class="value">23 kg (50 lbs)</div>
+          <div class="sub">Max size: 158 cm total</div>
+        </div>
+      </div>
+
+      <div class="fee-highlight">1st bag: Free on most fares · 2nd bag: $50+ · Overweight: $75+</div>
+
+      <ul>
+        <li><strong>Basic fare</strong> — personal item + carry-on only</li>
+        <li><strong>Standard/Flexible fares</strong> — personal item + carry-on + 1 checked bag free</li>
+        <li><strong>Business Class</strong> — personal item + carry-on + 2 checked bags free</li>
+        <li>Porter is consistently the most generous with included baggage</li>
+        <li>Complimentary snacks and beverages on all flights</li>
+        <li>No fees for seat selection on most fares</li>
+      </ul>
+      <a href="https://www.flyporter.com/en-ca/travel-information/baggage" class="policy-link" target="_blank" rel="noopener">Full Porter baggage policy →</a>
+    </div>
+
+    <div class="info-box tip">
+      <h4>Aunt Tia's Porter Tip</h4>
+      <p>Porter is genuinely the most generous airline for included baggage in Canada. If your route is available on Porter, the included checked bag often makes up for any fare difference versus Flair or Swoop. Do the math before booking the cheapest option.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FLAIR -->
+  <div class="guide-section">
+    <h2>Flair Airlines</h2>
+
+    <div class="airline-card flair">
+      <h3>Flair Baggage Allowance</h3>
+
+      <div class="bag-grid">
+        <div class="bag-box">
+          <div class="label">Personal Item</div>
+          <div class="value">Free</div>
+          <div class="sub">Max 33×20×43 cm · Must fit under seat</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Carry-On</div>
+          <div class="value">$29–$79</div>
+          <div class="sub">Max 55×40×23 cm · 10 kg · NOT included</div>
+        </div>
+        <div class="bag-box">
+          <div class="label">Checked Bag Weight</div>
+          <div class="value">23 kg (50 lbs)</div>
+          <div class="sub">Max size: 158 cm total</div>
+        </div>
+      </div>
+
+      <div class="fee-highlight">Carry-on: $29–$79 · 1st bag: $39–$99 · 2nd bag: $49–$99</div>
+
+      <ul>
+        <li>Base fare includes personal item ONLY — everything else costs extra</li>
+        <li>Carry-on bag is NOT included and must be purchased separately</li>
+        <li>Buy baggage online before travel — airport fees are significantly higher</li>
+        <li>Bundle deals available when booking (often cheapest option)</li>
+        <li>Oversize/overweight fees apply above 23 kg or 158 cm</li>
+        <li>Second bag must also be pre-purchased online</li>
+      </ul>
+      <a href="https://flyflair.com/en/travel-info/baggage" class="policy-link" target="_blank" rel="noopener">Full Flair baggage policy →</a>
+    </div>
+
+    <div class="info-box danger">
+      <h4>The Flair Trap</h4>
+      <p>Flair's base fare looks cheap. Then you add a carry-on ($50), a checked bag ($60), and a seat selection ($25) and suddenly you have spent $135 extra on top of the base fare. Always price out the total cost with all your bags before assuming Flair is cheaper.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRO TIPS -->
+  <div class="guide-section">
+    <h2>Aunt Tia's Baggage Tips</h2>
+    <p class="section-intro">Twelve years of flying Canadian airlines and these are the things that actually save money and stress.</p>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>Always pre-pay for bags online</h4>
+        <p>Airport bag fees are almost always $20–$40 more than pre-paid online fees. Buy your bag allowance when you book or at least 24 hours before the flight.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Weigh your bag at home</h4>
+        <p>A cheap luggage scale costs $15 on Amazon and pays for itself the first time you avoid a $100 overweight fee. The 23 kg limit catches more people than you think.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Personal item is your best friend</h4>
+        <p>A well-packed personal item under the seat in front of you is always free. A small backpack or tote that meets the size limit can carry more than you expect.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Compare total cost not base fare</h4>
+        <p>A $99 Flair fare with a $60 checked bag is $159. A $139 WestJet fare with a free checked bag is $139. Always add your bags before comparing prices.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Pack liquids in checked bags</h4>
+        <p>The 100 ml carry-on liquid rule is real and enforced. If you are checking a bag anyway, put all your liquids in it and skip the security line stress entirely.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Gate check strollers and car seats free</h4>
+        <p>All Canadian airlines must accept strollers and car seats for gate check at no charge. You check them at the gate and collect them at the jet bridge on arrival.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- INTERNATIONAL -->
+  <div class="guide-section">
+    <h2>International Baggage Rules</h2>
+    <p class="section-intro">Flying internationally adds another layer of complexity — especially when your flight involves a connection or a codeshare partner airline.</p>
+
+    <h3>The Most Important Rule</h3>
+    <p>When flying internationally, the baggage rules that apply are usually those of the <strong>operating carrier</strong> on each leg — not the airline you booked with. Always check the rules for every airline on every segment of your journey.</p>
+
+    <div class="info-box warning">
+      <h4>Connections Through the US</h4>
+      <p>If your international flight connects through a US airport, you will need to collect your checked baggage, clear US customs, and re-check your bags before your connection. Allow at least 2.5–3 hours for US connections.</p>
+    </div>
+
+    <h3>Transatlantic Flights (Europe)</h3>
+    <ul>
+      <li>Air Canada transatlantic: 1 checked bag included on most fares (23 kg)</li>
+      <li>WestJet transatlantic: 1 checked bag included on most fares</li>
+      <li>European carriers (KLM, Lufthansa, Etihad): check each airline separately</li>
+      <li>Business class typically includes 2 checked bags (32 kg each)</li>
+    </ul>
+
+    <h3>Prohibited Items</h3>
+    <ul>
+      <li><strong>Lithium batteries</strong> — spare batteries must be in carry-on, not checked bags</li>
+      <li><strong>Aerosols</strong> — limited quantities in carry-on (100 ml rule)</li>
+      <li><strong>Sharp objects</strong> — must be in checked bags</li>
+      <li><strong>Firearms</strong> — must be declared, unloaded, in locked hard case, checked only</li>
+      <li>Check the CATSA website for the full prohibited items list</li>
+    </ul>
+
+    <p><a href="https://www.catsa-acsta.gc.ca/en/permitted-prohibited" target="_blank" rel="noopener">CATSA permitted and prohibited items →</a></p>
+  </div>
+
+  <!-- CTA -->
+  <div class="guide-cta">
+    <h2>Get weekly flight deals from Aunt Tia.</h2>
+    <p>Free. One email a week. Real prices. No nonsense.</p>
+    <div class="cta-form">
+      <input type="email" id="luggage-email" placeholder="your@email.com">
+      <button onclick="handleSubscribe()">Subscribe Free</button>
+    </div>
+    <div class="cta-note">Unsubscribe anytime.</div>
+  </div>
+
+</div>
+
+<div class="nav-inner">
+  <footer>
+    <div class="footer-row">
+      <a href="/" class="logo" style="font-size:1.1rem;"><span class="plane" style="font-size:1rem;">✈</span> SkyTia</a>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="mailto:social@skytia.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-disclosure">Baggage fees and policies change frequently. Always verify directly with your airline before travel. This guide is for informational purposes only. © 2026 SkyTia.</div>
+  </footer>
+</div>
+
+<script>
+function handleSubscribe() {
+  var input = document.getElementById('luggage-email');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) { input.style.borderColor='#e05c4a'; input.focus(); return; }
+  window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email), '_blank');
+  input.value = '';
+  input.placeholder = 'You are in! Check your inbox.';
+}
+document.getElementById('luggage-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe(); });
+</script>
+
+</body>
+</html>
