@@ -14,43 +14,9 @@
       script.src = 'https://tp-em.com/NTQ0NzQ2.js?t=544746';
       document.head.appendChild(script);
   })();
-
-// ── Currency Corner ──
-var CURRENCIES = {
-  USD: { id: 'rate-usd', symbol: '$', decimals: 4 },
-  EUR: { id: 'rate-eur', symbol: '€', decimals: 4 },
-  MXN: { id: 'rate-mxn', symbol: '$', decimals: 2 },
-  GBP: { id: 'rate-gbp', symbol: '£', decimals: 4 },
-  JPY: { id: 'rate-jpy', symbol: '¥', decimals: 2 },
-  AED: { id: 'rate-aed', symbol: 'د.إ', decimals: 4 },
-  BSD: { id: 'rate-bsd', symbol: '$', decimals: 4 },
-  THB: { id: 'rate-thb', symbol: '฿', decimals: 2 }
-};
-fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,BSD,THB')
-  .then(function(r){ return r.json(); })
-  .then(function(data){
-    Object.keys(CURRENCIES).forEach(function(code){
-      var el = document.getElementById(CURRENCIES[code].id);
-      if (el && data.rates && data.rates[code]) {
-        var rate = data.rates[code].toFixed(CURRENCIES[code].decimals);
-        el.innerHTML = '1 CAD = <span>' + CURRENCIES[code].symbol + rate + '</span>';
-      }
-    });
-    var upd = document.getElementById('currency-updated');
-    if (upd) upd.textContent = 'Rates from ' + (data.date || 'today') + ' via Frankfurter.app';
-  })
-  .catch(function(){
-    var upd = document.getElementById('currency-updated');
-    if (upd) upd.textContent = 'Rates temporarily unavailable';
-  });
 </script>
 <style>
-  :root {
-    --cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;
-    --tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;
-    --gold:#D4A843;--gold-deep:#A67C2E;--navy:#0D1B2A;
-    --shadow:rgba(30,58,74,0.10);
-  }
+  :root{--cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;--gold:#D4A843;--gold-deep:#A67C2E;--navy:#0D1B2A;--shadow:rgba(30,58,74,0.10);}
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--cream);background-image:radial-gradient(circle at 15% 10%,rgba(79,168,216,0.08) 0%,transparent 45%),radial-gradient(circle at 85% 60%,rgba(47,174,148,0.07) 0%,transparent 45%);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.6;}
   a{color:inherit;text-decoration:none;}
@@ -81,8 +47,7 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
   .hero-note{font-size:0.82rem;color:var(--sky-deep);margin-top:12px;font-weight:500;}
   .form-success{display:none;background:#e8f7f4;border:2px solid var(--teal);border-radius:12px;padding:14px 18px;color:var(--ink);font-weight:600;margin-top:12px;}
   .hero-art{position:relative;display:flex;justify-content:center;flex-direction:column;align-items:center;}
-  .hero-art img.hero-main{width:100%;max-width:480px;}
-  .hero-art img.seasonal-badge{width:100%;max-width:480px;border-radius:16px;margin-bottom:12px;}
+  .hero-art img{width:100%;max-width:480px;border-radius:16px;}
   .speech-bubble{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:12px 18px;font-family:'Caveat',cursive;font-size:1.25rem;color:var(--ink);max-width:280px;box-shadow:0 6px 14px var(--shadow);text-align:center;margin-bottom:12px;}
   @media(max-width:760px){
     .hero{grid-template-columns:1fr;}
@@ -97,11 +62,9 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
   .section-tab.gold .dot{background:#fff;}
   .deals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   @media(max-width:760px){.deals-grid{grid-template-columns:1fr;}}
-  .deal-card{background:#fff;border-radius:16px;box-shadow:0 8px 22px var(--shadow);position:relative;overflow:hidden;transition:transform 0.2s ease;border:3px solid #fff;}
+  .deal-card{background:#fff;border-radius:16px;box-shadow:0 8px 22px var(--shadow);position:relative;overflow:hidden;transition:transform 0.2s ease;}
   .deal-card:hover{transform:translateY(-4px) rotate(-0.5deg);}
-  .deal-card.premium{background:#0D1B2A;border:3px solid var(--gold-deep);color:#fff;}
-  .deal-sticker{position:absolute;top:14px;right:14px;background:var(--tan);color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:0.78rem;padding:5px 12px;border-radius:20px;transform:rotate(8deg);box-shadow:0 3px 6px rgba(0,0,0,0.15);}
-  .deal-card.premium .deal-sticker{background:var(--gold-deep);}
+  .deal-card.premium{background:var(--navy);border:3px solid var(--gold-deep);}
   .deal-top{background:var(--sky);color:#fff;padding:22px 22px 18px;}
   .deal-top.intl{background:var(--teal);}
   .deal-top.biz{background:linear-gradient(135deg,#1a2f4a,#2C3E6B);border-bottom:2px solid var(--gold-deep);}
@@ -111,12 +74,11 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
   .deal-top.biz .deal-price{color:var(--gold);}
   .deal-body{padding:18px 22px 22px;}
   .deal-card.premium .deal-body{color:#cbd5e1;}
-  .deal-meta{display:flex;justify-content:space-between;font-size:0.85rem;color:var(--sky-deep);margin-bottom:12px;font-weight:500;}
+  .deal-meta{font-size:0.85rem;color:var(--sky-deep);margin-bottom:12px;font-weight:500;}
   .deal-card.premium .deal-meta{color:var(--gold);}
   .deal-note{font-family:'Caveat',cursive;font-size:1.2rem;color:var(--tan-deep);margin-bottom:14px;}
   .deal-card.premium .deal-note{color:var(--gold);}
-  .deal-link{display:inline-block;font-weight:700;font-size:0.9rem;color:var(--ink);border-bottom:2px solid var(--teal);padding-bottom:2px;transition:color 0.2s;}
-  .deal-link:hover{color:var(--sky-deep);}
+  .deal-link{display:inline-block;font-weight:700;font-size:0.9rem;color:var(--ink);border-bottom:2px solid var(--teal);padding-bottom:2px;}
   .deal-card.premium .deal-link{color:var(--gold);border-bottom-color:var(--gold-deep);}
   .deals-note{margin-top:18px;font-size:0.83rem;color:var(--sky-deep);font-style:italic;}
 
@@ -129,6 +91,29 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
   .biz-banner-text h2{font-family:'Fraunces',serif;font-size:1.8rem;color:#fff;margin-bottom:10px;}
   .biz-banner-text p{color:#94a3b8;font-size:0.95rem;font-style:italic;line-height:1.6;}
   .biz-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-deep);color:#fff;padding:6px 16px;border-radius:20px;font-size:0.8rem;font-weight:700;margin-bottom:14px;}
+
+  /* ALBERTA FIRST BANNER */
+  .alberta-banner{background:linear-gradient(135deg,var(--ink),#1a3a2a);border-radius:20px;padding:44px;text-align:center;margin-bottom:20px;}
+  .alberta-banner .eyebrow{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--teal);margin-bottom:6px;}
+  .alberta-banner h2{font-family:'Fraunces',serif;font-size:2rem;color:var(--tan);margin-bottom:10px;}
+  .alberta-banner p{color:#94a3b8;font-size:0.95rem;max-width:560px;margin:0 auto 24px;}
+  .city-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .city-btn{padding:14px 26px;border-radius:14px;font-weight:700;font-size:0.95rem;color:#fff;transition:opacity 0.2s;}
+  .city-btn:hover{opacity:0.88;}
+
+  /* CURRENCY */
+  .currency-box{background:var(--ink);border-radius:20px;padding:36px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  @media(max-width:760px){.currency-box{grid-template-columns:1fr;gap:24px;}}
+  .currency-left h2{font-family:'Fraunces',serif;font-size:1.8rem;color:#fff;margin-bottom:8px;}
+  .currency-left p{color:#94a3b8;font-size:0.9rem;margin-bottom:20px;}
+  .currency-quote{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--teal);line-height:1.5;}
+  .currency-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .currency-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 16px;}
+  .currency-flag{font-size:1.4rem;margin-bottom:4px;}
+  .currency-name{font-size:0.75rem;color:#94a3b8;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.05em;}
+  .currency-rate{font-family:'Fraunces',serif;font-size:1.25rem;color:#fff;font-weight:600;}
+  .currency-rate span{font-size:0.85rem;color:var(--teal);font-family:'Inter',sans-serif;font-weight:400;}
+  .currency-updated{font-size:0.75rem;color:#64748b;margin-top:16px;text-align:right;}
 
   /* TOOLS */
   .tools-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
@@ -172,22 +157,6 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
   .footer-links{display:flex;gap:20px;}
   .footer-links a:hover{color:var(--tan-deep);}
   .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
-
-  /* CURRENCY CORNER */
-  .currency-section { padding:50px 0; }
-  .currency-box { background:var(--ink); border-radius:20px; padding:36px 40px; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-  @media(max-width:760px){ .currency-box { grid-template-columns:1fr; gap:24px; } }
-  .currency-left h2 { font-family:'Fraunces',serif; font-size:1.8rem; color:#fff; margin-bottom:8px; }
-  .currency-left p { color:#94a3b8; font-size:0.9rem; margin-bottom:20px; }
-  .currency-quote { font-family:'Caveat',cursive; font-size:1.3rem; color:var(--teal); line-height:1.5; }
-  .currency-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .currency-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:14px 16px; }
-  .currency-flag { font-size:1.4rem; margin-bottom:4px; }
-  .currency-name { font-size:0.75rem; color:#94a3b8; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.05em; }
-  .currency-rate { font-family:'Fraunces',serif; font-size:1.25rem; color:#fff; font-weight:600; }
-  .currency-rate span { font-size:0.85rem; color:var(--teal); font-family:'Inter',sans-serif; font-weight:400; }
-  .currency-updated { font-size:0.75rem; color:#64748b; margin-top:16px; text-align:right; }
-  .currency-img { width:100%; max-width:300px; border-radius:16px; margin:0 auto; display:block; }
 </style>
 </head>
 <body>
@@ -199,19 +168,19 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
     <div class="nav-links">
       <a href="#deals">Deals</a>
       <a href="#business">Business Class</a>
+      <a href="#alberta">Alberta First</a>
       <a href="#currency">Currency</a>
       <a href="#tools">Check Your Seat</a>
-      <a href="#explore">Luggage & Pets</a>
-      <a href="#subscribe" class="nav-cta">Get Deals ✈️</a>
+      <a href="#subscribe" class="nav-cta">Get Deals</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <div class="hero">
     <div class="hero-copy">
-      <div class="hero-eyebrow">Hi, I'm Aunt Tia 👋</div>
+      <div class="hero-eyebrow">Hi, I am Aunt Tia</div>
       <h1>Cheap flights, found by <span class="accent">someone who actually looks.</span></h1>
-      <p class="sub">Every week I dig through flight prices out of Canada — domestic hops and international steals — so you don't overpay for a seat you didn't even like.</p>
+      <p class="sub">Every week I dig through flight prices out of Canada — domestic hops and international steals — so you do not overpay for a seat you did not even like.</p>
       <div class="hero-form">
         <input type="email" id="hero-email" placeholder="your@email.com" />
         <button onclick="handleSubscribe('hero')">Send Me Deals</button>
@@ -221,7 +190,7 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
     </div>
     <div class="hero-art">
       <div class="speech-bubble" id="seasonal-bubble">Found a $310 flight to Lisbon this week!</div>
-      <img id="seasonal-img" class="seasonal-badge" src="aunt-tia-hero.png" alt="Aunt Tia">
+      <img id="seasonal-img" src="aunt-tia-hero.png" alt="Aunt Tia">
     </div>
   </div>
 
@@ -229,67 +198,74 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
   <div class="section" id="deals">
     <div class="section-tab"><span class="dot"></span>This Week's Domestic Deals</div>
     <div class="deals-grid" id="domestic-grid">
-      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">
-        <p style="font-size:1.1rem;">Loading domestic deals...</p>
-      </div>
+      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">Loading domestic deals...</div>
     </div>
   </div>
 
   <!-- INTERNATIONAL DEALS -->
   <div class="section" id="intl-deals">
-    <div class="section-tab teal"><span class="dot"></span>This Week's International Deals</div>
+    <div class="section-tab teal"><span class="dot"></span>Direct International from Alberta</div>
     <div class="deals-grid" id="intl-grid">
-      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">
-        <p style="font-size:1.1rem;">Loading international deals...</p>
-      </div>
+      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">Loading international deals...</div>
     </div>
     <p class="deals-note" id="deals-updated"></p>
-    <p class="deals-note">Deals update every Monday. Prices are approximate — always verify before booking. Booking links are affiliate links.</p>
+    <p class="deals-note">Nonstop from YEG and YYC. Prices update every Monday. Always verify before booking.</p>
   </div>
 
+  <!-- BUSINESS CLASS -->
+  <div class="section" id="business">
+    <div class="section-tab gold"><span class="dot"></span>Direct Business Class from Alberta</div>
+    <div class="biz-banner">
+      <div class="biz-banner-img">
+        <img id="biz-img" src="aunt-tia-business-1.png" alt="Aunt Tia in Business Class">
+      </div>
+      <div class="biz-banner-text">
+        <div class="biz-badge">Alberta Direct Picks</div>
+        <h2>You deserve the good seat.</h2>
+        <p>"These are direct business class routes from Edmonton and Calgary. No connections. No compromises. Just you, a flat bed, and somewhere worth arriving rested."</p>
+      </div>
+    </div>
+    <div class="deals-grid" id="biz-grid">
+      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">Loading business class routes...</div>
+    </div>
+  </div>
+
+  <!-- ALBERTA FIRST BANNER -->
+  <div class="section" id="alberta">
+    <div class="alberta-banner">
+      <div class="eyebrow">Nobody puts Alberta First like Aunt Tia</div>
+      <h2>Flying from YEG, YYC or Fort Mac?</h2>
+      <p>Aunt Tia has a full page for every Alberta airport — every domestic deal, every direct international route, and every business class pick. All in one place. Alberta first, always.</p>
+      <div class="city-btns">
+        <a href="/edmonton" class="city-btn" style="background:var(--teal);">All YEG Flights</a>
+        <a href="/calgary" class="city-btn" style="background:var(--sky-deep);">All YYC Flights</a>
+        <a href="/fortmcmurray" class="city-btn" style="background:var(--tan-deep);">Fort McMurray (YMM)</a>
+      </div>
+    </div>
+  </div>
 
   <!-- CURRENCY CORNER -->
-  <div class="currency-section" id="currency">
-    <div class="section-tab" style="background:var(--tan-deep);"><span class="dot"></span>💱 Currency Corner</div>
+  <div class="section" id="currency">
+    <div class="section-tab" style="background:var(--tan-deep);"><span class="dot"></span>Currency Corner</div>
     <div class="currency-box">
       <div class="currency-left">
         <h2>How far does your loonie go?</h2>
         <p>Live CAD exchange rates — updated every time you visit.</p>
-        <div class="currency-grid" id="currency-grid">
+        <div class="currency-grid">
           <div class="currency-card"><div class="currency-flag">🇺🇸</div><div class="currency-name">US Dollar</div><div class="currency-rate" id="rate-usd">Loading...</div></div>
           <div class="currency-card"><div class="currency-flag">🇪🇺</div><div class="currency-name">Euro</div><div class="currency-rate" id="rate-eur">Loading...</div></div>
           <div class="currency-card"><div class="currency-flag">🇲🇽</div><div class="currency-name">Mexican Peso</div><div class="currency-rate" id="rate-mxn">Loading...</div></div>
           <div class="currency-card"><div class="currency-flag">🇬🇧</div><div class="currency-name">British Pound</div><div class="currency-rate" id="rate-gbp">Loading...</div></div>
           <div class="currency-card"><div class="currency-flag">🇯🇵</div><div class="currency-name">Japanese Yen</div><div class="currency-rate" id="rate-jpy">Loading...</div></div>
           <div class="currency-card"><div class="currency-flag">🇦🇪</div><div class="currency-name">UAE Dirham</div><div class="currency-rate" id="rate-aed">Loading...</div></div>
-          <div class="currency-card"><div class="currency-flag">🇧🇸</div><div class="currency-name">Bahamian Dollar</div><div class="currency-rate" id="rate-bsd">Loading...</div></div>
           <div class="currency-card"><div class="currency-flag">🇹🇭</div><div class="currency-name">Thai Baht</div><div class="currency-rate" id="rate-thb">Loading...</div></div>
+          <div class="currency-card"><div class="currency-flag">🇩🇪</div><div class="currency-name">Euro (Frankfurt)</div><div class="currency-rate" id="rate-eur2">Loading...</div></div>
         </div>
         <div class="currency-updated" id="currency-updated"></div>
       </div>
-      <div>
-        <img src="aunt-tia-hero.png" id="currency-img" class="currency-img" alt="Aunt Tia at the currency exchange">
-        <div style="text-align:center;margin-top:16px;" class="currency-quote">"Your loonie goes further than you think, darling." 🐾</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BUSINESS CLASS -->
-  <div class="section" id="business">
-    <div class="section-tab gold"><span class="dot"></span>Business Class Deals</div>
-    <div class="biz-banner">
-      <div class="biz-banner-img">
-        <img id="biz-img" src="aunt-tia-business-1.png" alt="Aunt Tia in Business Class">
-      </div>
-      <div class="biz-banner-text">
-        <div class="biz-badge">Premium Picks</div>
-        <h2>You deserve the good seat.</h2>
-        <p>"Look, I am not saying you need lie-flat beds and warm nuts at 35,000 feet. I am just saying you deserve them — and these prices make it a lot harder to say no."</p>
-      </div>
-    </div>
-    <div class="deals-grid" id="biz-grid">
-      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">
-        <p style="font-size:1.1rem;">Loading business class deals...</p>
+      <div style="text-align:center;">
+        <img src="aunt-tia-hero.png" style="width:100%;max-width:280px;border-radius:16px;margin-bottom:16px;" alt="Aunt Tia currency corner">
+        <div class="currency-quote">"Your loonie goes further than you think, darling."</div>
       </div>
     </div>
   </div>
@@ -300,7 +276,7 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
     <div class="tools-row">
       <div class="tool-card">
         <h3>Check your seat first</h3>
-        <p>See legroom, window alignment, and power ports before you pick a seat you will regret. Aunt Tia approved.</p>
+        <p>See legroom, window alignment, and power ports before you pick a seat you will regret.</p>
         <div class="btn-row">
           <a href="https://www.aerolopa.com/ac" class="pill-btn pill-ac" target="_blank" rel="noopener">Air Canada</a>
           <a href="https://www.aerolopa.com/ws" class="pill-btn pill-wj" target="_blank" rel="noopener">WestJet</a>
@@ -308,8 +284,8 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
         </div>
       </div>
       <div class="tool-card">
-        <h3>Flying somewhere I did not mention?</h3>
-        <p>Search any route, any date. I cannot catch every deal — but you can still find yours here.</p>
+        <h3>Flying somewhere not listed?</h3>
+        <p>Search any route, any date. Aunt Tia cannot catch every deal — but you can still find yours.</p>
         <div class="btn-row">
           <a href="https://www.aviasales.com/?marker=744905&currency=cad" class="pill-btn pill-search" target="_blank" rel="noopener">Search Any Flight</a>
         </div>
@@ -325,15 +301,15 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
         <div class="explore-img"><img src="aunt-tia-luggage.png" alt="Aunt Tia with luggage"></div>
         <div class="explore-text">
           <h3>Luggage and Baggage Rules</h3>
-          <p>Every airline's baggage allowance is different, and they all hope you won't notice. I keep track so you don't get surprised at the gate.</p>
+          <p>Every airline's baggage allowance is different, and they all hope you will not notice.</p>
           <span class="coming-soon">Guide coming soon</span>
         </div>
       </div>
       <div class="explore-card pets">
-        <div class="explore-img"><img src="aunt-tia-pets.png" alt="Aunt Tia with her dog in a carrier"></div>
+        <div class="explore-img"><img src="aunt-tia-pets.png" alt="Aunt Tia with her dog"></div>
         <div class="explore-text">
           <h3>Travelling With Pets</h3>
-          <p>Carrier sizes, airline pet fees, and which routes actually make it easy on your furry travel companion.</p>
+          <p>Carrier sizes, airline pet fees, and which routes make it easy on your furry companion.</p>
           <span class="coming-soon">Guide coming soon</span>
         </div>
       </div>
@@ -343,7 +319,7 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
   <!-- SUBSCRIBE -->
   <div class="section" id="subscribe">
     <div class="subscribe-banner">
-      <h2>Don't miss next week's deals.</h2>
+      <h2>Do not miss next week's deals.</h2>
       <p>One email. Real prices. No nonsense. Aunt Tia does the hunting — you do the booking.</p>
       <div class="hero-form">
         <input type="email" id="banner-email" placeholder="your@email.com" />
@@ -362,166 +338,98 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED
         <a href="mailto:social@skytia.com">Contact</a>
       </div>
     </div>
-    <div class="footer-disclosure">
-      Some links on SkyTia are affiliate links — if you book through them, I may earn a small commission at no extra cost to you. I only share deals I would genuinely use myself. Prices shown are approximate and may have changed. Always verify before booking. 2026 SkyTia.
-    </div>
+    <div class="footer-disclosure">Some links on SkyTia are affiliate links — if you book through them, I may earn a small commission at no extra cost to you. Prices shown are approximate and may have changed. Always verify before booking. © 2026 SkyTia.</div>
   </footer>
 
 </div>
 
 <script>
-// ── Seasonal hero ──
+// Seasonal hero
 function getSeason() {
-  var d = new Date();
-  var m = d.getMonth() + 1;
-  var day = d.getDate();
-  if (m === 7 && day === 1) return { img: 'season-canada-day.png', bubble: 'Happy Canada Day! Celebrating with deals so good, you will have money left for fireworks.' };
-  if (m === 10 && day >= 24) return { img: 'season-halloween.png', bubble: 'Spooktacular deals this week — these prices are scarier than your costume.' };
-  if (m === 12 && day >= 15) return { img: 'season-christmas.png', bubble: 'Tis the season to travel! Gift yourself a flight this holiday.' };
-  if (m === 2 && day === 14) return { img: 'season-valentine.png', bubble: 'Treat yourself this Valentine\'s Day. You deserve a trip more than flowers.' };
-  if (m === 12 || m === 1 || (m === 2 && day < 14)) return { img: 'season-winter.png', bubble: 'Winter deals are here — escape the cold or embrace it somewhere new.' };
-  if (m === 3 || (m === 4 && day < 15)) return { img: 'season-spring.png', bubble: 'Spring break adventures await! These deals will not last.' };
-  if (m >= 6 && m <= 8) return { img: 'season-summer.png', bubble: 'Summer travel escapes — found fresh this week just for you.' };
-  if (m >= 9 && m <= 11) return { img: 'season-fall.png', bubble: 'Fall deals are here — shoulder season prices, full season vibes.' };
-  return { img: 'aunt-tia-hero.png', bubble: 'Fresh deals found this week — do not miss them!' };
+  var d = new Date(); var m = d.getMonth()+1; var day = d.getDate();
+  if (m===7&&day===1) return {img:'season-canada-day.png',bubble:'Happy Canada Day! Celebrating with deals so good, you will have money left for fireworks.'};
+  if (m===10&&day>=24) return {img:'season-halloween.png',bubble:'Spooktacular deals this week — these prices are scarier than your costume.'};
+  if (m===12&&day>=15) return {img:'season-christmas.png',bubble:'Tis the season to travel! Gift yourself a flight this holiday.'};
+  if (m===2&&day===14) return {img:'season-valentine.png',bubble:'Treat yourself this Valentine\'s Day. You deserve a trip more than flowers.'};
+  if (m===12||m===1||(m===2&&day<14)) return {img:'season-winter.png',bubble:'Winter deals are here — escape the cold or embrace it somewhere new.'};
+  if (m===3||(m===4&&day<15)) return {img:'season-spring.png',bubble:'Spring break adventures await! These deals will not last.'};
+  if (m>=6&&m<=8) return {img:'season-summer.png',bubble:'Summer travel escapes — found fresh this week just for you.'};
+  return {img:'aunt-tia-hero.png',bubble:'Fresh deals found this week — do not miss them!'};
 }
 var season = getSeason();
 document.getElementById('seasonal-img').src = season.img;
 document.getElementById('seasonal-bubble').textContent = season.bubble;
 
-// ── Rotating business class image ──
-var bizImages = ['aunt-tia-business-1.png', 'aunt-tia-business-2.png', 'aunt-tia-business-3.png'];
-var weekNum = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
-document.getElementById('biz-img').src = bizImages[weekNum % bizImages.length];
+// Rotating biz image
+var bizImages = ['aunt-tia-business-1.png','aunt-tia-business-2.png','aunt-tia-business-3.png'];
+document.getElementById('biz-img').src = bizImages[Math.floor(Date.now()/(7*24*60*60*1000)) % bizImages.length];
 
-// ── Subscribe form ──
+// Subscribe
 function handleSubscribe(formId) {
-  var input = document.getElementById(formId === 'hero' ? 'hero-email' : 'banner-email');
-  var success = document.getElementById(formId === 'hero' ? 'hero-success' : 'banner-success');
+  var input = document.getElementById(formId==='hero'?'hero-email':'banner-email');
+  var success = document.getElementById(formId==='hero'?'hero-success':'banner-success');
   var email = input.value.trim();
-  if (!email || !email.includes('@')) { input.style.borderColor = '#e05c4a'; input.focus(); return; }
-  window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email=' + encodeURIComponent(email), '_blank');
-  input.style.display = 'none';
-  input.closest('.hero-form').querySelector('button').style.display = 'none';
-  success.style.display = 'block';
+  if (!email||!email.includes('@')) { input.style.borderColor='#e05c4a'; input.focus(); return; }
+  window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email='+encodeURIComponent(email),'_blank');
+  input.style.display='none';
+  input.closest('.hero-form').querySelector('button').style.display='none';
+  success.style.display='block';
 }
-document.getElementById('hero-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('hero'); });
-document.getElementById('banner-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleSubscribe('banner'); });
+document.getElementById('hero-email').addEventListener('keydown',function(e){if(e.key==='Enter')handleSubscribe('hero');});
+document.getElementById('banner-email').addEventListener('keydown',function(e){if(e.key==='Enter')handleSubscribe('banner');});
 
-// ── Load deals ──
-var DEALS_URL = 'https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
-var stickers = ['Hot','New','Deal','Hot','New','Deal'];
+// Currency
+fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,THB')
+  .then(function(r){return r.json();})
+  .then(function(data){
+    var rates = {USD:{id:'rate-usd',sym:'$',dec:4},EUR:{id:'rate-eur',sym:'€',dec:4},MXN:{id:'rate-mxn',sym:'$',dec:2},GBP:{id:'rate-gbp',sym:'£',dec:4},JPY:{id:'rate-jpy',sym:'¥',dec:2},AED:{id:'rate-aed',sym:'د.إ',dec:4},THB:{id:'rate-thb',sym:'฿',dec:2}};
+    Object.keys(rates).forEach(function(code){
+      var el=document.getElementById(rates[code].id);
+      if(el&&data.rates&&data.rates[code]) el.innerHTML='1 CAD = <span>'+rates[code].sym+data.rates[code].toFixed(rates[code].dec)+'</span>';
+    });
+    // Duplicate EUR for second slot
+    var el2=document.getElementById('rate-eur2');
+    if(el2&&data.rates&&data.rates.EUR) el2.innerHTML='1 CAD = <span>€'+data.rates.EUR.toFixed(4)+'</span>';
+    var upd=document.getElementById('currency-updated');
+    if(upd) upd.textContent='Rates from '+(data.date||'today')+' via Frankfurter.app';
+  }).catch(function(){});
 
-function formatDate(d) {
-  try { return new Date(d + 'T12:00:00Z').toLocaleDateString('en-CA', {month:'short',day:'numeric'}); }
-  catch(e) { return d; }
-}
+// Deals
+var DEALS_URL='https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
+var stickers=['Hot','New','Deal','Hot','New','Deal'];
 
-function buildCard(d, i) {
-  var note = d.bubble ? d.bubble : 'Great price — book it before it disappears!';
-  var topClass = d.type === 'international' ? 'deal-top intl' : 'deal-top';
-  return '<div class="deal-card">' +
-    '<div class="deal-sticker">' + stickers[i % stickers.length] + '</div>' +
-    '<div class="' + topClass + '">' +
-      '<div class="deal-route">' + d.origin + ' to ' + d.destination + '</div>' +
-      '<div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div>' +
-      '<div class="deal-price">$' + d.price + ' CAD</div>' +
-      '<div style="font-size:0.75rem;opacity:0.85;margin-top:2px;">roundtrip</div>' +
-    '</div>' +
-    '<div class="deal-body">' +
-      '<div class="deal-meta"><span>Around ' + formatDate(d.departDate) + '</span></div>' +
-      '<div class="deal-note">' + note + '</div>' +
-      '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a>' +
-    '</div>' +
-  '</div>';
-}
-function buildBizCard(d, i) {
-  var note = d.bubble ? d.bubble : 'Nonstop from Alberta — you deserve the good seat.';
-  return '<div class="deal-card premium">' +
-    '<div class="deal-sticker">' + ['Direct ✈️','Nonstop ✈️','Direct ✈️','Nonstop ✈️'][i % 4] + '</div>' +
-    '<div class="deal-top biz">' +
-      '<div class="deal-route">' + d.origin + ' to ' + d.destination + '</div>' +
-      '<div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div>' +
-      '<div style="font-size:0.9rem;opacity:0.8;margin-top:4px;">' + d.label + '</div>' +
-    '</div>' +
-    '<div class="deal-body">' +
-      '<div class="deal-note">' + note + '</div>' +
-      '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices →</a>' +
-    '</div>' +
-  '</div>';
-}
-function noDeals(msg) {
-  return '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">' + msg + '</p></div>';
+function formatDate(d){try{return new Date(d+'T12:00:00Z').toLocaleDateString('en-CA',{month:'short',day:'numeric'});}catch(e){return d;}}
+function noDeals(msg){return '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">'+msg+'</p></div>';}
+
+function buildCard(d,i){
+  var note=d.bubble?d.bubble:'Great price — book it before it disappears!';
+  var topClass=d.type==='international'?'deal-top intl':'deal-top';
+  return '<div class="deal-card"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div class="deal-price">$'+d.price+' CAD</div><div style="font-size:0.75rem;opacity:0.85;margin-top:2px;">roundtrip</div></div><div class="deal-body"><div class="deal-meta">Around '+formatDate(d.departDate)+'</div><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
 }
 
-function renderDeals(data) {
-  var domGrid = document.getElementById('domestic-grid');
-  var intlGrid = document.getElementById('intl-grid');
-  var bizGrid = document.getElementById('biz-grid');
-  var updated = document.getElementById('deals-updated');
-
-  if (!data.deals || !data.deals.length) {
-    domGrid.innerHTML = noDeals('No domestic deals this week — check back Monday!');
-    intlGrid.innerHTML = noDeals('No international deals this week — check back Monday!');
-    bizGrid.innerHTML = noDeals('No business class deals this week — check back Monday!');
-    return;
-  }
-
-  var domestic = data.deals.filter(function(d){ return d.type === 'domestic'; });
-  var intl = data.deals.filter(function(d){ return d.type === 'international'; });
-  var biz = data.business || [];
-
- domGrid.innerHTML = domestic.length
-    ? domestic.map(function(d,i){ return buildCard(d,i); }).join('')
-    : noDeals('No domestic deals this week.');
-
-  intlGrid.innerHTML = intl.length
-    ? intl.map(function(d,i){ return buildCard(d,i); }).join('')
-    : noDeals('No international deals this week.');
-
-  bizGrid.innerHTML = biz.length
-    ? biz.map(function(d,i){ return buildBizCard(d,i); }).join('')
-    : noDeals('No business class routes found — check back shortly!');
-
-  if (data.updated) updated.textContent = 'Last updated ' + data.updated + '. Deals refresh every Monday.';
+function buildBizCard(d,i){
+  var note=d.bubble?d.bubble:'Direct from Alberta. You deserve the good seat.';
+  return '<div class="deal-card premium"><div class="deal-top biz"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div style="font-size:0.8rem;color:var(--gold);margin-top:4px;">'+d.label+'</div></div><div class="deal-body"><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices</a></div></div>';
 }
 
 fetch(DEALS_URL)
-  .then(function(r){ return r.json(); })
-  .then(renderDeals)
-  .catch(function(){
-    document.getElementById('domestic-grid').innerHTML = noDeals('Deals loading — check back shortly!');
-    document.getElementById('intl-grid').innerHTML = noDeals('Deals loading — check back shortly!');
-    document.getElementById('biz-grid').innerHTML = noDeals('Deals loading — check back shortly!');
-  });
-
-// ── Currency Corner ──
-var CURRENCIES = {
-  USD: { id: 'rate-usd', symbol: '$', decimals: 4 },
-  EUR: { id: 'rate-eur', symbol: '€', decimals: 4 },
-  MXN: { id: 'rate-mxn', symbol: '$', decimals: 2 },
-  GBP: { id: 'rate-gbp', symbol: '£', decimals: 4 },
-  JPY: { id: 'rate-jpy', symbol: '¥', decimals: 2 },
-  AED: { id: 'rate-aed', symbol: 'د.إ', decimals: 4 },
-  BSD: { id: 'rate-bsd', symbol: '$', decimals: 4 },
-  THB: { id: 'rate-thb', symbol: '฿', decimals: 2 }
-};
-fetch('https://api.frankfurter.app/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,BSD,THB')
-  .then(function(r){ return r.json(); })
+  .then(function(r){return r.json();})
   .then(function(data){
-    Object.keys(CURRENCIES).forEach(function(code){
-      var el = document.getElementById(CURRENCIES[code].id);
-      if (el && data.rates && data.rates[code]) {
-        var rate = data.rates[code].toFixed(CURRENCIES[code].decimals);
-        el.innerHTML = '1 CAD = <span>' + CURRENCIES[code].symbol + rate + '</span>';
-      }
-    });
-    var upd = document.getElementById('currency-updated');
-    if (upd) upd.textContent = 'Rates from ' + (data.date || 'today') + ' via Frankfurter.app';
+    var dom=data.deals||[];
+    var intl=data.international||[];
+    var biz=data.business||[];
+    var updated=document.getElementById('deals-updated');
+
+    document.getElementById('domestic-grid').innerHTML=dom.length?dom.map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No domestic deals this week — check back Monday!');
+    document.getElementById('intl-grid').innerHTML=intl.length?intl.slice(0,6).map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No international routes this week.');
+    document.getElementById('biz-grid').innerHTML=biz.length?biz.map(function(d,i){return buildBizCard(d,i);}).join(''):noDeals('No business class routes found.');
+
+    if(data.updated&&updated) updated.textContent='Last updated '+data.updated+'. Deals refresh every Monday.';
   })
   .catch(function(){
-    var upd = document.getElementById('currency-updated');
-    if (upd) upd.textContent = 'Rates temporarily unavailable';
+    document.getElementById('domestic-grid').innerHTML=noDeals('Deals loading — check back shortly!');
+    document.getElementById('intl-grid').innerHTML=noDeals('Deals loading — check back shortly!');
+    document.getElementById('biz-grid').innerHTML=noDeals('Deals loading — check back shortly!');
   });
 </script>
 </body>
