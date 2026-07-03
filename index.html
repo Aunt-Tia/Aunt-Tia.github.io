@@ -404,17 +404,16 @@ function noDeals(msg){return '<div style="grid-column:1/-1;text-align:center;pad
 function buildCard(d,i){
   var note=d.bubble?d.bubble:'Great price — book it before it disappears!';
   var topClass=d.type==='international'?'deal-top intl':'deal-top';
-  return '<div class="deal-card"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div class="deal-price">$'+d.price+' CAD</div><div style="font-size:0.75rem;opacity:0.85;margin-top:2px;">roundtrip</div></div><div class="deal-body"><div class="deal-meta">Around '+formatDate(d.departDate)+'</div><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
-}
-
-function buildCard(d,i){
-  var note=d.bubble?d.bubble:'Great price — book it before it disappears!';
-  var topClass=d.type==='international'?'deal-top intl':'deal-top';
   var priceHtml=d.price?'<div class="deal-price">$'+d.price+' CAD</div><div style="font-size:0.75rem;opacity:0.85;margin-top:2px;">roundtrip</div>':'<div style="font-size:0.95rem;margin-top:6px;opacity:0.85;">Check live prices</div>';
   var metaHtml=d.departDate?'<div class="deal-meta">Around '+formatDate(d.departDate)+'</div>':'';
   return '<div class="deal-card"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div>'+priceHtml+'</div><div class="deal-body">'+metaHtml+'<div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
 }
 
+  function buildBizCard(d,i){
+  var note=d.bubble?d.bubble:'Direct from Alberta. You deserve the good seat.';
+  return '<div class="deal-card premium"><div class="deal-top biz"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div style="font-size:0.8rem;color:var(--gold);margin-top:4px;">'+d.label+'</div></div><div class="deal-body"><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices</a></div></div>';
+}
+  
 fetch(DEALS_URL)
   .then(function(r){return r.json();})
   .then(function(data){
