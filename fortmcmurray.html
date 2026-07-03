@@ -175,9 +175,25 @@ var YMM_ROUTES = [
 ];
 
 fetch(DEALS_URL).then(function(r){ return r.json(); }).then(function(data) {
-  var cards = YMM_ROUTES.map(function(r) {
-    var url = 'https://www.aviasales.com/search/' + r.o + r.d + '1?marker=744905&currency=cad';
-    return '<div class="deal-card"><div class="deal-top"><div class="deal-route">YMM to ' + r.d + '</div><div class="deal-cities">Fort McMurray to ' + r.dest + '</div><div style="font-size:0.9rem;margin-top:6px;opacity:0.85">Click to see live prices</div></div><div class="deal-body"><div class="deal-meta">Direct flight available</div><a href="' + url + '" class="deal-link" target="_blank" rel="noopener">Search prices on Aviasales</a></div></div>';
+  var routes = data.fortmcmurray && data.fortmcmurray.routes ? data.fortmcmurray.routes : [];
+  if (!routes.length) {
+    document.getElementById('ymm-deals').innerHTML = noDeals('Checking Fort Mac prices — check back shortly!');
+    return;
+  }
+  var cards = routes.map(function(r) {
+    var priceHtml = r.price
+      ? '<div class="deal-price">$' + r.price + ' CAD</div><div style="font-size:0.72rem;opacity:0.8">roundtrip</div>'
+      : '<div style="font-size:0.9rem;margin-top:6px;opacity:0.85">Check live prices</div>';
+    var dateHtml = r.departDate
+      ? '<div class="deal-meta">Around ' + formatDate(r.departDate) + '</div>'
+      : '';
+    return '<div class="deal-card"><div class="deal-top">' +
+      '<div class="deal-route">' + r.origin + ' to ' + r.destination + '</div>' +
+      '<div class="deal-cities">' + r.originCity + ' to ' + r.destinationCity + '</div>' +
+      priceHtml + '</div><div class="deal-body">' + dateHtml +
+      '<div class="deal-meta">Direct flight available</div>' +
+      '<a href="' + r.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a>' +
+      '</div></div>';
   }).join('');
   document.getElementById('ymm-deals').innerHTML = cards;
 }).catch(function(){
