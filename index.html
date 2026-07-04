@@ -389,21 +389,26 @@ document.getElementById('hero-email').addEventListener('keydown',function(e){if(
 document.getElementById('banner-email').addEventListener('keydown',function(e){if(e.key==='Enter')handleSubscribe('banner');});
 
 // Currency
-fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,MXN,GBP,JPY,AED,THB')
+fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,GBP,JPY,AED,THB,ISK,JMD')
   .then(function(r){return r.json();})
   .then(function(data){
-    var rates = {USD:{id:'rate-usd',sym:'$',dec:4},EUR:{id:'rate-eur',sym:'€',dec:4},MXN:{id:'rate-mxn',sym:'$',dec:2},GBP:{id:'rate-gbp',sym:'£',dec:4},JPY:{id:'rate-jpy',sym:'¥',dec:2},AED:{id:'rate-aed',sym:'د.إ',dec:4},THB:{id:'rate-thb',sym:'฿',dec:2}};
+    var rates = {
+      USD:{id:'rate-usd',sym:'$',dec:2},
+      EUR:{id:'rate-eur',sym:'€',dec:2},
+      GBP:{id:'rate-gbp',sym:'£',dec:2},
+      AED:{id:'rate-aed',sym:'د.إ',dec:2},
+      JPY:{id:'rate-jpy',sym:'¥',dec:0},
+      THB:{id:'rate-thb',sym:'฿',dec:2},
+      ISK:{id:'rate-isk',sym:'kr',dec:0},
+      JMD:{id:'rate-jmd',sym:'J$',dec:0}
+    };
     Object.keys(rates).forEach(function(code){
       var el=document.getElementById(rates[code].id);
       if(el&&data.rates&&data.rates[code]) el.innerHTML='1 CAD = <span>'+rates[code].sym+data.rates[code].toFixed(rates[code].dec)+'</span>';
     });
-    // Duplicate EUR for second slot
-    var el2=document.getElementById('rate-eur2');
-    if(el2&&data.rates&&data.rates.EUR) el2.innerHTML='1 CAD = <span>€'+data.rates.EUR.toFixed(4)+'</span>';
     var upd=document.getElementById('currency-updated');
     if(upd) upd.textContent='Rates from '+(data.date||'today')+' via Frankfurter.app';
   }).catch(function(){});
-
 // Deals
 var DEALS_URL='https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
 var stickers=['Hot','New','Deal','Hot','New','Deal'];
