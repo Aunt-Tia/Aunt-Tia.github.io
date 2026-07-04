@@ -257,12 +257,10 @@
          <div class="currency-card"><div class="currency-flag">🇺🇸</div><div class="currency-name">US Dollar</div><div class="currency-rate" id="rate-usd">Loading...</div></div>
 <div class="currency-card"><div class="currency-flag">🇪🇺</div><div class="currency-name">Euro</div><div class="currency-rate" id="rate-eur">Loading...</div></div>
 <div class="currency-card"><div class="currency-flag">🇬🇧</div><div class="currency-name">British Pound</div><div class="currency-rate" id="rate-gbp">Loading...</div></div>
-<div class="currency-card"><div class="currency-flag">🇦🇪</div><div class="currency-name">UAE Dirham</div><div class="currency-rate" id="rate-aed">Loading...</div></div>
-<div class="currency-card"><div class="currency-flag">🇯🇵</div><div class="currency-name">Japanese Yen</div><div class="currency-rate" id="rate-jpy">Loading...</div></div>
+<div class="currency-card"><div class="currency-flag">🇲🇽</div><div class="currency-name">Mexican Peso</div><div class="currency-rate" id="rate-mxn">Loading...</div></div><div class="currency-card"><div class="currency-flag">🇯🇵</div><div class="currency-name">Japanese Yen</div><div class="currency-rate" id="rate-jpy">Loading...</div></div>
 <div class="currency-card"><div class="currency-flag">🇹🇭</div><div class="currency-name">Thai Baht</div><div class="currency-rate" id="rate-thb">Loading...</div></div>
 <div class="currency-card"><div class="currency-flag">🇮🇸</div><div class="currency-name">Icelandic Króna</div><div class="currency-rate" id="rate-isk">Loading...</div></div>
-<div class="currency-card"><div class="currency-flag">🇯🇲</div><div class="currency-name">Jamaican Dollar</div><div class="currency-rate" id="rate-jmd">Loading...</div></div>
-        </div>
+<div class="currency-card"><div class="currency-flag">🇦🇺</div><div class="currency-name">Australian Dollar</div><div class="currency-rate" id="rate-aud">Loading...</div></div>        </div>
         <div class="currency-updated" id="currency-updated"></div>
       </div>
       <div style="text-align:center;">
@@ -389,18 +387,18 @@ document.getElementById('hero-email').addEventListener('keydown',function(e){if(
 document.getElementById('banner-email').addEventListener('keydown',function(e){if(e.key==='Enter')handleSubscribe('banner');});
 
 // Currency
-fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,GBP,JPY,AED,THB,ISK,JMD')
+fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,GBP,JPY,MXN,THB,ISK,AUD')
   .then(function(r){return r.json();})
   .then(function(data){
     var rates = {
       USD:{id:'rate-usd',sym:'$',dec:2},
       EUR:{id:'rate-eur',sym:'€',dec:2},
       GBP:{id:'rate-gbp',sym:'£',dec:2},
-      AED:{id:'rate-aed',sym:'د.إ',dec:2},
+      MXN:{id:'rate-mxn',sym:'$',dec:2},
       JPY:{id:'rate-jpy',sym:'¥',dec:0},
       THB:{id:'rate-thb',sym:'฿',dec:2},
       ISK:{id:'rate-isk',sym:'kr',dec:0},
-      JMD:{id:'rate-jmd',sym:'J$',dec:0}
+      AUD:{id:'rate-aud',sym:'A$',dec:2}
     };
     Object.keys(rates).forEach(function(code){
       var el=document.getElementById(rates[code].id);
