@@ -184,10 +184,8 @@
       <h1>Cheap flights, found by <span class="accent">someone who actually looks.</span></h1>
       <p class="sub">Every week I dig through flight prices out of Canada — domestic hops and international steals — so you do not overpay for a seat you did not even like.</p>
       <div class="hero-form">
-        <input type="email" id="hero-email" placeholder="your@email.com" />
-        <button onclick="handleSubscribe('hero')">Send Me Deals</button>
-      </div>
-      <div class="form-success" id="hero-success">You are in! Check your inbox for your first deal drop.</div>
+  <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="9ce24353-5da5-4f9e-8014-dee6492086d2"></script>
+</div>
       <div class="hero-note">Free · one email a week · unsubscribe anytime</div>
     </div>
     <div class="hero-art">
@@ -330,10 +328,8 @@
       <h2>Do not miss next week's deals.</h2>
       <p>One email. Real prices. No nonsense. Aunt Tia does the hunting — you do the booking.</p>
       <div class="hero-form">
-        <input type="email" id="banner-email" placeholder="your@email.com" />
-        <button onclick="handleSubscribe('banner')">Subscribe Free</button>
-      </div>
-      <div class="form-success" id="banner-success" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.4);color:#fff;">You are in! Check your inbox for your first deal drop.</div>
+  <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="9ce24353-5da5-4f9e-8014-dee6492086d2"></script>
+</div>
     </div>
   </div>
 
@@ -373,18 +369,7 @@ var bizImages = ['aunt-tia-business-1.png','aunt-tia-business-2.png','aunt-tia-b
 document.getElementById('biz-img').src = bizImages[Math.floor(Date.now()/(7*24*60*60*1000)) % bizImages.length];
 
 // Subscribe
-function handleSubscribe(formId) {
-  var input = document.getElementById(formId==='hero'?'hero-email':'banner-email');
-  var success = document.getElementById(formId==='hero'?'hero-success':'banner-success');
-  var email = input.value.trim();
-  if (!email||!email.includes('@')) { input.style.borderColor='#e05c4a'; input.focus(); return; }
-  window.open('https://app.beehiiv.com/forms/pub_2ea5e905-dde5-419f-8b28-b8eadf4fce34/subscribe?email='+encodeURIComponent(email),'_blank');
-  input.style.display='none';
-  input.closest('.hero-form').querySelector('button').style.display='none';
-  success.style.display='block';
-}
-document.getElementById('hero-email').addEventListener('keydown',function(e){if(e.key==='Enter')handleSubscribe('hero');});
-document.getElementById('banner-email').addEventListener('keydown',function(e){if(e.key==='Enter')handleSubscribe('banner');});
+
 
 // Currency
 fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,GBP,JPY,MXN,THB,ISK,AUD')
@@ -453,5 +438,6 @@ fetch(DEALS_URL)
   });
 }, 100);
 </script>
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
 </html>
