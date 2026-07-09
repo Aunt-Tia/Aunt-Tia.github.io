@@ -392,7 +392,7 @@ fetch('https://api.frankfurter.dev/v1/latest?from=CAD&to=USD,EUR,GBP,JPY,MXN,THB
     if(upd) upd.textContent='Rates from '+(data.date||'today')+' via Frankfurter.app';
   }).catch(function(){});
 // Deals
-var DEALS_URL='https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
+var DEALS_URL='https://raw.githubusercontent.com/Aunt-Tia/Aunt-Tia.github.io/main/deals.json';
 var stickers=['Hot','New','Deal','Hot','New','Deal'];
 
 function formatDate(d){try{return new Date(d+'T12:00:00Z').toLocaleDateString('en-CA',{month:'short',day:'numeric'});}catch(e){return d;}}
