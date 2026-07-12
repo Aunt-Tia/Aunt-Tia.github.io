@@ -429,6 +429,20 @@ fetch(DEALS_URL)
     document.getElementById('biz-grid').innerHTML=biz.length?biz.map(function(d,i){return buildBizCard(d,i);}).join(''):noDeals('No business class routes found.');
 
     if(data.updated&&updated) updated.textContent='Last updated '+data.updated+'. Deals refresh every Monday.';
+
+    var params=new URLSearchParams(window.location.search);
+    var dealParam=params.get('deal');
+    if(dealParam){
+      setTimeout(function(){
+        var el=document.getElementById('deal-'+dealParam)||document.getElementById('deal-biz-'+dealParam);
+        if(el){
+          el.scrollIntoView({behavior:'smooth',block:'center'});
+          el.style.outline='4px solid var(--tan)';
+          el.style.outlineOffset='4px';
+          el.style.transition='outline 0.3s';
+        }
+      },200);
+    }
   })
   .catch(function(){
     document.getElementById('domestic-grid').innerHTML=noDeals('Deals loading — check back shortly!');
