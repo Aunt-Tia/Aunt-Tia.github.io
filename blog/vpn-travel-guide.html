@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do You Actually Need a VPN When You Travel? — Aunt Tia's Honest Answer | SkyTia</title>
+<meta name="description" content="Answer 4 quick questions and Aunt Tia will tell you honestly whether you need a VPN for your next trip — no fear-mongering, just straight talk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;--shadow:rgba(30,58,74,0.10);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.8;}
+  a{color:var(--sky-deep);}
+  .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .logo .plane{color:var(--tan-deep);font-size:1.3rem;transform:rotate(15deg);display:inline-block;}
+  .nav-links{display:flex;gap:20px;align-items:center;font-weight:500;font-size:0.9rem;}
+  .nav-cta{background:var(--sky-deep);color:#fff!important;padding:9px 20px;border-radius:24px;font-weight:600;text-decoration:none;}
+  .article{max-width:760px;margin:0 auto;padding:0 24px;}
+  .article-hero{padding:40px 0 24px;}
+  .article-tag{display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--tan-deep);margin-bottom:10px;}
+  .article-hero h1{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--ink);line-height:1.2;margin-bottom:16px;}
+  .article-meta{font-size:0.85rem;color:#94a3b8;margin-bottom:24px;}
+  .article-intro{font-size:1.1rem;color:var(--charcoal);margin-bottom:20px;line-height:1.7;}
+  .hero-image{width:100%;border-radius:16px;margin-bottom:32px;box-shadow:0 8px 24px var(--shadow);}
+  h2{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--ink);margin:36px 0 14px;}
+  p{margin-bottom:16px;font-size:0.97rem;}
+
+  .chat-wrap{background:#fff;border-radius:20px;box-shadow:0 8px 30px var(--shadow);padding:28px 24px;margin:32px 0;}
+  .chat-log{display:flex;flex-direction:column;gap:14px;margin-bottom:18px;min-height:40px;}
+  .msg{display:flex;gap:10px;align-items:flex-start;opacity:0;transform:translateY(8px);animation:msgIn 0.35s ease forwards;}
+  @keyframes msgIn{to{opacity:1;transform:translateY(0);}}
+  .msg-avatar{width:36px;height:36px;border-radius:50%;background:var(--sky-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+  .msg-bubble{background:#f0f9ff;border-radius:14px 14px 14px 4px;padding:12px 16px;font-size:0.95rem;color:var(--ink);max-width:480px;}
+  .msg.user{flex-direction:row-reverse;}
+  .msg.user .msg-avatar{background:var(--tan-deep);}
+  .msg.user .msg-bubble{background:var(--teal);color:#fff;border-radius:14px 14px 4px 14px;}
+  .typing-dots{display:inline-flex;gap:4px;padding:12px 16px;background:#f0f9ff;border-radius:14px 14px 14px 4px;}
+  .typing-dots span{width:7px;height:7px;background:var(--sky-deep);border-radius:50%;opacity:0.4;animation:blink 1.2s infinite;}
+  .typing-dots span:nth-child(2){animation-delay:0.2s;}
+  .typing-dots span:nth-child(3){animation-delay:0.4s;}
+  @keyframes blink{0%,80%,100%{opacity:0.3;}40%{opacity:1;}}
+  .qa-buttons{display:flex;gap:10px;margin-top:6px;}
+  .qa-btn{background:#fff;border:2px solid var(--sky-deep);color:var(--sky-deep);font-weight:700;padding:9px 22px;border-radius:24px;cursor:pointer;font-size:0.9rem;font-family:'Inter',sans-serif;transition:all 0.15s;}
+  .qa-btn:hover{background:var(--sky-deep);color:#fff;}
+  .qa-btn.yes-btn{border-color:var(--teal);color:var(--teal);}
+  .qa-btn.yes-btn:hover{background:var(--teal);color:#fff;}
+
+  .blackboard{background:#1e3d2f;border-radius:14px;padding:20px 24px;margin:12px 0 4px;box-shadow:inset 0 0 30px rgba(0,0,0,0.3);opacity:0;max-height:0;overflow:hidden;transition:all 0.5s ease;}
+  .blackboard.show{opacity:1;max-height:300px;padding:20px 24px;}
+  .blackboard p{font-family:'Caveat',cursive;font-size:1.35rem;color:#fdf6e3;line-height:1.5;margin:0;}
+  .blackboard .chalk-title{font-family:'Caveat',cursive;font-size:1rem;color:#e8b45c;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:6px;}
+
+  .cta-box{background:var(--teal);border-radius:16px;padding:28px;text-align:center;margin:24px 0 40px;color:#fff;}
+  .cta-box h3{font-family:'Fraunces',serif;font-size:1.4rem;margin-bottom:8px;}
+  .cta-box p{opacity:0.95;margin-bottom:6px;font-size:0.95rem;}
+  .cta-box .desktop-note{font-size:0.8rem;opacity:0.8;margin-bottom:16px;font-style:italic;}
+  .cta-box a.apply-btn{display:inline-block;background:#fff;color:var(--teal);padding:13px 28px;border-radius:24px;font-weight:700;text-decoration:none;}
+  .restart-link{display:block;text-align:center;margin-top:14px;font-size:0.85rem;color:#94a3b8;cursor:pointer;text-decoration:underline;}
+
+  .related{background:var(--ink);border-radius:16px;padding:28px;margin:40px 0;color:#fff;}
+  .related h3{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--tan);margin-bottom:14px;}
+  .related-links{display:flex;flex-direction:column;gap:8px;}
+  .related-links a{color:#94a3b8;font-size:0.9rem;text-decoration:none;}
+  .related-links a:hover{color:#fff;}
+  footer{padding:36px 0 50px;font-size:0.85rem;color:var(--sky-deep);}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
+  .footer-links{display:flex;gap:20px;}
+  .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
+</style>
+</head>
+<body>
+<div class="nav-inner">
+  <nav>
+    <a href="/" class="logo"><span class="plane">✈</span> SkyTia</a>
+    <div class="nav-links">
+      <a href="/">Deals</a>
+      <a href="/blog">Blog</a>
+      <a href="/needtoknow.html">Need to Know</a>
+      <a href="/calgary">YYC Flights</a>
+      <a href="/#subscribe" class="nav-cta">Get Deals</a>
+    </div>
+  </nav>
+</div>
+
+<div class="article">
+  <div class="article-hero">
+    <div class="article-tag">🔒 Travel Safety</div>
+    <h1>Do You Actually Need a VPN When You Travel? Let's Find Out.</h1>
+    <div class="article-meta">By Aunt Tia · July 2026 · 2 min quiz</div>
+    <p class="article-intro">No fear-mongering, no jargon — just answer honestly and I'll tell you exactly where you stand. Tap Yes or No below and let's chat.</p>
+  </div>
+
+  <img src="/aunt-tia-vpn.png" alt="Aunt Tia holding a phone showing a VPN app connected, in front of a chalkboard reading reasons to use a VPN" class="hero-image">
+
+  <div class="chat-wrap">
+    <div class="chat-log" id="chatLog"></div>
+  </div>
+
+  <div class="related">
+    <h3>More From Aunt Tia</h3>
+    <div class="related-links">
+      <a href="/luggage.html">Luggage and Baggage Rules →</a>
+      <a href="/needtoknow.html">Need to Know — Visas, Advisories & Entry Requirements →</a>
+      <a href="/pets.html">Travelling With Pets →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <a href="/" class="logo" style="font-size:1.2rem;"><span class="plane">✈</span> SkyTia</a>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <p class="footer-disclosure">Some links on SkyTia are affiliate links — if you sign up through them, I may earn a small commission at no extra cost to you. © 2026 SkyTia.</p>
+  </footer>
+</div>
+
+<script>
+const chatLog = document.getElementById('chatLog');
+let yesCount = 0;
+
+const questions = [
+  {
+    text: "Hi! Quick one for you — when you travel, do you connect to free wifi at the airport or your hotel?",
+    yesReveal: { title: "Here's the thing...", text: "That \"free\" wifi has no lock on the door, darling. Anyone else on that same network — including whoever set it up — can potentially see what you're sending. Passwords. Messages. Everything." }
+  },
+  {
+    text: "Okay. And do you ever check your banking app or log into your bank's website while you're away?",
+    yesReveal: { title: "That one worries me a little...", text: "Banking on open wifi is exactly the kind of thing someone snooping on that network is hoping you'll do. It's the digital version of doing your banking out loud in a crowded room." }
+  },
+  {
+    text: "What about email, social media, or anything else with a password — checking those on the road?",
+    yesReveal: { title: "Same problem, bigger pile...", text: "Every login is a door. On an unsecured network, you're leaving all of them slightly ajar, all trip long." }
+  },
+  {
+    text: "Last one — ever tried to watch something and gotten \"this content isn't available in your region\"?",
+    yesReveal: { title: "Ah, the classic travel curse...", text: "That's not a security thing, that's just annoying — but it's the same fix. A VPN can make it look like you're back home, Netflix Canada and all." }
+  }
+];
+
+function addMessage(html, isUser=false){
+  const div = document.createElement('div');
+  div.className = 'msg' + (isUser ? ' user' : '');
+  div.innerHTML = `<div class="msg-avatar">${isUser ? '🙂' : '🐾'}</div><div class="msg-bubble">${html}</div>`;
+  chatLog.appendChild(div);
+  chatLog.scrollTop = chatLog.scrollHeight;
+  return div;
+}
+
+function showTyping(){
+  const div = document.createElement('div');
+  div.className = 'msg typing-msg';
+  div.innerHTML = `<div class="msg-avatar">🐾</div><div class="typing-dots"><span></span><span></span><span></span></div>`;
+  chatLog.appendChild(div);
+  chatLog.scrollTop = chatLog.scrollHeight;
+  return div;
+}
+
+function askQuestion(index){
+  if(index >= questions.length){
+    showVerdict();
+    return;
+  }
+  const typing = showTyping();
+  setTimeout(() => {
+    typing.remove();
+    addMessage(questions[index].text);
+    const btnWrap = document.createElement('div');
+    btnWrap.className = 'qa-buttons';
+    btnWrap.innerHTML = `<button class="qa-btn yes-btn">Yes</button><button class="qa-btn">No</button>`;
+    chatLog.appendChild(btnWrap);
+    chatLog.scrollTop = chatLog.scrollHeight;
+
+    btnWrap.querySelectorAll('.qa-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answeredYes = btn.classList.contains('yes-btn');
+        btnWrap.remove();
+        addMessage(answeredYes ? 'Yes' : 'No', true);
+
+        if(answeredYes){
+          yesCount++;
+          const board = document.createElement('div');
+          board.className = 'blackboard';
+          board.innerHTML = `<span class="chalk-title">${questions[index].yesReveal.title}</span><p>${questions[index].yesReveal.text}</p>`;
+          chatLog.appendChild(board);
+          requestAnimationFrame(() => board.classList.add('show'));
+        }
+        setTimeout(() => askQuestion(index + 1), answeredYes ? 900 : 300);
+      }, { once: true });
+    });
+  }, 900);
+}
+
+function showVerdict(){
+  const typing = showTyping();
+  setTimeout(() => {
+    typing.remove();
+    let verdictText, ctaText;
+    if(yesCount === 0){
+      verdictText = "Honestly? You're being careful already. A VPN is still a nice extra layer, but you're not in the danger zone.";
+      ctaText = "Still, for a few bucks a month, it's cheap peace of mind:";
+    } else if(yesCount <= 2){
+      verdictText = "You've got some exposure there. Nothing catastrophic, but worth fixing before your next trip.";
+      ctaText = "This is exactly what a VPN is built to fix:";
+    } else {
+      verdictText = "Okay, we need to talk. You're doing sensitive stuff on networks that are basically wide open. Let's fix that before you fly again.";
+      ctaText = "Seriously — get one before your next trip:";
+    }
+    addMessage(`You said <strong>yes</strong> to ${yesCount} out of ${questions.length}. ${verdictText}`);
+
+    const cta = document.createElement('div');
+    cta.className = 'cta-box';
+    cta.innerHTML = `
+      <h3>${ctaText}</h3>
+      <p>NordVPN — secures up to 10 devices, easy apps for phone and laptop, servers in 60+ countries.</p>
+      <p class="desktop-note">Psst — grab this one from your laptop, not your phone, for the best deal.</p>
+      <a href="https://nordvpn.tpo.lv/7FBjaZEI" class="apply-btn" target="_blank" rel="noopener sponsored">Check Out NordVPN</a>
+    `;
+    chatLog.appendChild(cta);
+    chatLog.scrollTop = chatLog.scrollHeight;
+
+    const restart = document.createElement('div');
+    restart.className = 'restart-link';
+    restart.textContent = 'Start over';
+    restart.addEventListener('click', () => {
+      chatLog.innerHTML = '';
+      yesCount = 0;
+      askQuestion(0);
+    });
+    chatLog.appendChild(restart);
+  }, 900);
+}
+
+askQuestion(0);
+</script>
+</body>
+</html>
