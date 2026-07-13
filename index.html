@@ -427,6 +427,10 @@ function buildCard(d,i){
   return '<div class="deal-card premium" id="deal-biz-'+d.origin+'-'+d.destination+'"><div class="deal-top biz"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div style="font-size:0.8rem;color:var(--gold);margin-top:4px;">'+d.label+'</div></div><div class="deal-body"><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices</a>'+ntkHtml+'</div></div>';
 }
   
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(function(){});
+}
+
 setTimeout(function() {
 fetch(DEALS_URL)
   .then(function(r){return r.json();})
