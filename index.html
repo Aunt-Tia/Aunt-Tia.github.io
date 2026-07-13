@@ -385,6 +385,15 @@ var season = getSeason();
 document.getElementById('seasonal-img').src = season.img;
 document.getElementById('seasonal-bubble').textContent = season.bubble;
 
+// Close nav menu when clicking outside it
+document.addEventListener('click', function(e) {
+  var navLinks = document.querySelector('.nav-links');
+  var hamburger = document.querySelector('.nav-hamburger');
+  if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+    navLinks.classList.remove('open');
+  }
+});
+
 // Rotating biz image
 var bizImages = ['aunt-tia-business-1.png','aunt-tia-business-2.png','aunt-tia-business-3.png'];
 document.getElementById('biz-img').src = bizImages[Math.floor(Date.now()/(7*24*60*60*1000)) % bizImages.length];
