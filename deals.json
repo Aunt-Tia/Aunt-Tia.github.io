@@ -1,60 +1,60 @@
 {
-  "updated": "2026-07-13",
+  "updated": "2026-07-20",
   "deals": [
     {
       "origin": "YEG",
       "destination": "YVR",
       "originCity": "Edmonton",
       "destinationCity": "Vancouver",
-      "price": 117,
-      "departDate": "2026-08-05",
-      "url": "https://www.aviasales.com/search/YEG0508YVR10081?marker=744905&currency=cad",
+      "price": 122,
+      "departDate": "2026-08-19",
+      "url": "https://www.aviasales.com/search/YEG1908YVR21081?marker=744905&currency=cad",
       "type": "domestic",
-      "bubble": "For $117 roundtrip Edmonton to Vancouver, I'm paying less per mile than a decent brunch costs in either city. Absolutely bonkers."
+      "bubble": "Flying Edmonton to Vancouver for $122 roundtrip? That's cheaper than my regret collection, and way more fun."
     },
     {
-      "origin": "YVR",
-      "destination": "YYC",
-      "originCity": "Vancouver",
-      "destinationCity": "Calgary",
-      "price": 130,
-      "departDate": "2026-08-11",
-      "url": "https://www.aviasales.com/search/YVR1108YYC21081?marker=744905&currency=cad",
+      "origin": "YYC",
+      "destination": "YVR",
+      "originCity": "Calgary",
+      "destinationCity": "Vancouver",
+      "price": 129,
+      "departDate": "2026-09-17",
+      "url": "https://www.aviasales.com/search/YYC1709YVR19091?marker=744905&currency=cad",
       "type": "domestic",
-      "bubble": "Flying YVR to YYC for $130 is cheaper than replacing the cowboy hat I'll lose laughing at Calgary's skyline."
+      "bubble": "For $129 Calgary to Vancouver roundtrip, I'm finally visiting somewhere that makes my hometown look like a modest oil derrick instead of a downtown skyline."
     },
     {
       "origin": "YHZ",
       "destination": "YYZ",
       "originCity": "Halifax",
       "destinationCity": "Toronto",
-      "price": 187,
+      "price": 188,
       "departDate": "2026-09-19",
       "url": "https://www.aviasales.com/search/YHZ1909YYZ22091?marker=744905&currency=cad",
       "type": "domestic",
-      "bubble": "At $187 Halifax to Toronto, I'm spending less than a Bluenose bottle of wine to escape the Maritimes and pretend I understand the CN Tower's purpose."
+      "bubble": "Halifax to Toronto for $188? That's less than a lobster dinner, more than a Maritime conscience allows."
     },
     {
       "origin": "YYZ",
       "destination": "YUL",
       "originCity": "Toronto",
       "destinationCity": "Montreal",
-      "price": 204,
-      "departDate": "2026-09-11",
-      "url": "https://www.aviasales.com/search/YYZ1109YUL15091?marker=744905&currency=cad",
+      "price": 206,
+      "departDate": "2026-09-09",
+      "url": "https://www.aviasales.com/search/YYZ0909YUL13091?marker=744905&currency=cad",
       "type": "domestic",
-      "bubble": "Toronto to Montreal for $204 means I'm paying less per kilometer than a bagel costs in either city, which is either a steal or proof the universe has a sense of humor."
+      "bubble": "Toronto to Montreal for $206 roundtrip means I'm paying more for bagels than the actual flight, which tracks perfectly."
     },
     {
-      "origin": "YYC",
+      "origin": "YOW",
       "destination": "YYZ",
-      "originCity": "Calgary",
+      "originCity": "Ottawa",
       "destinationCity": "Toronto",
-      "price": 205,
-      "departDate": "2026-10-05",
-      "url": "https://www.aviasales.com/search/YYC0510YYZ06101?marker=744905&currency=cad",
+      "price": 318,
+      "departDate": "2026-07-24",
+      "url": "https://www.aviasales.com/search/YOW2407YYZ26071?marker=744905&currency=cad",
       "type": "domestic",
-      "bubble": "At $205 Calgary to Toronto, I'm flying across four provinces for less than a decent steak dinner, which explains why I'll arrive confused about whether I'm supposed to be cowboy or condo."
+      "bubble": "Ottawa to Toronto for $318? That's the price of admitting Parliament's boring and the CN Tower's worth the commute."
     }
   ],
   "international": [
@@ -63,143 +63,143 @@
       "destination": "AMS",
       "originCity": "Edmonton",
       "destinationCity": "Amsterdam",
-      "price": 1021,
+      "price": 890,
       "departDate": "2026-09-07",
       "url": "https://www.aviasales.com/search/YEG0709AMS17091?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Amsterdam's 165 canal rings contain more water than all Canadian Great Lakes combined, yet somehow feels cozier than your childhood basement."
+      "bubble": "Amsterdam's 17th-century canal houses are slowly sinking sideways into the earth, creating a beautifully crooked cityscape nowhere else exists."
     },
     {
       "origin": "YEG",
       "destination": "IAH",
       "originCity": "Edmonton",
       "destinationCity": "Houston",
-      "price": 606,
-      "departDate": "2026-09-07",
-      "url": "https://www.aviasales.com/search/YEG0709IAH17091?marker=744905&currency=cad",
+      "price": 528,
+      "departDate": "2026-09-14",
+      "url": "https://www.aviasales.com/search/YEG1409IAH24091?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Houston's NASA Space Center lets you touch actual moon rocks for free, something most Canadians travel thousands of miles seeking."
+      "bubble": "Houston's Space Center lets you touch actual moon rocks NASA brought back, making it Earth's most cosmic souvenir shop experience."
     },
     {
       "origin": "YEG",
       "destination": "DEN",
       "originCity": "Edmonton",
       "destinationCity": "Denver",
-      "price": 714,
+      "price": 519,
       "departDate": "2026-09-07",
       "url": "https://www.aviasales.com/search/YEG0709DEN17091?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Denver sits exactly one mile above sea level, making it the only major US city where you literally breathe thinner air than home."
+      "bubble": "Denver's Mile High Stadium hosted the first-ever Super Bowl at high altitude, giving home teams an unfair oxygen advantage that's still debated."
     },
     {
       "origin": "YEG",
       "destination": "LAX",
       "originCity": "Edmonton",
       "destinationCity": "Los Angeles",
-      "price": 424,
+      "price": 316,
       "departDate": "2026-10-26",
       "url": "https://www.aviasales.com/search/YEG2610LAX05111?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Los Angeles has more museums per capita than any North American city, including world-class art spaces hidden inside strip malls."
+      "bubble": "Los Angeles has more swimming pools per capita than any major city globally, meaning your neighbor might literally live in Aquaman's neighborhood for three-sixty-six bucks roundtrip."
     },
     {
       "origin": "YEG",
       "destination": "KEF",
       "originCity": "Edmonton",
       "destinationCity": "Reykjavik",
-      "price": 1081,
-      "departDate": "2026-09-07",
-      "url": "https://www.aviasales.com/search/YEG0709KEF17091?marker=744905&currency=cad",
+      "price": 1072,
+      "departDate": "2026-09-14",
+      "url": "https://www.aviasales.com/search/YEG1409KEF24091?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Reykjavik's geothermal system heats ninety percent of buildings using Earth's natural warmth, making winter energy bills embarrassingly cheap compared to Canadian heating nightmares."
+      "bubble": "Reykjavik's Golden Circle route passes through tectonic plate gaps you can walk between, literally straddling North American and Eurasian continental shelves simultaneously."
     },
     {
       "origin": "YYC",
       "destination": "LHR",
       "originCity": "Calgary",
       "destinationCity": "London",
-      "price": 904,
+      "price": 884,
       "departDate": "2026-10-13",
       "url": "https://www.aviasales.com/search/YYC1310LHR17101?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "London's Underground moves two billion passengers annually through tunnels older than Canada itself, yet somehow runs on caffeine and spite like a true commonwealth nation."
+      "bubble": "London's Underground has secret abandoned stations from the Blitz still accessible through tunnels, turning history into your commute's forgotten basement."
     },
     {
       "origin": "YYC",
       "destination": "CDG",
       "originCity": "Calgary",
       "destinationCity": "Paris",
-      "price": 945,
-      "departDate": "2026-09-02",
-      "url": "https://www.aviasales.com/search/YYC0209CDG25091?marker=744905&currency=cad",
+      "price": 654,
+      "departDate": "2026-10-07",
+      "url": "https://www.aviasales.com/search/YYC0710CDG18101?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Paris has more Michelin stars per capita than any city globally, meaning your dinner reservation matters more than your passport."
+      "bubble": "Paris has secret tunnels beneath the city where millions of skulls from overcrowded cemeteries were relocated, creating underground bone cathedrals tourists rarely discover."
     },
     {
       "origin": "YYC",
       "destination": "AMS",
       "originCity": "Calgary",
       "destinationCity": "Amsterdam",
-      "price": 907,
-      "departDate": "2026-08-29",
-      "url": "https://www.aviasales.com/search/YYC2908AMS18091?marker=744905&currency=cad",
+      "price": 868,
+      "departDate": "2026-08-31",
+      "url": "https://www.aviasales.com/search/YYC3108AMS21091?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Amsterdam's bike culture moves sixty percent of residents daily by bicycle, more than any major world city, turning commuting into an actual lifestyle instead of survival."
+      "bubble": "Amsterdam's bike theft rate is so astronomical that locals buy intentionally terrible bikes, making stealing one a punishment rather than a prize."
     },
     {
       "origin": "YYC",
       "destination": "FRA",
       "originCity": "Calgary",
       "destinationCity": "Frankfurt",
-      "price": 1027,
-      "departDate": "2026-08-04",
-      "url": "https://www.aviasales.com/search/YYC0408FRA02091?marker=744905&currency=cad",
+      "price": 1000,
+      "departDate": "2026-10-29",
+      "url": "https://www.aviasales.com/search/YYC2910FRA03111?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Frankfurt's Iron Museum houses the world's largest collection of antique cast iron stoves, legitimately warming hearts since medieval times."
+      "bubble": "Frankfurt's Main River waterfront has more museums per square kilometer than anywhere on Earth, basically turning a riverbank into an open-air culture buffet daily."
     },
     {
       "origin": "YYC",
       "destination": "AUH",
       "originCity": "Calgary",
       "destinationCity": "Abu Dhabi",
-      "price": 1614,
-      "departDate": "2026-10-26",
-      "url": "https://www.aviasales.com/search/YYC2610AUH05111?marker=744905&currency=cad",
+      "price": 1612,
+      "departDate": "2026-11-02",
+      "url": "https://www.aviasales.com/search/YYC0211AUH12111?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Abu Dhabi's Sheikh Zayed Grand Mosque contains the world's largest hand-knotted Persian carpet, woven by eighty artisans over two years."
+      "bubble": "Abu Dhabi's Sheikh Zayed Grand Mosque has twenty-four karat gold-plated chandeliers weighing twelve tons each, making prayer literally glitter."
     },
     {
       "origin": "YYC",
       "destination": "FCO",
       "originCity": "Calgary",
       "destinationCity": "Rome",
-      "price": 745,
-      "departDate": "2026-08-04",
-      "url": "https://www.aviasales.com/search/YYC0408FCO02091?marker=744905&currency=cad",
+      "price": 891,
+      "departDate": "2026-09-14",
+      "url": "https://www.aviasales.com/search/YYC1409FCO21091?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Rome's underground contains four distinct ancient cities stacked beneath your feet, each totally explorable without leaving the modern metropolitan area."
+      "bubble": "Rome's ancient aqueducts still deliver water today, meaning you're drinking from the same system Caesar Augustus built two thousand years ago."
     },
     {
       "origin": "YYC",
       "destination": "BCN",
       "originCity": "Calgary",
       "destinationCity": "Barcelona",
-      "price": 832,
-      "departDate": "2026-08-31",
-      "url": "https://www.aviasales.com/search/YYC3108BCN10091?marker=744905&currency=cad",
+      "price": 1019,
+      "departDate": "2026-11-24",
+      "url": "https://www.aviasales.com/search/YYC2411BCN26111?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Barcelona's underground Roman city sits perfectly preserved beneath Las Ramblas, walkable today like time travel without the jet lag complications."
+      "bubble": "Barcelona's Gothic Quarter contains a perfectly preserved Roman temple tucked inside a medieval cathedral, layering twenty centuries architecturally."
     },
     {
       "origin": "YYC",
       "destination": "DUB",
       "originCity": "Calgary",
       "destinationCity": "Dublin",
-      "price": 878,
-      "departDate": "2026-09-07",
-      "url": "https://www.aviasales.com/search/YYC0709DUB17091?marker=744905&currency=cad",
+      "price": 1096,
+      "departDate": "2026-11-02",
+      "url": "https://www.aviasales.com/search/YYC0211DUB12111?marker=744905&currency=cad",
       "type": "international",
-      "bubble": "Dublin's literary pub crawl follows four Nobel Prize winners' actual drinking routes, making you culturally educated while magnificently drunk for $878."
+      "bubble": "Dublin's Guinness Storehouse sits atop a fermentation plant where millions of gallons bubble underground daily, literally beneath your feet while sipping."
     }
   ],
   "business": [
@@ -211,7 +211,7 @@
       "label": "Direct — KLM year-round",
       "url": "https://www.aviasales.com/search/YEGAMS1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Direct business Edmonton to Amsterdam means arriving rested enough to actually appreciate those canal rings instead of just floating through them comatose."
+      "bubble": "Business class to Amsterdam means arriving rested while my Edmonton wallet arrives separately, never to return."
     },
     {
       "origin": "YEG",
@@ -221,7 +221,7 @@
       "label": "Direct — United year-round",
       "url": "https://www.aviasales.com/search/YEGIAH1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Flying business Edmonton to Houston means arriving too alert to pretend you understand Texas's relationship with barbecue versus actual cuisine."
+      "bubble": "Business class Edmonton to Houston means arriving before my bank account realizes what I've done."
     },
     {
       "origin": "YEG",
@@ -231,7 +231,7 @@
       "label": "Direct — United year-round",
       "url": "https://www.aviasales.com/search/YEGDEN1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Business class Edmonton to Denver means arriving so oxygen-deprived you'll think the Rocky Mountains are actually hallucinations from altitude sickness."
+      "bubble": "Business class Edmonton to Denver means arriving so refreshed I'll actually enjoy the thin air instead of gasping like a landed fish."
     },
     {
       "origin": "YEG",
@@ -241,7 +241,7 @@
       "label": "Direct — WestJet",
       "url": "https://www.aviasales.com/search/YEGLAX1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Business class Edmonton to Los Angeles means arriving so well-rested you'll actually enjoy pretending to understand In-N-Out's cult status."
+      "bubble": "Business class Edmonton to Los Angeles means arriving so fabulous, even the smog applauds my entrance."
     },
     {
       "origin": "YEG",
@@ -251,7 +251,7 @@
       "label": "Direct — WestJet seasonal",
       "url": "https://www.aviasales.com/search/YEGKEF1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Direct business Edmonton to Reykjavik means arriving geothermally heated while Canada's still paying winter's ransom."
+      "bubble": "Business class Edmonton to Reykjavik means arriving between continents before my jet lag decides which one."
     },
     {
       "origin": "YYC",
@@ -261,7 +261,7 @@
       "label": "Direct — Air Canada + WestJet year-round",
       "url": "https://www.aviasales.com/search/YYCLHR1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Direct business Calgary to London means arriving refreshed enough to mock the Thames without jet lag excuses."
+      "bubble": "Direct business class Calgary to London means arriving so refreshed, I'll actually understand British humor instead of nodding confusedly."
     },
     {
       "origin": "YYC",
@@ -271,7 +271,7 @@
       "label": "Direct — WestJet year-round",
       "url": "https://www.aviasales.com/search/YYCCDG1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Flying direct business Calgary to Paris means arriving elegant enough to judge French fashion instead of just envying it desperately."
+      "bubble": "Direct business class Calgary to Paris means arriving so refreshed, I'll actually appreciate the Louvre instead of napping in it."
     },
     {
       "origin": "YYC",
@@ -281,7 +281,7 @@
       "label": "Direct — KLM year-round",
       "url": "https://www.aviasales.com/search/YYCAMS1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Direct business Calgary to Amsterdam means arriving cultured enough to appreciate the canals instead of just pedaling through them panicked."
+      "bubble": "Direct business class Calgary to Amsterdam means arriving so rested, I'll actually navigate the canals instead of becoming one."
     },
     {
       "origin": "YYC",
@@ -291,7 +291,7 @@
       "label": "Direct — Discover Airlines year-round",
       "url": "https://www.aviasales.com/search/YYCFRA1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Frankfurt's banking district gleams so brightly, business class passengers arrive thinking they've landed in Toronto's financial core."
+      "bubble": "Direct business class Calgary to Frankfurt means arriving refreshed enough to actually appreciate Goethe's house instead of napping through German literature history."
     },
     {
       "origin": "YYC",
@@ -301,7 +301,7 @@
       "label": "Direct — Etihad year-round",
       "url": "https://www.aviasales.com/search/YYCAUH1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Flying direct business Calgary to Abu Dhabi means arriving too refreshed to properly appreciate the mosque's carpet."
+      "bubble": "Direct business class Calgary to Abu Dhabi means arriving so refreshed, I'll actually withstand the desert heat instead of melting immediately."
     },
     {
       "origin": "YYC",
@@ -311,7 +311,7 @@
       "label": "Direct — WestJet seasonal",
       "url": "https://www.aviasales.com/search/YYCFCO1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Paying business class fares to arrive in Rome so rested I'll actually read the guidebook instead of just napping beneath ancient ruins."
+      "bubble": "Direct business class Calgary to Rome means arriving so rested, the Colosseum finally seems less impressive than my seat."
     },
     {
       "origin": "YYC",
@@ -321,7 +321,7 @@
       "label": "Direct — WestJet seasonal",
       "url": "https://www.aviasales.com/search/YYCBCN1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Flying direct business Calgary to Barcelona means arriving sophisticated enough to pretend I understand Gaudí instead of just gawking uselessly."
+      "bubble": "Direct business class Calgary to Barcelona means arriving so refreshed, even the Sagrada Familia's construction delays seem reasonable."
     },
     {
       "origin": "YYC",
@@ -331,7 +331,7 @@
       "label": "Direct — WestJet seasonal",
       "url": "https://www.aviasales.com/search/YYCDUB1?marker=744905&currency=cad&trip_class=1",
       "type": "business",
-      "bubble": "Direct business Calgary to Dublin means arriving cultured enough to actually finish a novel before the pub crawl starts."
+      "bubble": "Direct business class Calgary to Dublin means arriving so refreshed, I'll actually understand Irish accents instead of nodding at Guinness."
     }
   ],
   "edmonton": {
@@ -341,9 +341,19 @@
         "destination": "YVR",
         "originCity": "Edmonton",
         "destinationCity": "Vancouver",
-        "price": 117,
-        "departDate": "2026-08-05",
-        "url": "https://www.aviasales.com/search/YEG0508YVR10081?marker=744905&currency=cad",
+        "price": 122,
+        "departDate": "2026-08-19",
+        "url": "https://www.aviasales.com/search/YEG1908YVR21081?marker=744905&currency=cad",
+        "type": "domestic"
+      },
+      {
+        "origin": "YEG",
+        "destination": "YYC",
+        "originCity": "Edmonton",
+        "destinationCity": "Calgary",
+        "price": 224,
+        "departDate": "2026-08-01",
+        "url": "https://www.aviasales.com/search/YEG0108YYC04081?marker=744905&currency=cad",
         "type": "domestic"
       },
       {
@@ -351,9 +361,9 @@
         "destination": "YYZ",
         "originCity": "Edmonton",
         "destinationCity": "Toronto",
-        "price": 235,
-        "departDate": "2026-09-13",
-        "url": "https://www.aviasales.com/search/YEG1309YYZ14091?marker=744905&currency=cad",
+        "price": 249,
+        "departDate": "2026-09-18",
+        "url": "https://www.aviasales.com/search/YEG1809YYZ18091?marker=744905&currency=cad",
         "type": "domestic"
       }
     ],
@@ -363,7 +373,7 @@
         "destination": "AMS",
         "originCity": "Edmonton",
         "destinationCity": "Amsterdam",
-        "price": 1021,
+        "price": 890,
         "departDate": "2026-09-07",
         "url": "https://www.aviasales.com/search/YEG0709AMS17091?marker=744905&currency=cad",
         "type": "international"
@@ -373,9 +383,9 @@
         "destination": "IAH",
         "originCity": "Edmonton",
         "destinationCity": "Houston",
-        "price": 606,
-        "departDate": "2026-09-07",
-        "url": "https://www.aviasales.com/search/YEG0709IAH17091?marker=744905&currency=cad",
+        "price": 528,
+        "departDate": "2026-09-14",
+        "url": "https://www.aviasales.com/search/YEG1409IAH24091?marker=744905&currency=cad",
         "type": "international"
       },
       {
@@ -383,7 +393,7 @@
         "destination": "DEN",
         "originCity": "Edmonton",
         "destinationCity": "Denver",
-        "price": 714,
+        "price": 519,
         "departDate": "2026-09-07",
         "url": "https://www.aviasales.com/search/YEG0709DEN17091?marker=744905&currency=cad",
         "type": "international"
@@ -393,7 +403,7 @@
         "destination": "LAX",
         "originCity": "Edmonton",
         "destinationCity": "Los Angeles",
-        "price": 424,
+        "price": 316,
         "departDate": "2026-10-26",
         "url": "https://www.aviasales.com/search/YEG2610LAX05111?marker=744905&currency=cad",
         "type": "international"
@@ -403,9 +413,9 @@
         "destination": "KEF",
         "originCity": "Edmonton",
         "destinationCity": "Reykjavik",
-        "price": 1081,
-        "departDate": "2026-09-07",
-        "url": "https://www.aviasales.com/search/YEG0709KEF17091?marker=744905&currency=cad",
+        "price": 1072,
+        "departDate": "2026-09-14",
+        "url": "https://www.aviasales.com/search/YEG1409KEF24091?marker=744905&currency=cad",
         "type": "international"
       }
     ],
@@ -418,7 +428,7 @@
         "label": "Direct — KLM year-round",
         "url": "https://www.aviasales.com/search/YEGAMS1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Direct business Edmonton to Amsterdam means arriving rested enough to actually appreciate those canal rings instead of just floating through them comatose."
+        "bubble": "Business class to Amsterdam means arriving rested while my Edmonton wallet arrives separately, never to return."
       },
       {
         "origin": "YEG",
@@ -428,7 +438,7 @@
         "label": "Direct — United year-round",
         "url": "https://www.aviasales.com/search/YEGIAH1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Flying business Edmonton to Houston means arriving too alert to pretend you understand Texas's relationship with barbecue versus actual cuisine."
+        "bubble": "Business class Edmonton to Houston means arriving before my bank account realizes what I've done."
       },
       {
         "origin": "YEG",
@@ -438,7 +448,7 @@
         "label": "Direct — United year-round",
         "url": "https://www.aviasales.com/search/YEGDEN1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Business class Edmonton to Denver means arriving so oxygen-deprived you'll think the Rocky Mountains are actually hallucinations from altitude sickness."
+        "bubble": "Business class Edmonton to Denver means arriving so refreshed I'll actually enjoy the thin air instead of gasping like a landed fish."
       },
       {
         "origin": "YEG",
@@ -448,7 +458,7 @@
         "label": "Direct — WestJet",
         "url": "https://www.aviasales.com/search/YEGLAX1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Business class Edmonton to Los Angeles means arriving so well-rested you'll actually enjoy pretending to understand In-N-Out's cult status."
+        "bubble": "Business class Edmonton to Los Angeles means arriving so fabulous, even the smog applauds my entrance."
       },
       {
         "origin": "YEG",
@@ -458,7 +468,7 @@
         "label": "Direct — WestJet seasonal",
         "url": "https://www.aviasales.com/search/YEGKEF1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Direct business Edmonton to Reykjavik means arriving geothermally heated while Canada's still paying winter's ransom."
+        "bubble": "Business class Edmonton to Reykjavik means arriving between continents before my jet lag decides which one."
       }
     ]
   },
@@ -466,22 +476,12 @@
     "domestic": [
       {
         "origin": "YYC",
-        "destination": "YYZ",
+        "destination": "YVR",
         "originCity": "Calgary",
-        "destinationCity": "Toronto",
-        "price": 205,
-        "departDate": "2026-10-05",
-        "url": "https://www.aviasales.com/search/YYC0510YYZ06101?marker=744905&currency=cad",
-        "type": "domestic"
-      },
-      {
-        "origin": "YYC",
-        "destination": "YEG",
-        "originCity": "Calgary",
-        "destinationCity": "Edmonton",
-        "price": 278,
-        "departDate": "2026-11-01",
-        "url": "https://www.aviasales.com/search/YYC0111YEG04111?marker=744905&currency=cad",
+        "destinationCity": "Vancouver",
+        "price": 129,
+        "departDate": "2026-09-17",
+        "url": "https://www.aviasales.com/search/YYC1709YVR19091?marker=744905&currency=cad",
         "type": "domestic"
       },
       {
@@ -489,9 +489,9 @@
         "destination": "YOW",
         "originCity": "Calgary",
         "destinationCity": "Ottawa",
-        "price": 307,
-        "departDate": "2026-09-07",
-        "url": "https://www.aviasales.com/search/YYC0709YOW09091?marker=744905&currency=cad",
+        "price": 293,
+        "departDate": "2026-08-27",
+        "url": "https://www.aviasales.com/search/YYC2708YOW30081?marker=744905&currency=cad",
         "type": "domestic"
       }
     ],
@@ -501,7 +501,7 @@
         "destination": "LHR",
         "originCity": "Calgary",
         "destinationCity": "London",
-        "price": 904,
+        "price": 884,
         "departDate": "2026-10-13",
         "url": "https://www.aviasales.com/search/YYC1310LHR17101?marker=744905&currency=cad",
         "type": "international"
@@ -511,9 +511,9 @@
         "destination": "CDG",
         "originCity": "Calgary",
         "destinationCity": "Paris",
-        "price": 945,
-        "departDate": "2026-09-02",
-        "url": "https://www.aviasales.com/search/YYC0209CDG25091?marker=744905&currency=cad",
+        "price": 654,
+        "departDate": "2026-10-07",
+        "url": "https://www.aviasales.com/search/YYC0710CDG18101?marker=744905&currency=cad",
         "type": "international"
       },
       {
@@ -521,9 +521,9 @@
         "destination": "AMS",
         "originCity": "Calgary",
         "destinationCity": "Amsterdam",
-        "price": 907,
-        "departDate": "2026-08-29",
-        "url": "https://www.aviasales.com/search/YYC2908AMS18091?marker=744905&currency=cad",
+        "price": 868,
+        "departDate": "2026-08-31",
+        "url": "https://www.aviasales.com/search/YYC3108AMS21091?marker=744905&currency=cad",
         "type": "international"
       },
       {
@@ -531,9 +531,9 @@
         "destination": "FRA",
         "originCity": "Calgary",
         "destinationCity": "Frankfurt",
-        "price": 1027,
-        "departDate": "2026-08-04",
-        "url": "https://www.aviasales.com/search/YYC0408FRA02091?marker=744905&currency=cad",
+        "price": 1000,
+        "departDate": "2026-10-29",
+        "url": "https://www.aviasales.com/search/YYC2910FRA03111?marker=744905&currency=cad",
         "type": "international"
       },
       {
@@ -541,9 +541,9 @@
         "destination": "AUH",
         "originCity": "Calgary",
         "destinationCity": "Abu Dhabi",
-        "price": 1614,
-        "departDate": "2026-10-26",
-        "url": "https://www.aviasales.com/search/YYC2610AUH05111?marker=744905&currency=cad",
+        "price": 1612,
+        "departDate": "2026-11-02",
+        "url": "https://www.aviasales.com/search/YYC0211AUH12111?marker=744905&currency=cad",
         "type": "international"
       },
       {
@@ -551,9 +551,9 @@
         "destination": "FCO",
         "originCity": "Calgary",
         "destinationCity": "Rome",
-        "price": 745,
-        "departDate": "2026-08-04",
-        "url": "https://www.aviasales.com/search/YYC0408FCO02091?marker=744905&currency=cad",
+        "price": 891,
+        "departDate": "2026-09-14",
+        "url": "https://www.aviasales.com/search/YYC1409FCO21091?marker=744905&currency=cad",
         "type": "international"
       },
       {
@@ -561,9 +561,9 @@
         "destination": "BCN",
         "originCity": "Calgary",
         "destinationCity": "Barcelona",
-        "price": 832,
-        "departDate": "2026-08-31",
-        "url": "https://www.aviasales.com/search/YYC3108BCN10091?marker=744905&currency=cad",
+        "price": 1019,
+        "departDate": "2026-11-24",
+        "url": "https://www.aviasales.com/search/YYC2411BCN26111?marker=744905&currency=cad",
         "type": "international"
       },
       {
@@ -571,9 +571,9 @@
         "destination": "DUB",
         "originCity": "Calgary",
         "destinationCity": "Dublin",
-        "price": 878,
-        "departDate": "2026-09-07",
-        "url": "https://www.aviasales.com/search/YYC0709DUB17091?marker=744905&currency=cad",
+        "price": 1096,
+        "departDate": "2026-11-02",
+        "url": "https://www.aviasales.com/search/YYC0211DUB12111?marker=744905&currency=cad",
         "type": "international"
       }
     ],
@@ -586,7 +586,7 @@
         "label": "Direct — Air Canada + WestJet year-round",
         "url": "https://www.aviasales.com/search/YYCLHR1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Direct business Calgary to London means arriving refreshed enough to mock the Thames without jet lag excuses."
+        "bubble": "Direct business class Calgary to London means arriving so refreshed, I'll actually understand British humor instead of nodding confusedly."
       },
       {
         "origin": "YYC",
@@ -596,7 +596,7 @@
         "label": "Direct — WestJet year-round",
         "url": "https://www.aviasales.com/search/YYCCDG1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Flying direct business Calgary to Paris means arriving elegant enough to judge French fashion instead of just envying it desperately."
+        "bubble": "Direct business class Calgary to Paris means arriving so refreshed, I'll actually appreciate the Louvre instead of napping in it."
       },
       {
         "origin": "YYC",
@@ -606,7 +606,7 @@
         "label": "Direct — KLM year-round",
         "url": "https://www.aviasales.com/search/YYCAMS1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Direct business Calgary to Amsterdam means arriving cultured enough to appreciate the canals instead of just pedaling through them panicked."
+        "bubble": "Direct business class Calgary to Amsterdam means arriving so rested, I'll actually navigate the canals instead of becoming one."
       },
       {
         "origin": "YYC",
@@ -616,7 +616,7 @@
         "label": "Direct — Discover Airlines year-round",
         "url": "https://www.aviasales.com/search/YYCFRA1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Frankfurt's banking district gleams so brightly, business class passengers arrive thinking they've landed in Toronto's financial core."
+        "bubble": "Direct business class Calgary to Frankfurt means arriving refreshed enough to actually appreciate Goethe's house instead of napping through German literature history."
       },
       {
         "origin": "YYC",
@@ -626,7 +626,7 @@
         "label": "Direct — Etihad year-round",
         "url": "https://www.aviasales.com/search/YYCAUH1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Flying direct business Calgary to Abu Dhabi means arriving too refreshed to properly appreciate the mosque's carpet."
+        "bubble": "Direct business class Calgary to Abu Dhabi means arriving so refreshed, I'll actually withstand the desert heat instead of melting immediately."
       },
       {
         "origin": "YYC",
@@ -636,7 +636,7 @@
         "label": "Direct — WestJet seasonal",
         "url": "https://www.aviasales.com/search/YYCFCO1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Paying business class fares to arrive in Rome so rested I'll actually read the guidebook instead of just napping beneath ancient ruins."
+        "bubble": "Direct business class Calgary to Rome means arriving so rested, the Colosseum finally seems less impressive than my seat."
       },
       {
         "origin": "YYC",
@@ -646,7 +646,7 @@
         "label": "Direct — WestJet seasonal",
         "url": "https://www.aviasales.com/search/YYCBCN1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Flying direct business Calgary to Barcelona means arriving sophisticated enough to pretend I understand Gaudí instead of just gawking uselessly."
+        "bubble": "Direct business class Calgary to Barcelona means arriving so refreshed, even the Sagrada Familia's construction delays seem reasonable."
       },
       {
         "origin": "YYC",
@@ -656,7 +656,7 @@
         "label": "Direct — WestJet seasonal",
         "url": "https://www.aviasales.com/search/YYCDUB1?marker=744905&currency=cad&trip_class=1",
         "type": "business",
-        "bubble": "Direct business Calgary to Dublin means arriving cultured enough to actually finish a novel before the pub crawl starts."
+        "bubble": "Direct business class Calgary to Dublin means arriving so refreshed, I'll actually understand Irish accents instead of nodding at Guinness."
       }
     ]
   },
@@ -685,9 +685,9 @@
         "destination": "YYZ",
         "originCity": "Fort McMurray",
         "destinationCity": "Toronto",
-        "price": null,
-        "departDate": null,
-        "url": "https://www.aviasales.com/search/YMMYYZ1?marker=744905&currency=cad"
+        "price": 984,
+        "departDate": "2026-07-30",
+        "url": "https://www.aviasales.com/search/YMM3007YYZ05081?marker=744905&currency=cad"
       },
       {
         "origin": "YMM",
