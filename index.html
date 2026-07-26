@@ -397,6 +397,24 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// Pull the latest blog post dynamically for the homepage promo banner
+fetch('/blog/index.html')
+  .then(function(r){return r.text();})
+  .then(function(html){
+    var firstCard = html.split('<div class="blog-card">')[1];
+    if (!firstCard) return;
+    var titleMatch = firstCard.match(/<h2>([\s\S]*?)<\/h2>/);
+    var teaserMatch = firstCard.match(/<p>([\s\S]*?)<\/p>/);
+    var linkMatch = firstCard.match(/<a href="([^"]*)"[^>]*class="read-more"/);
+    if (!titleMatch || !linkMatch) return;
+    var banner = document.getElementById('blogPromoBanner');
+    if (banner) {
+      document.getElementById('blogPromoTitle').textContent = titleMatch[1].trim();
+      document.getElementById('blogPromoTeaser').textContent = teaserMatch ? teaserMatch[1].trim() : '';
+      document.getElementById('blogPromoLink').href = linkMatch[1];
+    }
+  }).catch(function(){});
+
 // Rotating biz image
 var bizImages = ['aunt-tia-business-1.png','aunt-tia-business-2.png','aunt-tia-business-3.png'];
 document.getElementById('biz-img').src = bizImages[Math.floor(Date.now()/(7*24*60*60*1000)) % bizImages.length];
