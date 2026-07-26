@@ -332,11 +332,11 @@ function getRecommendation(){
     return {
       title: `Get a Regional eSIM — around ${dataAmount}`,
       reason: `Since you're hitting multiple countries, one regional plan covers your whole route instead of buying separate eSIMs at each border.`,
-      link, needsCallNote: (callhome === 'yes' || needs === 'calls')
+      link, dataAmount, needsCallNote: (callhome === 'yes' || needs === 'calls')
     };
   }
 
- const dest = DESTINATIONS.find(d => d.label === destination);
+  const dest = DESTINATIONS.find(d => d.label === destination);
   link = dest ? dest.link : REGIONAL_LINK;
   const isOther = destination === 'Somewhere else';
   destLabel = isOther ? "your destination" : (dest ? dest.label : "your destination");
@@ -346,7 +346,7 @@ function getRecommendation(){
     reason: isOther
       ? `That's a solid data range for a ${length === 'short' ? 'short' : length === 'medium' ? '1-2 week' : 'longer'} trip. Search for your destination once you're on Airalo's site.`
       : `That's a solid data range for a ${length === 'short' ? 'short' : length === 'medium' ? '1-2 week' : 'longer'} trip to ${destLabel}.`,
-    link, needsCallNote: (callhome === 'yes' || needs === 'calls')
+    link, dataAmount, needsCallNote: (callhome === 'yes' || needs === 'calls')
   };
 }
 
