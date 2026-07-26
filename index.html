@@ -413,12 +413,12 @@ fetch('/blog/index.html')
       document.getElementById('blogPromoTeaser').textContent = teaserMatch ? teaserMatch[1].trim() : '';
       document.getElementById('blogPromoLink').href = linkMatch[1];
     }
-    var badge = document.getElementById('navNewBadge');
-    if (badge && dateMatch) {
+    var badges = [document.getElementById('navNewBadge1'), document.getElementById('navNewBadge2')];
+    if (dateMatch) {
       var postDate = new Date(dateMatch[1].trim());
       var daysSince = (Date.now() - postDate.getTime()) / (1000 * 60 * 60 * 24);
       if (isNaN(daysSince) || daysSince > 7) {
-        badge.style.display = 'none';
+        badges.forEach(function(b){ if (b) b.style.display = 'none'; });
       }
     }
   }).catch(function(){});
