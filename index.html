@@ -397,7 +397,7 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Pull the latest blog post dynamically for the homepage promo banner
+// Pull the latest blog post dynamically for the homepage promo banner and nav "NEW" badge
 fetch('/blog/index.html')
   .then(function(r){return r.text();})
   .then(function(html){
@@ -406,12 +406,21 @@ fetch('/blog/index.html')
     var titleMatch = firstCard.match(/<h2>([\s\S]*?)<\/h2>/);
     var teaserMatch = firstCard.match(/<p>([\s\S]*?)<\/p>/);
     var linkMatch = firstCard.match(/<a href="([^"]*)"[^>]*class="read-more"/);
+    var dateMatch = firstCard.match(/<div class="blog-date">([\s\S]*?)<\/div>/);
     if (!titleMatch || !linkMatch) return;
     var banner = document.getElementById('blogPromoBanner');
     if (banner) {
       document.getElementById('blogPromoTitle').textContent = titleMatch[1].trim();
       document.getElementById('blogPromoTeaser').textContent = teaserMatch ? teaserMatch[1].trim() : '';
       document.getElementById('blogPromoLink').href = linkMatch[1];
+    }
+    var badge = document.getElementById('navNewBadge');
+    if (badge && dateMatch) {
+      var postDate = new Date(dateMatch[1].trim());
+      var daysSince = (Date.now() - postDate.getTime()) / (1000 * 60 * 60 * 24);
+      if (isNaN(daysSince) || daysSince > 7) {
+        badge.style.display = 'none';
+      }
     }
   }).catch(function(){});
 
