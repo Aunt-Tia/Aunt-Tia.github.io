@@ -336,13 +336,16 @@ function getRecommendation(){
     };
   }
 
-  const dest = DESTINATIONS.find(d => d.label === destination);
+ const dest = DESTINATIONS.find(d => d.label === destination);
   link = dest ? dest.link : REGIONAL_LINK;
-  destLabel = dest ? dest.label : "your destination";
+  const isOther = destination === 'Somewhere else';
+  destLabel = isOther ? "your destination" : (dest ? dest.label : "your destination");
 
   return {
-    title: `Get a ${destLabel} eSIM — around ${dataAmount}`,
-    reason: `That's a solid data range for a ${length === 'short' ? 'short' : length === 'medium' ? '1-2 week' : 'longer'} trip to ${destLabel}.`,
+    title: isOther ? `Look for an eSIM plan — around ${dataAmount}` : `Get a ${destLabel} eSIM — around ${dataAmount}`,
+    reason: isOther
+      ? `That's a solid data range for a ${length === 'short' ? 'short' : length === 'medium' ? '1-2 week' : 'longer'} trip. Search for your destination once you're on Airalo's site.`
+      : `That's a solid data range for a ${length === 'short' ? 'short' : length === 'medium' ? '1-2 week' : 'longer'} trip to ${destLabel}.`,
     link, needsCallNote: (callhome === 'yes' || needs === 'calls')
   };
 }
