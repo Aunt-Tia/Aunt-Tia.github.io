@@ -388,11 +388,19 @@ function showVerdict(){
 
       const callNote = rec.needsCallNote ? " One honest note: eSIMs are primarily data-based — for actual calls home, pair it with WhatsApp or FaceTime over that data connection rather than expecting a traditional calling plan." : "";
 
+      const daysHint = answers.length === 'short' ? '3-5 days' : answers.length === 'medium' ? '7-14 days' : '15-30 days';
+
       const cta = document.createElement('div');
       cta.className = 'cta-box';
       cta.innerHTML = `
         <h3>${rec.title}</h3>
         <p>${rec.reason}${callNote}</p>
+        <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:14px 16px;margin-bottom:16px;text-align:left;font-size:0.85rem;line-height:1.6;">
+          <strong>When you land on Airalo:</strong><br>
+          1️⃣ Click <strong>"Standard"</strong> (not "Unlimited" — you likely don't need it)<br>
+          2️⃣ Pick around <strong>${daysHint}</strong><br>
+          3️⃣ Choose the <strong>${dataAmount}</strong> option
+        </div>
         <a href="${rec.link}" class="apply-btn" target="_blank" rel="noopener sponsored">See This Plan on Airalo</a>
       `;
       chatLog.appendChild(cta);
