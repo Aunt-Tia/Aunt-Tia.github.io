@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Which eSIM Do You Actually Need? — Aunt Tia's Quiz | SkyTia</title>
-<meta name="description" content="Answer 4 quick questions and get a personalized eSIM recommendation for your next trip — no more guessing which plan you need.">
+<meta name="description" content="Answer a few quick questions and get a personalized eSIM recommendation — real destination, real data amount, real link.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -25,7 +25,6 @@
   .article-meta{font-size:0.85rem;color:#94a3b8;margin-bottom:24px;}
   .article-intro{font-size:1.1rem;color:var(--charcoal);margin-bottom:20px;line-height:1.7;}
 
-  /* Journey progress bar */
   .journey-wrap{background:#fff;border-radius:20px;padding:28px 24px 20px;margin:20px 0;box-shadow:0 8px 24px var(--shadow);position:relative;}
   .journey-track{position:relative;height:4px;background:#e2e8f0;border-radius:4px;margin:22px 20px 8px;}
   .journey-fill{position:absolute;left:0;top:0;height:100%;background:var(--teal);border-radius:4px;width:0%;transition:width 0.6s ease;}
@@ -51,11 +50,11 @@
   @keyframes blink{0%,80%,100%{opacity:0.3;}40%{opacity:1;}}
 
   .option-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+  .option-grid.wide{grid-template-columns:1fr 1fr 1fr;}
   .option-btn{background:#fff;border:2px solid var(--sky-deep);color:var(--ink);font-weight:700;padding:14px 12px;border-radius:14px;cursor:pointer;font-size:0.9rem;font-family:'Inter',sans-serif;transition:all 0.15s;text-align:center;}
   .option-btn .emoji{display:block;font-size:1.5rem;margin-bottom:4px;}
   .option-btn:hover{background:var(--sky-deep);color:#fff;transform:translateY(-2px);}
 
-  /* Phone install animation */
   .phone-reveal{display:flex;justify-content:center;margin:20px 0;}
   .phone{width:180px;height:340px;background:var(--ink);border-radius:28px;padding:10px;box-shadow:0 12px 30px var(--shadow);position:relative;}
   .phone-screen{background:#0D1B2A;width:100%;height:100%;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;color:#fff;text-align:center;}
@@ -117,7 +116,7 @@
     <div class="article-tag">📶 Travel Tech</div>
     <h1>Which eSIM Do You Actually Need?</h1>
     <div class="article-meta">By Aunt Tia · July 2026 · 1 min quiz</div>
-    <p class="article-intro">Stop guessing at eSIM plans. Answer 4 quick questions and I'll tell you exactly what to get for your trip.</p>
+    <p class="article-intro">Tell me where you're headed and for how long — I'll tell you exactly what to get, no generic guessing.</p>
   </div>
 
   <div class="journey-wrap">
@@ -125,12 +124,7 @@
       <div class="journey-fill" id="journeyFill"></div>
       <div class="journey-plane" id="journeyPlane">✈️</div>
     </div>
-    <div class="journey-dots">
-      <div class="journey-dot" id="dot0"></div>
-      <div class="journey-dot" id="dot1"></div>
-      <div class="journey-dot" id="dot2"></div>
-      <div class="journey-dot" id="dot3"></div>
-    </div>
+    <div class="journey-dots" id="journeyDots"></div>
     <div class="journey-label" id="journeyLabel">Let's find your plan...</div>
   </div>
 
@@ -162,23 +156,42 @@
 <script>
 const chatLog = document.getElementById('chatLog');
 const answers = {};
-const totalSteps = 4;
+let flow = [];
+let totalSteps = 0;
 
-const journeyLabels = [
-  "How many countries?",
-  "Data or calls too?",
-  "How long's the trip?",
-  "Calling home a lot?",
-  "Your plan is ready!"
+const DESTINATIONS = [
+  { emoji: '🇳🇱', label: 'Netherlands', link: 'https://airalo.tpo.lv/i5uZi422' },
+  { emoji: '🇺🇸', label: 'United States', link: 'https://airalo.tpo.lv/oEKXoRke' },
+  { emoji: '🇮🇸', label: 'Iceland', link: 'https://airalo.tpo.lv/8bos9QPw' },
+  { emoji: '🇬🇧', label: 'United Kingdom', link: 'https://airalo.tpo.lv/YhU9u2ED' },
+  { emoji: '🇫🇷', label: 'France', link: 'https://airalo.tpo.lv/ISqDJujX' },
+  { emoji: '🇩🇪', label: 'Germany', link: 'https://airalo.tpo.lv/UExLGWjX' },
+  { emoji: '🇦🇪', label: 'UAE', link: 'https://airalo.tpo.lv/YpM0KuNu' },
+  { emoji: '🇮🇹', label: 'Italy', link: 'https://airalo.tpo.lv/RWAufJgA' },
+  { emoji: '🇪🇸', label: 'Spain', link: 'https://airalo.tpo.lv/46WG5d76' },
+  { emoji: '🇮🇪', label: 'Ireland', link: 'https://airalo.tpo.lv/CbTg9gLE' }
 ];
+const REGIONAL_LINK = 'https://airalo.tpo.lv/EcBigWPg';
 
-function updateJourney(step){
-  const pct = (step / totalSteps) * 100;
+function buildDots(){
+  const wrap = document.getElementById('journeyDots');
+  wrap.innerHTML = '';
+  for(let i=0;i<totalSteps;i++){
+    const d = document.createElement('div');
+    d.className = 'journey-dot';
+    d.id = 'dot'+i;
+    wrap.appendChild(d);
+  }
+}
+
+function updateJourney(step, label){
+  const pct = totalSteps ? (step / totalSteps) * 100 : 0;
   document.getElementById('journeyFill').style.width = pct + '%';
   document.getElementById('journeyPlane').style.left = pct + '%';
-  document.getElementById('journeyLabel').textContent = journeyLabels[step];
+  document.getElementById('journeyLabel').textContent = label;
   for(let i=0;i<totalSteps;i++){
-    document.getElementById('dot'+i).classList.toggle('done', i < step);
+    const dot = document.getElementById('dot'+i);
+    if (dot) dot.classList.toggle('done', i < step);
   }
 }
 
@@ -200,65 +213,28 @@ function showTyping(){
   return div;
 }
 
-const questions = [
-  {
-    key: 'countries',
-    text: "First up — how many countries are you visiting on this trip?",
-    options: [
-      { emoji: '📍', label: 'Just one country', value: 'single' },
-      { emoji: '🗺️', label: 'Multiple countries', value: 'multi' }
-    ]
-  },
-  {
-    key: 'needs',
-    text: "Do you need actual calls and texts, or just data (maps, WhatsApp, socials)?",
-    options: [
-      { emoji: '📶', label: 'Just data', value: 'data' },
-      { emoji: '📞', label: 'Calls & texts too', value: 'calls' }
-    ]
-  },
-  {
-    key: 'length',
-    text: "How long is the trip?",
-    options: [
-      { emoji: '🌤️', label: 'A few days', value: 'short' },
-      { emoji: '🧳', label: '1-2 weeks', value: 'medium' },
-      { emoji: '🏡', label: 'Longer than 2 weeks', value: 'long' }
-    ]
-  },
-  {
-    key: 'callhome',
-    text: "Last one — will you need to call home a lot?",
-    options: [
-      { emoji: '☎️', label: 'Yes, often', value: 'yes' },
-      { emoji: '💬', label: 'No, WhatsApp is fine', value: 'no' }
-    ]
-  }
-];
-
-function askQuestion(index){
-  updateJourney(index);
-  if(index >= questions.length){
-    updateJourney(4);
+function askStep(stepIndex){
+  if (stepIndex >= flow.length) {
+    updateJourney(totalSteps, "Your plan is ready!");
     showVerdict();
     return;
   }
+  updateJourney(stepIndex, flow[stepIndex].label);
   const typing = showTyping();
   setTimeout(() => {
     typing.remove();
-    addMessage(questions[index].text);
+    addMessage(flow[stepIndex].text);
     const grid = document.createElement('div');
-    grid.className = 'option-grid';
-    if (questions[index].options.length === 3) grid.style.gridTemplateColumns = '1fr 1fr 1fr';
-    questions[index].options.forEach(opt => {
+    grid.className = 'option-grid' + (flow[stepIndex].options.length >= 3 ? ' wide' : '');
+    flow[stepIndex].options.forEach(opt => {
       const btn = document.createElement('button');
       btn.className = 'option-btn';
       btn.innerHTML = `<span class="emoji">${opt.emoji}</span>${opt.label}`;
       btn.addEventListener('click', () => {
-        answers[questions[index].key] = opt.value;
+        answers[flow[stepIndex].key] = opt.value;
         grid.remove();
         addMessage(opt.label, true);
-        setTimeout(() => askQuestion(index + 1), 500);
+        setTimeout(() => askStep(stepIndex + 1), 500);
       }, { once: true });
       grid.appendChild(btn);
     });
@@ -266,6 +242,64 @@ function askQuestion(index){
     chatLog.scrollTop = chatLog.scrollHeight;
   }, 800);
 }
+
+function buildFlow(){
+  flow = [];
+  flow.push({
+    key: 'countries', label: 'How many countries?',
+    text: "First up — how many countries are you visiting on this trip?",
+    options: [
+      { emoji: '📍', label: 'Just one country', value: 'single' },
+      { emoji: '🗺️', label: 'Multiple countries', value: 'multi' }
+    ]
+  });
+}
+
+function afterCountries(){
+  if (answers.countries === 'single') {
+    flow.push({
+      key: 'destination', label: 'Where to?',
+      text: "Which country are you headed to?",
+      options: DESTINATIONS.map(d => ({ emoji: d.emoji, label: d.label, value: d.label }))
+    });
+  }
+  flow.push({
+    key: 'needs', label: 'Data or calls?',
+    text: "Do you need actual calls and texts, or just data (maps, WhatsApp, socials)?",
+    options: [
+      { emoji: '📶', label: 'Just data', value: 'data' },
+      { emoji: '📞', label: 'Calls & texts too', value: 'calls' }
+    ]
+  });
+  flow.push({
+    key: 'length', label: "Trip length?",
+    text: "How long is the trip?",
+    options: [
+      { emoji: '🌤️', label: 'A few days', value: 'short' },
+      { emoji: '🧳', label: '1-2 weeks', value: 'medium' },
+      { emoji: '🏡', label: 'Longer than 2 weeks', value: 'long' }
+    ]
+  });
+  flow.push({
+    key: 'callhome', label: 'One more thing...',
+    text: "Last one — will you need to call home a lot?",
+    options: [
+      { emoji: '☎️', label: 'Yes, often', value: 'yes' },
+      { emoji: '💬', label: 'No, WhatsApp is fine', value: 'no' }
+    ]
+  });
+  totalSteps = flow.length;
+  buildDots();
+}
+
+// Override askStep to build the rest of the flow right after the first answer
+const originalAskStep = askStep;
+askStep = function(stepIndex){
+  if (stepIndex === 1 && flow.length === 1) {
+    afterCountries();
+  }
+  originalAskStep(stepIndex);
+};
 
 function fireConfetti(){
   const colors = ['#2FAE94','#2C7DAE','#C98F2E','#E8B45C'];
@@ -281,30 +315,35 @@ function fireConfetti(){
   }
 }
 
+function getDataAmount(length){
+  if (length === 'short') return "1-3GB";
+  if (length === 'medium') return "5-10GB";
+  return "15-20GB (or an unlimited plan if available)";
+}
+
 function getRecommendation(){
-  const { countries, needs, length, callhome } = answers;
-  let planType, reason;
+  const { countries, destination, needs, length, callhome } = answers;
+  let link, destLabel, dataAmount = getDataAmount(length);
 
   if (countries === 'multi') {
-    planType = "a Regional Airalo plan";
-    reason = "covers every country on your route with one single eSIM — no swapping plans at each border.";
-  } else if (length === 'long') {
-    planType = "a larger data Airalo plan for your destination";
-    reason = "a longer trip means you'll want more data in the tank so you're not topping up mid-way.";
-  } else if (length === 'short') {
-    planType = "a small local Airalo plan for your destination";
-    reason = "a short trip means you don't need to overpay for data you won't use.";
-  } else {
-    planType = "a mid-size local Airalo plan for your destination";
-    reason = "a solid middle-ground amount of data for a standard one to two week trip.";
+    link = REGIONAL_LINK;
+    destLabel = "your route";
+    return {
+      title: `Get a Regional eSIM — around ${dataAmount}`,
+      reason: `Since you're hitting multiple countries, one regional plan covers your whole route instead of buying separate eSIMs at each border.`,
+      link, needsCallNote: (callhome === 'yes' || needs === 'calls')
+    };
   }
 
-  let callNote = "";
-  if (callhome === 'yes' || needs === 'calls') {
-    callNote = " One honest note: eSIMs are primarily data-based — for actual calls home, pair it with WhatsApp or FaceTime over that data connection rather than expecting a traditional calling plan.";
-  }
+  const dest = DESTINATIONS.find(d => d.label === destination);
+  link = dest ? dest.link : REGIONAL_LINK;
+  destLabel = dest ? dest.label : "your destination";
 
-  return { planType, reason: reason + callNote };
+  return {
+    title: `Get a ${destLabel} eSIM — around ${dataAmount}`,
+    reason: `That's a solid data range for a ${length === 'short' ? 'short' : length === 'medium' ? '1-2 week' : 'longer'} trip to ${destLabel}.`,
+    link, needsCallNote: (callhome === 'yes' || needs === 'calls')
+  };
 }
 
 function showVerdict(){
@@ -343,12 +382,14 @@ function showVerdict(){
       setTimeout(() => document.getElementById('signalBars').classList.add('on'), 200);
       fireConfetti();
 
+      const callNote = rec.needsCallNote ? " One honest note: eSIMs are primarily data-based — for actual calls home, pair it with WhatsApp or FaceTime over that data connection rather than expecting a traditional calling plan." : "";
+
       const cta = document.createElement('div');
       cta.className = 'cta-box';
       cta.innerHTML = `
-        <h3>You need: ${rec.planType}</h3>
-        <p>${rec.reason}</p>
-        <a href="https://airalo.tpo.lv/GxgbL5Vr" class="apply-btn" target="_blank" rel="noopener sponsored">Browse Airalo Plans</a>
+        <h3>${rec.title}</h3>
+        <p>${rec.reason}${callNote}</p>
+        <a href="${rec.link}" class="apply-btn" target="_blank" rel="noopener sponsored">See This Plan on Airalo</a>
       `;
       chatLog.appendChild(cta);
       chatLog.scrollTop = chatLog.scrollHeight;
@@ -358,14 +399,18 @@ function showVerdict(){
       restart.textContent = 'Start over';
       restart.addEventListener('click', () => {
         chatLog.innerHTML = '';
-        askQuestion(0);
+        Object.keys(answers).forEach(k => delete answers[k]);
+        flow = [];
+        buildFlow();
+        askStep(0);
       });
       chatLog.appendChild(restart);
     }, 1600);
   }, 800);
 }
 
-askQuestion(0);
+buildFlow();
+askStep(0);
 </script>
 </body>
 </html>
