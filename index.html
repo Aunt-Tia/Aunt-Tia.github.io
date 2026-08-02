@@ -566,7 +566,7 @@ function submitFeedback(){
   btn.disabled = true;
   btn.textContent = 'Sending...';
 
-  fetch('https://YOUR-WORKER-URL.workers.dev', {
+  fetch('https://skytia-feedback.social-62e.workers.dev/', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ feedback: text, mood: selectedMood, email: email })
