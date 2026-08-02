@@ -466,12 +466,12 @@ if (new URLSearchParams(window.location.search).get('feedback') === '1') {
   if (fbModal) fbModal.style.display = 'flex';
 }
 
-// Generic "NEW" badge system for any feature announcement — auto-hides after 7 days
-document.querySelectorAll('.feature-badge').forEach(function(badge){
-  var featDate = new Date(badge.dataset.featureDate);
+// Generic "NEW" badge + banner system for any feature announcement — auto-hides after 7 days
+document.querySelectorAll('.feature-badge, .feature-banner').forEach(function(el){
+  var featDate = new Date(el.dataset.featureDate);
   var daysSince = (Date.now() - featDate.getTime()) / (1000 * 60 * 60 * 24);
   if (isNaN(daysSince) || daysSince > 7) {
-    badge.style.display = 'none';
+    el.style.display = 'none';
   }
 });
 
