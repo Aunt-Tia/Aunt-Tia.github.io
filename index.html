@@ -458,8 +458,7 @@ var stickers=['Hot','New','Deal','Hot','New','Deal'];
 function formatDate(d){try{return new Date(d+'T12:00:00Z').toLocaleDateString('en-CA',{month:'short',day:'numeric'});}catch(e){return d;}}
 function noDeals(msg){return '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">'+msg+'</p></div>';}
 
-var NTK={'LHR':'/needtoknow.html#london','CDG':'/needtoknow.html#paris','AMS':'/needtoknow.html#amsterdam','FRA':'/needtoknow.html#frankfurt','FCO':'/needtoknow.html#rome','BCN':'/needtoknow.html#barcelona','LIS':'/needtoknow.html#lisbon','DUB':'/needtoknow.html#dublin','KEF':'/needtoknow.html#reykjavik','AUH':'/needtoknow.html#abudhabi','IAH':'/needtoknow.html#usa','DEN':'/needtoknow.html#usa','LAX':'/needtoknow.html#usa','LAS':'/needtoknow.html#usa','SFO':'/needtoknow.html#usa','NAS':'/needtoknow.html#nassau','MBJ':'/needtoknow.html#jamaica','HND':'/needtoknow.html#tokyo','NRT':'/needtoknow.html#tokyo','BKK':'/needtoknow.html#bangkok','DXB':'/needtoknow.html#abudhabi'};
-
+var NTK={'LHR':'/needtoknow.html#london','CDG':'/needtoknow.html#paris','AMS':'/needtoknow.html#amsterdam','FRA':'/needtoknow.html#frankfurt','FCO':'/needtoknow.html#rome','BCN':'/needtoknow.html#barcelona','LIS':'/needtoknow.html#lisbon','DUB':'/needtoknow.html#dublin','KEF':'/needtoknow.html#reykjavik','AUH':'/needtoknow.html#abudhabi','IAH':'/needtoknow.html#usa','DEN':'/needtoknow.html#usa','LAX':'/needtoknow.html#usa','LAS':'/needtoknow.html#usa','SFO':'/needtoknow.html#usa','SEA':'/needtoknow.html#usa','PHX':'/needtoknow.html#usa','MSP':'/needtoknow.html#usa','NAS':'/needtoknow.html#nassau','MBJ':'/needtoknow.html#jamaica','HND':'/needtoknow.html#tokyo','NRT':'/needtoknow.html#tokyo','BKK':'/needtoknow.html#bangkok','DXB':'/needtoknow.html#abudhabi'};
 function buildCard(d,i){
   var note=d.bubble?d.bubble:'Great price — book it before it disappears!';
   var topClass=d.type==='international'?'deal-top intl':'deal-top';
