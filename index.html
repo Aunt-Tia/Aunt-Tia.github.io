@@ -473,7 +473,7 @@ function buildCard(d,i){
   var note=d.bubble?d.bubble:'Great price — book it before it disappears!';
   var topClass=d.type==='international'?'deal-top intl':'deal-top';
   var priceHtml=d.price?'<div class="deal-price">$'+d.price+' CAD</div><div style="font-size:0.75rem;opacity:0.85;margin-top:2px;">roundtrip</div>':'<div style="font-size:0.95rem;margin-top:6px;opacity:0.85;">Check live prices</div>';
-  var metaHtml=d.departDate?'<div class="deal-meta">Around '+formatDate(d.departDate)+'</div>':'';
+  var metaHtml=d.departDate?'<div class="deal-meta">Depart '+formatDate(d.departDate)+(d.returnDate?' · Return '+formatDate(d.returnDate):'')+'</div>':'';
   var ntkHtml=d.type==='international'&&NTK[d.destination]?'<a href="'+NTK[d.destination]+'" class="deal-link" style="font-size:0.8rem;color:var(--tan-deep);border-bottom-color:var(--tan);margin-top:6px;display:block;" target="_blank">📋 Entry requirements for Canadians →</a>':'';
   return '<div class="deal-card" id="deal-'+d.origin+'-'+d.destination+'"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div>'+priceHtml+'</div><div class="deal-body">'+metaHtml+'<div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a>'+ntkHtml+'</div></div>';
 }
