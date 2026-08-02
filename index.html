@@ -456,6 +456,15 @@ if (new URLSearchParams(window.location.search).get('feedback') === '1') {
   if (fbModal) fbModal.style.display = 'flex';
 }
 
+// Generic "NEW" badge system for any feature announcement — auto-hides after 7 days
+document.querySelectorAll('.feature-badge').forEach(function(badge){
+  var featDate = new Date(badge.dataset.featureDate);
+  var daysSince = (Date.now() - featDate.getTime()) / (1000 * 60 * 60 * 24);
+  if (isNaN(daysSince) || daysSince > 7) {
+    badge.style.display = 'none';
+  }
+});
+
 // Rotating biz image
 var bizImages = ['aunt-tia-business-1.png','aunt-tia-business-2.png','aunt-tia-business-3.png'];
 document.getElementById('biz-img').src = bizImages[Math.floor(Date.now()/(7*24*60*60*1000)) % bizImages.length];
