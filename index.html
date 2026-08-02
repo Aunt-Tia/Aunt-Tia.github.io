@@ -614,6 +614,7 @@ function submitFeedback(){
     } else {
       throw new Error();
     }
+  })
   .catch(function(){
     statusEl.textContent = 'Something went wrong — try again?';
     statusEl.style.color = '#dc2626';
