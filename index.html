@@ -539,6 +539,61 @@ fetch(DEALS_URL)
     document.getElementById('biz-grid').innerHTML=noDeals('Deals loading — check back shortly!');
   });
 }, 100);
+
+// Feedback widget
+let selectedMood = 'Not specified';
+document.querySelectorAll('.mood-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.mood-btn').forEach(function(b){ b.style.borderColor = '#e2e8f0'; });
+    this.style.borderColor = 'var(--teal)';
+    selectedMood = this.dataset.mood;
+  });
+});
+
+function submitFeedback(){
+  var text = document.getElementById('feedbackText').value.trim();
+  var email = document.getElementById('feedbackEmail').value.trim();
+  var statusEl = document.getElementById('feedbackStatus');
+  var btn = document.getElementById('feedbackSubmitBtn');
+
+  if (!text) {
+    statusEl.textContent = 'Please write something first!';
+    statusEl.style.color = '#dc2626';
+    statusEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  fetch('https://YOUR-WORKER-URL.workers.dev', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ feedback: text, mood: selectedMood, email: email })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if (data.success) {
+      statusEl.textContent = 'Thanks! Aunt Tia got it. 🐾';
+      statusEl.style.color = 'var(--teal)';
+      statusEl.style.display = 'block';
+      document.getElementById('feedbackText').value = '';
+      document.getElementById('feedbackEmail').value = '';
+      setTimeout(function(){ document.getElementById('feedbackModal').style.display = 'none'; }, 2000);
+    } else {
+      throw new Error();
+    }
+  })
+  .catch(function(){
+    statusEl.textContent = 'Something went wrong — try again?';
+    statusEl.style.color = '#dc2626';
+    statusEl.style.display = 'block';
+  })
+  .finally(function(){
+    btn.disabled = false;
+    btn.textContent = 'Send to Aunt Tia';
+  });
+}
 </script>
   <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
