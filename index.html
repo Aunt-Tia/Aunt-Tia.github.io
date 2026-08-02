@@ -449,6 +449,12 @@ fetch('/blog/index.html')
     }
   }).catch(function(){});
 
+// Auto-open feedback modal if ?feedback=1 is in the URL
+if (new URLSearchParams(window.location.search).get('feedback') === '1') {
+  var fbModal = document.getElementById('feedbackModal');
+  if (fbModal) fbModal.style.display = 'flex';
+}
+
 // Rotating biz image
 var bizImages = ['aunt-tia-business-1.png','aunt-tia-business-2.png','aunt-tia-business-3.png'];
 document.getElementById('biz-img').src = bizImages[Math.floor(Date.now()/(7*24*60*60*1000)) % bizImages.length];
