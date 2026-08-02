@@ -406,6 +406,17 @@
   </div>
 </div>
 
+<div id="airportModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(30,58,74,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:20px;padding:32px;max-width:520px;width:100%;position:relative;max-height:85vh;overflow-y:auto;">
+    <button onclick="document.getElementById('airportModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink);">✕</button>
+    <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;color:var(--ink);margin-bottom:8px;">Which airport is home for you? 🏠✈️</h2>
+    <p style="font-size:0.9rem;color:#64748b;margin-bottom:6px;">I'll show your city's deals first, every time.</p>
+    <p style="font-size:0.8rem;color:#94a3b8;margin-bottom:20px;font-style:italic;">Don't see your exact airport? Pick the closest one for now — as we grow, we'll add more!</p>
+    <div id="airportGrid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;"></div>
+    <button onclick="selectAirport('OTHER')" style="width:100%;background:none;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;font-weight:700;color:var(--sky-deep);cursor:pointer;font-family:'Inter',sans-serif;">🌍 Not flying from Canada</button>
+  </div>
+</div>
+
 </div>
 
 <script>
