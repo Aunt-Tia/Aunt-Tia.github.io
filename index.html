@@ -374,10 +374,25 @@
         <a href="/privacy.html">Privacy Policy</a>
         <a href="mailto:social@skytia.com">Contact</a>
         <a href="#" onclick="document.getElementById('feedbackModal').style.display='flex';return false;">💬 Feedback</a>
-      </div>
-    </div>
-    <div class="footer-disclosure">Some links on SkyTia are affiliate links — if you book through them, I may earn a small commission at no extra cost to you. Prices shown are approximate and may have changed. Always verify before booking. © 2026 SkyTia.</div>
+      <div class="footer-disclosure">Some links on SkyTia are affiliate links — if you book through them, I may earn a small commission at no extra cost to you. Prices shown are approximate and may have changed. Always verify before booking. © 2026 SkyTia.</div>
   </footer>
+
+<div id="feedbackModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(30,58,74,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:20px;padding:32px;max-width:440px;width:100%;position:relative;">
+    <button onclick="document.getElementById('feedbackModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink);">✕</button>
+    <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;color:var(--ink);margin-bottom:8px;">Tell Aunt Tia what's up 🐾</h2>
+    <p style="font-size:0.9rem;color:#64748b;margin-bottom:18px;">Good, bad, or "why does this look weird on my phone" — I read everything, I promise.</p>
+    <div style="display:flex;gap:10px;margin-bottom:16px;" id="moodPicker">
+      <button type="button" class="mood-btn" data-mood="😍 Love it" style="font-size:1.6rem;background:none;border:2px solid #e2e8f0;border-radius:12px;padding:10px 16px;cursor:pointer;">😍</button>
+      <button type="button" class="mood-btn" data-mood="😐 It's okay" style="font-size:1.6rem;background:none;border:2px solid #e2e8f0;border-radius:12px;padding:10px 16px;cursor:pointer;">😐</button>
+      <button type="button" class="mood-btn" data-mood="😤 Frustrated" style="font-size:1.6rem;background:none;border:2px solid #e2e8f0;border-radius:12px;padding:10px 16px;cursor:pointer;">😤</button>
+    </div>
+    <textarea id="feedbackText" placeholder="What's on your mind?" style="width:100%;min-height:100px;border:2px solid #e2e8f0;border-radius:12px;padding:12px;font-family:'Inter',sans-serif;font-size:0.95rem;resize:vertical;margin-bottom:12px;"></textarea>
+    <input id="feedbackEmail" type="email" placeholder="Your email (optional, if you want a reply)" style="width:100%;border:2px solid #e2e8f0;border-radius:12px;padding:12px;font-family:'Inter',sans-serif;font-size:0.9rem;margin-bottom:16px;">
+    <button onclick="submitFeedback()" id="feedbackSubmitBtn" style="width:100%;background:var(--teal);color:#fff;border:none;padding:14px;border-radius:24px;font-weight:700;font-size:1rem;cursor:pointer;">Send to Aunt Tia</button>
+    <p id="feedbackStatus" style="text-align:center;margin-top:12px;font-size:0.9rem;color:var(--teal);display:none;"></p>
+  </div>
+</div>
 
 </div>
 
