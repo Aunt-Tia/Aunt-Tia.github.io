@@ -545,7 +545,7 @@ fetch(DEALS_URL)
     var updated=document.getElementById('deals-updated');
 
     document.getElementById('domestic-grid').innerHTML=dom.length?dom.map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No domestic deals this week — check back Monday!');
-    document.getElementById('intl-grid').innerHTML=intl.length?intl.slice(0,6).map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No international routes this week.');
+    document.getElementById('intl-grid').innerHTML=intl.length?intl.map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No international routes this week.');
     document.getElementById('biz-grid').innerHTML=biz.length?biz.map(function(d,i){return buildBizCard(d,i);}).join(''):noDeals('No business class routes found.');
 
     if(data.updated&&updated) updated.textContent='Last updated '+data.updated+'. Deals refresh every Monday.';
