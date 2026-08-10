@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hidden Fee Calculator — What Your Trip Actually Costs | SkyTia</title>
+<meta name="description" content="Check off what applies to your trip and watch the real total build in real time — resort fees, baggage, booking fees, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://skytia.com/blog/hidden-fees.html">
+<meta property="og:title" content="The Hidden Fee Calculator — What Your Trip Actually Costs">
+<meta property="og:description" content="Check off what applies to your trip and watch the real total build in real time.">
+<meta property="og:image" content="https://skytia.com/aunt-tia-hidden-fees.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Hidden Fee Calculator — What Your Trip Actually Costs">
+<meta name="twitter:description" content="Check off what applies to your trip and watch the real total build in real time.">
+<meta name="twitter:image" content="https://skytia.com/aunt-tia-hidden-fees.png">
+<link rel="icon" type="image/png" href="/icon-192.png">
+<style>
+  :root{--cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;--shadow:rgba(30,58,74,0.10);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.8;}
+  a{color:var(--sky-deep);}
+  .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .logo .plane{color:var(--tan-deep);font-size:1.3rem;transform:rotate(15deg);display:inline-block;}
+  .nav-links{display:flex;gap:20px;align-items:center;font-weight:500;font-size:0.9rem;}
+  .nav-cta{background:var(--sky-deep);color:#fff!important;padding:9px 20px;border-radius:24px;font-weight:600;text-decoration:none;}
+  .article{max-width:760px;margin:0 auto;padding:0 24px;}
+  .article-hero{padding:40px 0 24px;}
+  .article-tag{display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--tan-deep);margin-bottom:10px;}
+  .article-hero h1{font-family:'Fraunces',serif;font-size:2.3rem;color:var(--ink);line-height:1.2;margin-bottom:16px;}
+  .article-meta{font-size:0.85rem;color:#94a3b8;margin-bottom:24px;}
+  .article-intro{font-size:1.1rem;color:var(--charcoal);margin-bottom:20px;line-height:1.7;}
+  .hero-image{width:100%;border-radius:16px;margin-bottom:32px;box-shadow:0 8px 24px var(--shadow);}
+
+  .ticker-wrap{position:sticky;top:16px;z-index:50;background:var(--ink);border-radius:20px;padding:24px 28px;margin-bottom:28px;box-shadow:0 12px 30px var(--shadow);text-align:center;}
+  .ticker-label{font-size:0.78rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;}
+  .ticker-amount{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:700;color:var(--tan);transition:all 0.2s;}
+  .ticker-note{font-size:0.82rem;color:#cbd5e1;margin-top:6px;}
+
+  .checklist{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
+  .fee-item{background:#fff;border:2px solid #e2e8f0;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.15s;}
+  .fee-item:hover{border-color:var(--sky-deep);}
+  .fee-item.checked{border-color:var(--teal);background:#f0fdfa;}
+  .fee-checkbox{width:24px;height:24px;border-radius:6px;border:2px solid #cbd5e1;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:#fff;transition:all 0.15s;}
+  .fee-item.checked .fee-checkbox{background:var(--teal);border-color:var(--teal);}
+  .fee-text{flex:1;}
+  .fee-name{font-weight:700;color:var(--ink);font-size:0.98rem;}
+  .fee-desc{font-size:0.85rem;color:#64748b;margin-top:2px;}
+  .fee-amount{font-family:'Fraunces',serif;font-weight:700;color:var(--tan-deep);font-size:1.1rem;white-space:nowrap;}
+
+  .reveal-box{background:linear-gradient(135deg,var(--teal),#1a7a5e);border-radius:20px;padding:30px 32px;color:#fff;margin-bottom:40px;display:none;}
+  .reveal-box.show{display:block;}
+  .reveal-box h3{font-family:'Fraunces',serif;font-size:1.4rem;margin-bottom:10px;}
+  .reveal-box p{font-size:0.95rem;opacity:0.95;margin-bottom:0;}
+
+  .related{background:var(--ink);border-radius:16px;padding:28px;margin:40px 0;color:#fff;}
+  .related h3{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--tan);margin-bottom:14px;}
+  .related-links{display:flex;flex-direction:column;gap:8px;}
+  .related-links a{color:#94a3b8;font-size:0.9rem;text-decoration:none;}
+  .related-links a:hover{color:#fff;}
+  footer{padding:36px 0 50px;font-size:0.85rem;color:var(--sky-deep);}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
+  .footer-links{display:flex;gap:20px;}
+  .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
+</style>
+</head>
+<body>
+<div class="nav-inner">
+  <nav>
+    <a href="/" class="logo"><span class="plane">✈</span> SkyTia</a>
+    <div class="nav-links">
+      <a href="/">Deals</a>
+      <a href="/blog/">Blog</a>
+      <a href="/needtoknow.html">Need to Know</a>
+      <a href="/#subscribe" class="nav-cta">Get Deals</a>
+    </div>
+  </nav>
+</div>
+
+<div class="article">
+  <div class="article-hero">
+    <div class="article-tag">💸 Travel Money</div>
+    <h1>What Your Trip <em>Actually</em> Costs</h1>
+    <div class="article-meta">By Aunt Tia · August 2026</div>
+    <p class="article-intro">The flight price is never the real price. Check off what applies to your trip and watch the true total build below — no judgment, just math.</p>
+  </div>
+
+  <img src="/aunt-tia-hidden-fees.png" alt="Aunt Tia holding a magnifying glass over a hotel bill covered in hidden fees" class="hero-image">
+
+  <div class="ticker-wrap">
+    <div class="ticker-label">Extra Fees So Far</div>
+    <div class="ticker-amount" id="tickerAmount">$0</div>
+    <div class="ticker-note" id="tickerNote">Tap what applies to your trip below</div>
+  </div>
+
+  <div class="checklist" id="feeChecklist"></div>
+
+  <div class="reveal-box" id="revealBox"></div>
+
+  <div class="related">
+    <h3>More From Aunt Tia</h3>
+    <div class="related-links">
+      <a href="/blog/esim-quiz.html">Which eSIM Do You Actually Need? →</a>
+      <a href="/blog/vpn-travel-guide.html">Do You Actually Need a VPN? →</a>
+      <a href="/luggage.html">Luggage and Baggage Rules →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <a href="/" class="logo" style="font-size:1.2rem;"><span class="plane">✈</span> SkyTia</a>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <p class="footer-disclosure">Fee amounts shown are typical ranges based on common industry practices — actual fees vary by airline, hotel, and destination. Always check the final total before booking. © 2026 SkyTia.</p>
+  </footer>
+</div>
+
+<script>
+const FEES = [
+  { id:'bag', name:'Checked bag', desc:'Almost every "cheap" fare charges for this now', amount:45 },
+  { id:'seat', name:'Seat selection', desc:'Yes, even just to sit next to who you\'re travelling with', amount:25 },
+  { id:'resort', name:'Resort fee', desc:'Charged per night, often not shown until checkout', amount:35 },
+  { id:'booking', name:'Booking site service fee', desc:'A fee for the privilege of using the website', amount:18 },
+  { id:'fx', name:'Foreign transaction fee', desc:'Roughly 2.5-3% on every card swipe abroad', amount:30 },
+  { id:'dcc', name:'"Pay in home currency" at the terminal', desc:'Sounds helpful, quietly costs you more — always choose local currency', amount:15 },
+  { id:'wifi', name:'In-flight wifi', desc:'For the privilege of watching your battery die slower', amount:19 },
+  { id:'boarding', name:'Priority boarding', desc:'To avoid standing in a line for slightly longer', amount:15 },
+  { id:'tax', name:'Tourist / city tax', desc:'Common in Europe, rarely shown in the sticker price', amount:22 },
+  { id:'rental', name:'Rental car "extra" fees', desc:'Additional driver, airport surcharge, facility fee', amount:40 }
+];
+
+let total = 0;
+const checked = {};
+
+function buildChecklist(){
+  const wrap = document.getElementById('feeChecklist');
+  wrap.innerHTML = FEES.map(function(f){
+    return '<div class="fee-item" id="item-' + f.id + '" onclick="toggleFee(\'' + f.id + '\')">' +
+      '<div class="fee-checkbox" id="check-' + f.id + '"></div>' +
+      '<div class="fee-text"><div class="fee-name">' + f.name + '</div><div class="fee-desc">' + f.desc + '</div></div>' +
+      '<div class="fee-amount">~$' + f.amount + '</div>' +
+    '</div>';
+  }).join('');
+}
+buildChecklist();
+
+function toggleFee(id){
+  const fee = FEES.find(function(f){ return f.id === id; });
+  const item = document.getElementById('item-' + id);
+  const check = document.getElementById('check-' + id);
+
+  if (checked[id]) {
+    checked[id] = false;
+    total -= fee.amount;
+    item.classList.remove('checked');
+    check.textContent = '';
+  } else {
+    checked[id] = true;
+    total += fee.amount;
+    item.classList.add('checked');
+    check.textContent = '✓';
+  }
+
+  updateTicker();
+}
+
+function updateTicker(){
+  document.getElementById('tickerAmount').textContent = '$' + total;
+  const note = document.getElementById('tickerNote');
+  const reveal = document.getElementById('revealBox');
+  const checkedCount = Object.values(checked).filter(Boolean).length;
+
+  if (checkedCount === 0) {
+    note.textContent = 'Tap what applies to your trip below';
+    reveal.classList.remove('show');
+    return;
+  }
+
+  note.textContent = checkedCount + ' fee' + (checkedCount > 1 ? 's' : '') + ' selected';
+
+  let title, body;
+  if (total < 50) {
+    title = "Not bad, honestly.";
+    body = "You're relatively fee-light so far. Keep going, or just book with your eyes open — you're already ahead of most people.";
+  } else if (total < 150) {
+    title = "Okay, this adds up.";
+    body = "That's " + total + " CAD on top of whatever price got you excited in the first place. Still worth booking — just know the real number going in.";
+  } else {
+    title = "This is the real trip cost, darling.";
+    body = "$" + total + " CAD in fees alone. None of this is your fault — it's just how pricing works now. The fix isn't guilt, it's checking the all-in total before you book, not the flashy headline price.";
+  }
+
+  reveal.innerHTML = '<h3>' + title + '</h3><p>' + body + '</p>';
+  reveal.classList.add('show');
+}
+</script>
+</body>
+</html>
