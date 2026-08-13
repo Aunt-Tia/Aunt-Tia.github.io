@@ -635,6 +635,128 @@ document.querySelectorAll('.feature-badge, .feature-banner').forEach(function(el
   }
 });
 
+// Postcard-style shareable deal cards
+async function generatePostcard(origin, dest, originCity, destCity, price, quip){
+  await document.fonts.load('700 60px Fraunces');
+  await document.fonts.load('600 32px Caveat');
+  await document.fonts.load('700 24px Inter');
+  await document.fonts.load('400 22px Inter');
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080;
+  canvas.height = 1350;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#F3EBD8';
+  ctx.fillRect(0, 0, 1080, 1350);
+
+  ctx.strokeStyle = '#1E3A4A';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(40, 40, 1000, 1270);
+  ctx.lineWidth = 1;
+  ctx.strokeRect(52, 52, 976, 1246);
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#C98F2E';
+  ctx.font = '700 26px Inter';
+  ctx.fillText('✈  GREETINGS FROM ALBERTA  ✈', 540, 140);
+
+  ctx.fillStyle = '#1E3A4A';
+  ctx.font = '700 100px Fraunces';
+  ctx.fillText(origin + ' → ' + dest, 540, 300);
+
+  ctx.font = '400 34px Inter';
+  ctx.fillStyle = '#2B2420';
+  ctx.fillText(originCity + ' to ' + destCity, 540, 355);
+
+  ctx.strokeStyle = '#94A3B8';
+  ctx.setLineDash([8, 8]);
+  ctx.beginPath();
+  ctx.moveTo(120, 420);
+  ctx.lineTo(960, 420);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  ctx.fillStyle = '#2FAE94';
+  ctx.font = '700 130px Fraunces';
+  ctx.fillText('$' + price + ' CAD', 540, 570);
+  ctx.font = '400 28px Inter';
+  ctx.fillStyle = '#64748B';
+  ctx.fillText('roundtrip', 540, 615);
+
+  ctx.textAlign = 'left';
+  ctx.fillStyle = '#1E3A4A';
+  ctx.font = '600 40px Caveat';
+  const words = ('🐾 ' + quip).split(' ');
+  let line = '', y = 720, maxWidth = 820;
+  words.forEach(function(word){
+    const test = line + word + ' ';
+    if (ctx.measureText(test).width > maxWidth && line !== '') {
+      ctx.fillText(line, 130, y);
+      line = word + ' ';
+      y += 52;
+    } else {
+      line = test;
+    }
+  });
+  ctx.fillText(line, 130, y);
+
+  ctx.strokeStyle = '#C98F2E';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(800, 1080, 160, 130);
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#C98F2E';
+  ctx.font = '700 20px Fraunces';
+  ctx.fillText('✈ SkyTia', 880, 1130);
+  ctx.font = '400 14px Inter';
+  ctx.fillText('POSTAGE PAID', 880, 1155);
+  ctx.fillText('EDMONTON, AB', 880, 1175);
+
+  ctx.textAlign = 'left';
+  ctx.fillStyle = '#1E3A4A';
+  ctx.font = '700 26px Inter';
+  ctx.fillText('Get deals like this free:', 130, 1120);
+  ctx.fillStyle = '#2FAE94';
+  ctx.font = '700 30px Inter';
+  ctx.fillText('skytia.com', 130, 1160);
+  ctx.fillStyle = '#64748B';
+  ctx.font = '400 20px Inter';
+  ctx.fillText('Aunt Tia hunts down Canadian flight deals every week.', 130, 1195);
+
+  return canvas;
+}
+
+async function sharePostcard(origin, dest, originCity, destCity, price, quip, btn){
+  const originalText = btn.textContent;
+  btn.textContent = 'Creating...';
+  btn.disabled = true;
+
+  try {
+    const canvas = await generatePostcard(origin, dest, originCity, destCity, price, quip || 'Great price — book it before it disappears!');
+    canvas.toBlob(async function(blob){
+      const file = new File([blob], 'skytia-' + origin + '-' + dest + '.png', { type: 'image/png' });
+
+      if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: 'SkyTia Deal: ' + origin + ' to ' + dest });
+        } catch(e) {}
+      } else {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'skytia-' + origin + '-' + dest + '.png';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }, 'image/png');
+  } catch(e) {
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }
+}
+
 </script>
 </script>
 
