@@ -746,7 +746,7 @@ async function generatePostcard(origin, dest, originCity, destCity, price, quip)
     ctx.stroke();
   }
 
-  ctx.textAlign = 'left';
+ ctx.textAlign = 'left';
   ctx.fillStyle = '#1E3A4A';
   ctx.font = '700 26px Inter';
   ctx.fillText('Get deals like this free:', 130, 1120);
@@ -756,6 +756,18 @@ async function generatePostcard(origin, dest, originCity, destCity, price, quip)
   ctx.fillStyle = '#64748B';
   ctx.font = '400 20px Inter';
   ctx.fillText('Aunt Tia hunts down Canadian flight deals every week.', 130, 1195);
+
+  try {
+    const qrImg = await loadImage('https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent('https://skytia.com'));
+    ctx.drawImage(qrImg, 800, 1220, 130, 130);
+    ctx.strokeStyle = '#1E3A4A';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(800, 1220, 130, 130);
+    ctx.fillStyle = '#64748B';
+    ctx.font = '400 16px Inter';
+    ctx.textAlign = 'center';
+    ctx.fillText('scan me', 865, 1370);
+  } catch(e){}
 
   return canvas;
 }
