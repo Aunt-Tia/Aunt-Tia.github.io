@@ -215,9 +215,13 @@
       <div style="margin-top:14px;"><a href="/install.html" style="color:var(--teal);font-weight:700;font-size:0.9rem;text-decoration:underline;">📲 Get Aunt Tia on your phone →</a></div>
       <div style="margin-top:8px;"><a href="#" onclick="document.getElementById('airportModal').style.display='flex';return false;" style="color:var(--teal);font-weight:700;font-size:0.9rem;text-decoration:underline;">🏠 Set your home airport →</a></div>
     </div>
-    <div class="hero-art">
+        <div class="hero-art">
       <div class="speech-bubble" id="seasonal-bubble">Found a $310 flight to Lisbon this week!</div>
       <img id="seasonal-img" src="aunt-tia-hero.png" alt="Aunt Tia">
+      <div id="heroPostcardWrap" style="display:none;margin-top:16px;text-align:center;">
+        <div style="font-family:'Caveat',cursive;font-size:1.3rem;color:var(--tan-deep);margin-bottom:8px;">🔥 Today's steal, made shareable</div>
+        <canvas id="heroPostcard" style="max-width:100%;border-radius:12px;box-shadow:0 8px 24px var(--shadow);cursor:pointer;"></canvas>
+      </div>
     </div>
   </div>
 
