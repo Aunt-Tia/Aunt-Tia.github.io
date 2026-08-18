@@ -550,7 +550,29 @@ fetch(DEALS_URL)
     var biz=data.business||[];
     var updated=document.getElementById('deals-updated');
 
-    document.getElementById('domestic-grid').innerHTML=dom.length?dom.map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No domestic deals this week — check back Monday!');
+        document.getElementById('domestic-grid').innerHTML=dom.length?dom.map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No domestic deals this week — check back Monday!');
+
+    if (dom.length) {
+      var top = dom[0];
+      generatePostcard(top.origin, top.destination, top.originCity, top.destinationCity, top.price, top.bubble || 'Great price — book it before it disappears!').then(function(canvas){
+        var heroCanvas = document.getElementById('heroPostcard');
+        var wrap = document.getElementById('heroPostcardWrap');
+        heroCanvas.width = canvas.width;
+        heroCanvas.height = canvas.height;
+        heroCanvas.getContext('2d').drawImage(canvas, 0, 0);
+        heroCanvas.onclick = function(){
+          canvas.toBlob(function(blob){
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'skytia-' + top.origin + '-' + top.destination + '.png';
+            a.click();
+            URL.revokeObjectURL(url);
+          }, 'image/png');
+        };
+        wrap.style.display = 'block';
+      }).catch(function(){});
+    }
     document.getElementById('intl-grid').innerHTML=intl.length?intl.map(function(d,i){return buildCard(d,i);}).join(''):noDeals('No international routes this week.');
     document.getElementById('biz-grid').innerHTML=biz.length?biz.map(function(d,i){return buildBizCard(d,i);}).join(''):noDeals('No business class routes found.');
 
