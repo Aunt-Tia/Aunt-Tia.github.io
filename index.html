@@ -549,7 +549,7 @@ function buildCard(d,i){
   } else if (d.isRecord) {
     recordBadge = '<button onclick="showRecordInfo(\'record\',' + d.timesChecked + ')" style="background:var(--tan);border:none;color:var(--ink);padding:6px 12px;border-radius:8px;font-weight:bold;font-size:0.78rem;cursor:pointer;margin-top:8px;display:block;width:100%;">🏆 Cheapest we\'ve ever seen this route!</button>';
   }
-    return '<div class="deal-card" id="deal-'+d.origin+'-'+d.destination+'"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div>'+priceHtml+'</div><div class="deal-body">'+metaHtml+'<div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a>'+shareBtn+ntkHtml+safetyFlag+'</div></div>';
+      return '<div class="deal-card" id="deal-'+d.origin+'-'+d.destination+'"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div>'+priceHtml+'</div><div class="deal-body">'+metaHtml+'<div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a>'+shareBtn+ntkHtml+safetyFlag+recordBadge+'</div></div>';
 }
 
 function buildBizCard(d,i){
