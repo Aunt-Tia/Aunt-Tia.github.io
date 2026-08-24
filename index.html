@@ -914,6 +914,22 @@ function applyAirportPersonalization(){
   setTimeout(function(){ clearInterval(checkReady); }, 8000);
 }
 
+function showRecordInfo(kind, timesChecked){
+  var icon = document.getElementById('recordModalIcon');
+  var title = document.getElementById('recordModalTitle');
+  var body = document.getElementById('recordModalBody');
+  if (kind === 'new') {
+    icon.textContent = '🔍';
+    title.textContent = "I'm new here too!";
+    body.textContent = "This is genuinely the first time I've ever checked this exact route — I'm basically a psychic who just moved to town. No history to compare this price against yet, but check back in a few weeks and I'll actually be able to tell you if it's a steal.";
+  } else {
+    icon.textContent = '🏆';
+    title.textContent = "This is the real deal.";
+    body.textContent = "Out of " + timesChecked + " times I've checked this exact route, this is the cheapest price I've ever seen. Not a guess, not a gut feeling — an actual record, tracked over time.";
+  }
+  document.getElementById('recordModal').style.display = 'flex';
+}
+
 document.addEventListener('DOMContentLoaded', function(){
   buildAirportGrid();
   if (!localStorage.getItem('skytia_home_airport')) {
