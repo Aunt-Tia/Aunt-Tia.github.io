@@ -535,10 +535,11 @@ function buildCard(d,i){
     return '<div class="deal-card" id="deal-'+d.origin+'-'+d.destination+'"><div class="'+topClass+'"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div>'+priceHtml+'</div><div class="deal-body">'+metaHtml+'<div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Book this flight</a>'+shareBtn+ntkHtml+safetyFlag+'</div></div>';
 }
 
- function buildBizCard(d,i){
+function buildBizCard(d,i){
   var note=d.bubble?d.bubble:'Direct from Alberta. You deserve the good seat.';
   var ntkHtml=NTK[d.destination]?'<a href="'+NTK[d.destination]+'" class="deal-link" style="font-size:0.8rem;color:var(--gold);border-bottom-color:var(--gold-deep);margin-top:6px;display:block;">📋 Entry requirements for Canadians →</a>':'';
-  return '<div class="deal-card premium" id="deal-biz-'+d.origin+'-'+d.destination+'"><div class="deal-top biz"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div style="font-size:0.8rem;color:var(--gold);margin-top:4px;">'+d.label+'</div></div><div class="deal-body"><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices</a>'+ntkHtml+'</div></div>';
+  var safetyFlag=d.destination==='AUH'?'<div style="background:rgba(224,92,74,0.15);border:1px solid #E05C4A;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:0.78rem;color:#ff9d8a;font-weight:600;">⚠️ Canada currently advises against non-essential travel to the UAE. <a href="/needtoknow.html#abudhabi" style="color:#ff9d8a;text-decoration:underline;">Read before booking →</a></div>':'';
+  return '<div class="deal-card premium" id="deal-biz-'+d.origin+'-'+d.destination+'"><div class="deal-top biz"><div class="deal-route">'+d.origin+' to '+d.destination+'</div><div class="deal-cities">'+d.originCity+' to '+d.destinationCity+'</div><div style="font-size:0.8rem;color:var(--gold);margin-top:4px;">'+d.label+'</div></div><div class="deal-body"><div class="deal-note">'+note+'</div><a href="'+d.url+'" class="deal-link" target="_blank" rel="noopener">Search Business Class Prices</a>'+ntkHtml+safetyFlag+'</div></div>';
 }
   
 if ('serviceWorker' in navigator) {
