@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince George Flights (YXS) — All Deals | SkyTia</title>
+<meta name="description" content="Flight deals from Prince George (YXS) — direct to Vancouver, Calgary and Edmonton. Northern BC, Aunt Tia sees you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;--ink:#1E3A4A;--charcoal:#2B2420;--gold:#D4A843;--gold-deep:#A67C2E;--navy:#0D1B2A;--shadow:rgba(30,58,74,0.10);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px;}
+  .logo .plane{color:var(--tan-deep);font-size:1.3rem;transform:rotate(15deg);display:inline-block;}
+  .nav-links{display:flex;gap:20px;align-items:center;font-weight:500;font-size:0.9rem;flex-wrap:wrap;}
+  .nav-cta{background:var(--sky-deep);color:#fff!important;padding:9px 20px;border-radius:24px;font-weight:600;}
+
+  .city-hero{background:linear-gradient(135deg,#1a3a2a,#0D1B2A);border-radius:20px;padding:40px;margin:20px 0 40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;}
+  @media(max-width:600px){.city-hero{grid-template-columns:1fr;}}
+  .city-hero h1{font-family:'Fraunces',serif;font-size:2.4rem;color:#fff;margin-bottom:8px;}
+  .city-hero p{color:#94a3b8;font-size:1rem;margin-bottom:16px;}
+  .city-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;padding:8px 18px;border-radius:20px;font-weight:700;font-size:0.9rem;}
+  .city-hero img{width:200px;border-radius:12px;}
+
+  .section{padding:40px 0;}
+  .section-tab{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);padding:8px 20px;border-radius:24px;font-weight:600;font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:24px;}
+  .section-tab .dot{width:8px;height:8px;border-radius:50%;background:var(--tan);}
+
+  .deals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:760px){.deals-grid{grid-template-columns:1fr;}}
+  .deal-card{background:#fff;border-radius:16px;box-shadow:0 6px 18px var(--shadow);overflow:hidden;transition:transform 0.2s;}
+  .deal-card:hover{transform:translateY(-3px);}
+  .deal-top{background:var(--teal);color:#fff;padding:18px 20px;}
+  .deal-route{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;}
+  .deal-cities{font-size:0.82rem;opacity:0.85;margin-top:2px;}
+  .deal-price{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-top:4px;}
+  .deal-body{padding:16px 20px 20px;}
+  .deal-note{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--tan-deep);margin-bottom:12px;}
+  .deal-meta{font-size:0.82rem;color:var(--sky-deep);margin-bottom:10px;}
+  .deal-link{display:inline-block;font-weight:700;font-size:0.88rem;color:var(--ink);border-bottom:2px solid var(--tan-deep);padding-bottom:1px;}
+
+  .yxs-note{background:#fff;border-radius:16px;padding:28px;box-shadow:0 6px 18px var(--shadow);margin-bottom:32px;}
+  .yxs-note h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);margin-bottom:8px;}
+  .yxs-note p{font-size:0.92rem;color:var(--charcoal);margin-bottom:16px;}
+  .yxs-routes{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media(max-width:500px){.yxs-routes{grid-template-columns:1fr;}}
+  .yxs-route{background:var(--cream);border-radius:12px;padding:14px 16px;border-left:4px solid var(--teal);}
+  .yxs-route strong{display:block;font-size:0.9rem;color:var(--ink);}
+  .yxs-route span{font-size:0.82rem;color:var(--charcoal);}
+  .yxs-route a{display:inline-block;margin-top:8px;font-size:0.82rem;font-weight:700;color:var(--teal);}
+
+  .alberta-banner{background:linear-gradient(135deg,var(--ink),#1a3a2a);border-radius:20px;padding:36px;text-align:center;margin:20px 0 40px;}
+  .alberta-banner h2{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--tan);margin-bottom:8px;}
+  .alberta-banner p{color:#94a3b8;margin-bottom:20px;}
+  .city-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .city-btn{padding:10px 20px;border-radius:20px;font-weight:700;font-size:0.88rem;color:#fff;}
+
+  footer{padding:36px 0 50px;font-size:0.85rem;color:var(--sky-deep);}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
+  .footer-links{display:flex;gap:20px;}
+  .footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <nav>
+    <a href="/" class="logo"><span class="plane">✈</span> SkyTia</a>
+    <div class="nav-links">
+      <a href="/edmonton">YEG</a>
+      <a href="/calgary">YYC</a>
+      <a href="/#deals">All Deals</a>
+      <a href="/#subscribe" class="nav-cta">Get Deals</a>
+    </div>
+  </nav>
+
+  <div class="city-hero">
+    <div>
+      <div style="font-family:'Caveat',cursive;font-size:1.3rem;color:var(--tan);margin-bottom:4px;">Prince George Airport</div>
+      <h1>YXS Flights</h1>
+      <p>Northern BC crew — Aunt Tia sees you too. Direct flights to Vancouver, Calgary and Edmonton. Real prices, no Toronto bias.</p>
+      <div class="city-badge">YXS · Prince George · Northern BC</div>
+    </div>
+    <img src="aunt-tia-princegeorge.png" alt="Aunt Tia in Prince George" id="yxs-img">
+  </div>
+
+  <!-- DIRECT ROUTES -->
+  <div class="section">
+    <div class="section-tab"><span class="dot"></span>YXS Direct Flights</div>
+
+    <div class="yxs-note">
+      <h3>Prince George's Direct Routes</h3>
+      <p>Prince George has direct flights to 3 destinations. No international flights yet — but Aunt Tia is watching. For international travel, connect through Vancouver, Calgary or Edmonton.</p>
+      <div class="yxs-routes">
+        <div class="yxs-route">
+          <strong>YXS → YVR Vancouver</strong>
+          <span>Air Canada + WestJet · multiple daily</span>
+          <a href="https://www.aviasales.com/search/YXSYVR1?marker=744905&currency=cad" target="_blank" rel="noopener">Search prices →</a>
+        </div>
+        <div class="yxs-route">
+          <strong>YXS → YYC Calgary</strong>
+          <span>WestJet · direct</span>
+          <a href="https://www.aviasales.com/search/YXSYYC1?marker=744905&currency=cad" target="_blank" rel="noopener">Search prices →</a>
+        </div>
+        <div class="yxs-route">
+          <strong>YXS → YEG Edmonton</strong>
+          <span>WestJet · direct</span>
+          <a href="https://www.aviasales.com/search/YXSYEG1?marker=744905&currency=cad" target="_blank" rel="noopener">Search prices →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deals-grid" id="yxs-deals">
+      <div class="deal-card" style="grid-column:1/-1;text-align:center;padding:40px;color:var(--sky-deep);">Loading YXS deals...</div>
+    </div>
+    <p style="margin-top:16px;font-size:0.82rem;color:var(--sky-deep);font-style:italic;">✦ Prices are roundtrip estimates. Always verify before booking.</p>
+  </div>
+
+  <!-- CONNECT THROUGH ALBERTA/VANCOUVER -->
+  <div class="section">
+    <div class="section-tab"><span class="dot"></span>Flying International from Prince George?</div>
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 6px 18px var(--shadow);">
+      <p style="font-size:0.95rem;color:var(--charcoal);margin-bottom:20px;">No direct international flights from YXS — but Vancouver, Calgary and Edmonton all have direct connections to Amsterdam, London, Paris, Frankfurt, Abu Dhabi and more.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/edmonton" style="background:var(--teal);color:#fff;padding:12px 24px;border-radius:12px;font-weight:700;display:inline-block;">YEG International Flights</a>
+        <a href="/calgary" style="background:var(--sky-deep);color:#fff;padding:12px 24px;border-radius:12px;font-weight:700;display:inline-block;">YYC International Flights</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="alberta-banner">
+    <h2>Aunt Tia Flies North Too.</h2>
+    <p>Alberta first, but Prince George isn't forgotten. No Toronto bias. Ever.</p>
+    <div class="city-btns">
+      <a href="/edmonton" class="city-btn" style="background:var(--teal);">Edmonton (YEG)</a>
+      <a href="/calgary" class="city-btn" style="background:var(--sky-deep);">Calgary (YYC)</a>
+      <a href="/" class="city-btn" style="background:var(--ink);">All Deals</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <a href="/" class="logo" style="font-size:1.1rem;"><span class="plane" style="font-size:1rem;">✈</span> SkyTia</a>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="mailto:social@skytia.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-disclosure">Booking links are affiliate links — Aunt Tia earns a small commission at no extra cost to you. Prices are estimates and may have changed. Always verify before booking. © 2026 SkyTia.</div>
+  </footer>
+</div>
+
+<script>
+var DEALS_URL = 'https://raw.githubusercontent.com/Aunt-Tia/skytia-deals/main/deals.json';
+function formatDate(d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateString('en-CA',{month:'short',day:'numeric'}); } catch(e) { return d; } }
+function noDeals(msg) { return '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">' + msg + '</p></div>'; }
+
+fetch(DEALS_URL).then(function(r){ return r.json(); }).then(function(data) {
+  var routes = data.princegeorge && data.princegeorge.routes ? data.princegeorge.routes : [];
+  if (!routes.length) {
+    document.getElementById('yxs-deals').innerHTML = noDeals('Checking Prince George prices — check back shortly!');
+    return;
+  }
+  var cards = routes.map(function(r) {
+    var priceHtml = r.price
+      ? '<div class="deal-price">$' + r.price + ' CAD</div><div style="font-size:0.72rem;opacity:0.8">roundtrip</div>'
+      : '<div style="font-size:0.9rem;margin-top:6px;opacity:0.85">Check live prices</div>';
+    var dateHtml = r.departDate
+      ? '<div class="deal-meta">Around ' + formatDate(r.departDate) + '</div>'
+      : '';
+    return '<div class="deal-card"><div class="deal-top">' +
+      '<div class="deal-route">' + r.origin + ' to ' + r.destination + '</div>' +
+      '<div class="deal-cities">' + r.originCity + ' to ' + r.destinationCity + '</div>' +
+      priceHtml + '</div><div class="deal-body">' + dateHtml +
+      '<div class="deal-meta">Direct flight available</div>' +
+      '<a href="' + r.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a>' +
+      '</div></div>';
+  }).join('');
+  document.getElementById('yxs-deals').innerHTML = cards;
+}).catch(function(){
+  document.getElementById('yxs-deals').innerHTML = noDeals('Deals loading — check back shortly!');
+});
+</script>
+</body>
+</html>
