@@ -285,12 +285,13 @@
   <div class="section" id="alberta">
     <div class="alberta-banner">
       <div class="eyebrow">Nobody puts Alberta First like Aunt Tia</div>
-      <h2>Flying from YEG, YYC or Fort Mac?</h2>
+      <h2>Flying from YEG, YYC, Fort Mac or Prince George?</h2>
       <p>Aunt Tia has a full page for every Alberta airport — every domestic deal, every direct international route, and every business class pick. All in one place. Alberta first, always.</p>
       <div class="city-btns">
         <a href="/edmonton" class="city-btn" style="background:var(--teal);">All YEG Flights</a>
         <a href="/calgary" class="city-btn" style="background:var(--sky-deep);">All YYC Flights</a>
         <a href="/fortmcmurray" class="city-btn" style="background:var(--tan-deep);">Fort McMurray (YMM)</a>
+        <a href="/princegeorge" class="city-btn" style="background:var(--gold-deep);">Prince George (YXS)</a>
       </div>
     </div>
   </div>
@@ -469,7 +470,7 @@ document.addEventListener('click', function(e) {
 fetch('/blog/index.html')
   .then(function(r){return r.text();})
   .then(function(html){
-    var firstCard = html.split('<div class="blog-card">')[1];
+     var firstCard = html.split('<div class="blog-card">')[1];
     if (!firstCard) return;
     var titleMatch = firstCard.match(/<h2>([\s\S]*?)<\/h2>/);
     var teaserMatch = firstCard.match(/<p>([\s\S]*?)<\/p>/);
@@ -941,4 +942,4 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
   <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
-</html>
+</html>   
