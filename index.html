@@ -462,7 +462,7 @@ document.addEventListener('click', function(e) {
 fetch('/blog/index.html')
   .then(function(r){return r.text();})
   .then(function(html){
-     var firstCard = html.split('<div class="blog-card">')[1];
+     var firstCard = html.split(/<div class="blog-card"[^>]*>/)[1];
     if (!firstCard) return;
     var titleMatch = firstCard.match(/<h2>([\s\S]*?)<\/h2>/);
     var teaserMatch = firstCard.match(/<p>([\s\S]*?)<\/p>/);
