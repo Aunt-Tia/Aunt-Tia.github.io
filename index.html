@@ -200,7 +200,7 @@
      <a href="/blog/" style="position:relative;">Blog<span id="navNewBadge1" style="position:absolute;top:-10px;right:-22px;background:var(--tan-deep);color:#fff;font-size:0.62rem;font-weight:700;padding:2px 6px;border-radius:8px;letter-spacing:0.03em;">NEW</span></a>
       <a href="#alberta">Alberta First</a>
       <a href="/needtoknow.html">Need to Know</a>
-      <a href="#featureBannerAnchor" class="feature-badge" data-feature-date="2026-08-12" style="background:var(--gold-deep);color:#fff!important;padding:6px 16px;border-radius:20px;font-weight:700;font-size:0.85rem;">🆕 New Feature!</a>
+      <a href="#topBanner" class="feature-badge" data-feature-date="2026-08-12" style="background:var(--gold-deep);color:#fff!important;padding:6px 16px;border-radius:20px;font-weight:700;font-size:0.85rem;">🆕 New Feature!</a>
     </div>
     <a href="#subscribe" class="nav-cta" style="margin-left:auto;margin-right:16px;">Get Deals</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
@@ -240,24 +240,16 @@
     </div>
   </div>
 
- <!-- NEW FEATURE ANNOUNCEMENT (reusable — just update text/link/date for each new launch) -->
-  <div id="featureBannerAnchor" class="feature-banner" data-feature-date="2026-08-12" style="background:linear-gradient(135deg,var(--gold-deep),#7a5c1f);border-radius:20px;padding:32px 36px;margin:20px 0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-    <div>
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.2);color:#fff;padding:5px 14px;border-radius:20px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">🆕 New Feature</div>
-      <h2 style="font-family:'Fraunces',serif;font-size:1.6rem;color:#fff;margin-bottom:6px;">Found a deal your friend needs to see? 📮🐾</h2>
-      <p style="color:rgba(255,255,255,0.9);font-size:0.95rem;margin:0;">Every deal now has a "Share" button — turns it into a real postcard, scannable QR code and all. Forward it, post it, text it. One tap.</p>
+ <!-- TOP BANNER: shows the newest of (a) a feature announcement or (b) the latest
+      blog post, whichever is more recent and still within its 7-day window.
+      Hidden entirely when neither is fresh, so it doesn't compete with the hero
+      once both have aged out. Update FEATURE below for each new launch. -->
+  <div id="topBanner" style="display:none;border-radius:14px;padding:14px 22px;margin:18px 0 30px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:12px;flex:1;min-width:220px;">
+      <span id="topBannerTag" style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.22);color:#fff;padding:4px 12px;border-radius:14px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;"></span>
+      <span id="topBannerText" style="color:#fff;font-size:0.92rem;font-weight:600;"></span>
     </div>
-    <a href="#deals" style="background:#fff;color:var(--gold-deep);padding:14px 28px;border-radius:24px;font-weight:700;font-size:0.95rem;white-space:nowrap;flex-shrink:0;">Try It →</a>
-  </div>
-
-  <!-- NEW BLOG PROMO -->
-  <div id="blogPromoBanner" style="background:linear-gradient(135deg,var(--teal),#1a7a5e);border-radius:20px;padding:32px 36px;margin:20px 0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-    <div>
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.2);color:#fff;padding:5px 14px;border-radius:20px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">🔥 Just Posted</div>
-      <h2 id="blogPromoTitle" style="font-family:'Fraunces',serif;font-size:1.6rem;color:#fff;margin-bottom:6px;">Loading...</h2>
-      <p id="blogPromoTeaser" style="color:rgba(255,255,255,0.9);font-size:0.95rem;margin:0;"></p>
-    </div>
-    <a id="blogPromoLink" href="/blog/" style="background:#fff;color:var(--teal);padding:14px 28px;border-radius:24px;font-weight:700;font-size:0.95rem;white-space:nowrap;flex-shrink:0;">Check it out →</a>
+    <a id="topBannerLink" href="#" style="background:#fff;padding:8px 18px;border-radius:20px;font-weight:700;font-size:0.85rem;white-space:nowrap;flex-shrink:0;"></a>
   </div>
 
   <!-- DOMESTIC DEALS -->
@@ -482,32 +474,72 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Pull the latest blog post dynamically for the homepage promo banner and nav "NEW" badge
-fetch('/blog/index.html')
-  .then(function(r){return r.text();})
-  .then(function(html){
-     var firstCard = html.split(/<div class="blog-card"[^>]*>/)[1];
-    if (!firstCard) return;
-    var titleMatch = firstCard.match(/<h2>([\s\S]*?)<\/h2>/);
-    var teaserMatch = firstCard.match(/<p>([\s\S]*?)<\/p>/);
-    var linkMatch = firstCard.match(/<a href="([^"]*)"[^>]*class="read-more"/);
-    var dateMatch = firstCard.match(/<div class="blog-date">([\s\S]*?)<\/div>/);
-    if (!titleMatch || !linkMatch) return;
-    var banner = document.getElementById('blogPromoBanner');
-    if (banner) {
-      document.getElementById('blogPromoTitle').textContent = titleMatch[1].trim();
-      document.getElementById('blogPromoTeaser').textContent = teaserMatch ? teaserMatch[1].trim() : '';
-      document.getElementById('blogPromoLink').href = linkMatch[1];
-    }
-    var badges = [document.getElementById('navNewBadge1'), document.getElementById('navNewBadge2')];
-    if (dateMatch) {
-      var postDate = new Date(dateMatch[1].trim());
-      var daysSince = (Date.now() - postDate.getTime()) / (1000 * 60 * 60 * 24);
-      if (isNaN(daysSince) || daysSince > 7) {
-        badges.forEach(function(b){ if (b) b.style.display = 'none'; });
-      }
-    }
-  }).catch(function(){});
+// Top banner: shows a feature announcement if it's still within its 7-day
+// window, otherwise the latest blog post if THAT is still fresh, otherwise
+// nothing. Also drives the nav "Blog NEW" badges off the same fetch, so
+// there's one source of truth instead of two mechanisms that can drift apart.
+(function(){
+  var FEATURE = {
+    date: '2026-08-12',
+    tag: '🆕 New',
+    text: 'Found a deal your friend needs to see? Every deal has a Share button now.',
+    href: '#deals',
+    cta: 'Try it →',
+    bg: 'linear-gradient(135deg,var(--gold-deep),#7a5c1f)',
+    color: 'var(--gold-deep)'
+  };
+
+  var banner = document.getElementById('topBanner');
+  var tagEl = document.getElementById('topBannerTag');
+  var textEl = document.getElementById('topBannerText');
+  var linkEl = document.getElementById('topBannerLink');
+  var navBadges = [document.getElementById('navNewBadge1'), document.getElementById('navNewBadge2')];
+  navBadges.forEach(function(b){ if (b) b.style.display = 'none'; });
+
+  function daysSince(dateStr){
+    var d = new Date(dateStr);
+    return (Date.now() - d.getTime()) / (1000 * 60 * 60 * 24);
+  }
+
+  function showBanner(cfg){
+    if (!banner) return;
+    banner.style.display = 'flex';
+    banner.style.background = cfg.bg;
+    tagEl.textContent = cfg.tag;
+    textEl.textContent = cfg.text;
+    linkEl.href = cfg.href;
+    linkEl.textContent = cfg.cta;
+    linkEl.style.color = cfg.color;
+  }
+
+  var featureDays = daysSince(FEATURE.date);
+  if (!isNaN(featureDays) && featureDays <= 7) {
+    showBanner(FEATURE);
+    return;
+  }
+
+  fetch('/blog/index.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var firstCard = html.split(/<div class="blog-card"[^>]*>/)[1];
+      if (!firstCard) return;
+      var titleMatch = firstCard.match(/<h2>([\s\S]*?)<\/h2>/);
+      var linkMatch = firstCard.match(/<a href="([^"]*)"[^>]*class="read-more"/);
+      var dateMatch = firstCard.match(/<div class="blog-date">([\s\S]*?)<\/div>/);
+      if (!titleMatch || !linkMatch || !dateMatch) return;
+      var days = daysSince(dateMatch[1].trim());
+      if (isNaN(days) || days > 7) return;
+      showBanner({
+        tag: '🔥 Just posted',
+        text: titleMatch[1].trim(),
+        href: linkMatch[1],
+        cta: 'Read →',
+        bg: 'linear-gradient(135deg,var(--teal),#1a7a5e)',
+        color: 'var(--teal)'
+      });
+      navBadges.forEach(function(b){ if (b) b.style.display = ''; });
+    }).catch(function(){});
+})();
 
 // Auto-open feedback modal if ?feedback=1 is in the URL
 if (new URLSearchParams(window.location.search).get('feedback') === '1') {
