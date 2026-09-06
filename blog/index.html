@@ -180,5 +180,17 @@
     <div class="footer-disclosure">© 2026 SkyTia. Some links are affiliate links — Aunt Tia earns a small commission at no extra cost to you.</div>
   </footer>
 </div>
+<script>
+(function(){
+  var card = document.getElementById('latestBlogCard');
+  var badge = document.getElementById('latestBlogBadge');
+  if (!card || !badge) return;
+  var postDate = new Date(card.dataset.postDate);
+  var daysSince = (Date.now() - postDate.getTime()) / (1000 * 60 * 60 * 24);
+  if (isNaN(daysSince) || daysSince > 7) {
+    badge.style.display = 'none';
+  }
+})();
+</script>
 </body>
 </html>
