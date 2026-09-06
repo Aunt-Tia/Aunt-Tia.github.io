@@ -1,0 +1,20 @@
+:root{
+  --cream:#FBF7EF;--sky:#4FA8D8;--sky-deep:#2C7DAE;--teal:#2FAE94;--tan:#E8B45C;--tan-deep:#C98F2E;
+  --ink:#1E3A4A;--charcoal:#2B2420;--gold:#D4A843;--gold-deep:#A67C2E;--navy:#0D1B2A;--shadow:rgba(30,58,74,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+
+/* Shared site chrome — nav, logo, footer. Kept in one place so every page
+   stays visually in sync (see git history for the bugs that came from
+   copy-pasting this per page). Page-specific layout stays inline per page. */
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+.logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo .plane{color:var(--tan-deep);font-size:1.3rem;transform:rotate(15deg);display:inline-block;}
+.nav-cta{background:var(--sky-deep);color:#fff!important;padding:10px 22px;border-radius:24px;font-weight:600;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--ink);}
+
+footer{padding:36px 0 50px;font-size:0.85rem;color:var(--sky-deep);}
+.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;align-items:center;}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a:hover{color:var(--tan-deep);}
+.footer-disclosure{max-width:660px;line-height:1.6;color:var(--charcoal);opacity:0.7;}
