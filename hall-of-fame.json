@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14",
+  "updated": "2026-09-21",
   "routes": [
     {
       "origin": "YYC",
@@ -8,53 +8,9 @@
       "destinationCity": "Barcelona",
       "lowestPrice": 861,
       "lowestDate": "2026-09-07",
-      "avgPrice": 1434,
-      "timesChecked": 4,
-      "savingsPct": 40
-    },
-    {
-      "origin": "YEG",
-      "destination": "SFO",
-      "originCity": "Edmonton",
-      "destinationCity": "San Francisco",
-      "lowestPrice": 415,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 676,
-      "timesChecked": 4,
-      "savingsPct": 39
-    },
-    {
-      "origin": "YEG",
-      "destination": "YYJ",
-      "originCity": "Edmonton",
-      "destinationCity": "Victoria",
-      "lowestPrice": 118,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 191,
-      "timesChecked": 3,
-      "savingsPct": 38
-    },
-    {
-      "origin": "YXE",
-      "destination": "YVR",
-      "originCity": "Saskatoon",
-      "destinationCity": "Vancouver",
-      "lowestPrice": 137,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 217,
-      "timesChecked": 2,
+      "avgPrice": 1372,
+      "timesChecked": 5,
       "savingsPct": 37
-    },
-    {
-      "origin": "YEG",
-      "destination": "IAH",
-      "originCity": "Edmonton",
-      "destinationCity": "Houston",
-      "lowestPrice": 487,
-      "lowestDate": "2026-08-31",
-      "avgPrice": 747,
-      "timesChecked": 4,
-      "savingsPct": 35
     },
     {
       "origin": "YEG",
@@ -63,8 +19,52 @@
       "destinationCity": "Los Angeles",
       "lowestPrice": 384,
       "lowestDate": "2026-09-14",
-      "avgPrice": 553,
+      "avgPrice": 599,
+      "timesChecked": 5,
+      "savingsPct": 36
+    },
+    {
+      "origin": "YEG",
+      "destination": "SFO",
+      "originCity": "Edmonton",
+      "destinationCity": "San Francisco",
+      "lowestPrice": 411,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 623,
+      "timesChecked": 5,
+      "savingsPct": 34
+    },
+    {
+      "origin": "YEG",
+      "destination": "YYJ",
+      "originCity": "Edmonton",
+      "destinationCity": "Victoria",
+      "lowestPrice": 118,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 174,
       "timesChecked": 4,
+      "savingsPct": 32
+    },
+    {
+      "origin": "YEG",
+      "destination": "IAH",
+      "originCity": "Edmonton",
+      "destinationCity": "Houston",
+      "lowestPrice": 487,
+      "lowestDate": "2026-08-31",
+      "avgPrice": 721,
+      "timesChecked": 5,
+      "savingsPct": 32
+    },
+    {
+      "origin": "YXE",
+      "destination": "YVR",
+      "originCity": "Saskatoon",
+      "destinationCity": "Vancouver",
+      "lowestPrice": 137,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 199,
+      "timesChecked": 3,
       "savingsPct": 31
     },
     {
@@ -79,26 +79,48 @@
       "savingsPct": 30
     },
     {
-      "origin": "YYC",
-      "destination": "AMS",
-      "originCity": "Calgary",
-      "destinationCity": "Amsterdam",
-      "lowestPrice": 877,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 1226,
-      "timesChecked": 4,
-      "savingsPct": 28
-    },
-    {
       "origin": "YEG",
       "destination": "SEA",
       "originCity": "Edmonton",
       "destinationCity": "Seattle",
       "lowestPrice": 520,
       "lowestDate": "2026-08-24",
-      "avgPrice": 705,
+      "avgPrice": 726,
+      "timesChecked": 5,
+      "savingsPct": 28
+    },
+    {
+      "origin": "YWG",
+      "destination": "YOW",
+      "originCity": "Winnipeg",
+      "destinationCity": "Ottawa",
+      "lowestPrice": 195,
+      "lowestDate": "2026-08-24",
+      "avgPrice": 262,
       "timesChecked": 4,
       "savingsPct": 26
+    },
+    {
+      "origin": "YYC",
+      "destination": "AMS",
+      "originCity": "Calgary",
+      "destinationCity": "Amsterdam",
+      "lowestPrice": 877,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 1186,
+      "timesChecked": 5,
+      "savingsPct": 26
+    },
+    {
+      "origin": "YEG",
+      "destination": "AMS",
+      "originCity": "Edmonton",
+      "destinationCity": "Amsterdam",
+      "lowestPrice": 983,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 1319,
+      "timesChecked": 4,
+      "savingsPct": 25
     },
     {
       "origin": "YYZ",
@@ -112,6 +134,17 @@
       "savingsPct": 25
     },
     {
+      "origin": "YYC",
+      "destination": "FCO",
+      "originCity": "Calgary",
+      "destinationCity": "Rome",
+      "lowestPrice": 944,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 1240,
+      "timesChecked": 5,
+      "savingsPct": 24
+    },
+    {
       "origin": "YQM",
       "destination": "YYZ",
       "originCity": "Moncton",
@@ -119,30 +152,8 @@
       "lowestPrice": 247,
       "lowestDate": "2026-08-24",
       "avgPrice": 320,
-      "timesChecked": 4,
+      "timesChecked": 5,
       "savingsPct": 23
-    },
-    {
-      "origin": "YEG",
-      "destination": "AMS",
-      "originCity": "Edmonton",
-      "destinationCity": "Amsterdam",
-      "lowestPrice": 1101,
-      "lowestDate": "2026-08-24",
-      "avgPrice": 1431,
-      "timesChecked": 3,
-      "savingsPct": 23
-    },
-    {
-      "origin": "YYC",
-      "destination": "LHR",
-      "originCity": "Calgary",
-      "destinationCity": "London",
-      "lowestPrice": 733,
-      "lowestDate": "2026-09-07",
-      "avgPrice": 940,
-      "timesChecked": 4,
-      "savingsPct": 22
     },
     {
       "origin": "YYC",
@@ -156,35 +167,123 @@
       "savingsPct": 22
     },
     {
+      "origin": "YYZ",
+      "destination": "YOW",
+      "originCity": "Toronto",
+      "destinationCity": "Ottawa",
+      "lowestPrice": 179,
+      "lowestDate": "2026-09-07",
+      "avgPrice": 226,
+      "timesChecked": 4,
+      "savingsPct": 21
+    },
+    {
+      "origin": "YYC",
+      "destination": "FRA",
+      "originCity": "Calgary",
+      "destinationCity": "Frankfurt",
+      "lowestPrice": 1218,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 1537,
+      "timesChecked": 5,
+      "savingsPct": 21
+    },
+    {
+      "origin": "YUL",
+      "destination": "YYZ",
+      "originCity": "Montreal",
+      "destinationCity": "Toronto",
+      "lowestPrice": 155,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 193,
+      "timesChecked": 4,
+      "savingsPct": 20
+    },
+    {
+      "origin": "YQR",
+      "destination": "YYJ",
+      "originCity": "Regina",
+      "destinationCity": "Victoria",
+      "lowestPrice": 206,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 258,
+      "timesChecked": 2,
+      "savingsPct": 20
+    },
+    {
+      "origin": "YYC",
+      "destination": "LHR",
+      "originCity": "Calgary",
+      "destinationCity": "London",
+      "lowestPrice": 733,
+      "lowestDate": "2026-09-07",
+      "avgPrice": 906,
+      "timesChecked": 5,
+      "savingsPct": 19
+    },
+    {
+      "origin": "YEG",
+      "destination": "LAS",
+      "originCity": "Edmonton",
+      "destinationCity": "Las Vegas",
+      "lowestPrice": 415,
+      "lowestDate": "2026-08-24",
+      "avgPrice": 507,
+      "timesChecked": 5,
+      "savingsPct": 18
+    },
+    {
+      "origin": "YYZ",
+      "destination": "YYT",
+      "originCity": "Toronto",
+      "destinationCity": "St. John's",
+      "lowestPrice": 204,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 248,
+      "timesChecked": 4,
+      "savingsPct": 18
+    },
+    {
+      "origin": "YWG",
+      "destination": "YYC",
+      "originCity": "Winnipeg",
+      "destinationCity": "Calgary",
+      "lowestPrice": 167,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 201,
+      "timesChecked": 5,
+      "savingsPct": 17
+    },
+    {
       "origin": "YEG",
       "destination": "DEN",
       "originCity": "Edmonton",
       "destinationCity": "Denver",
       "lowestPrice": 607,
       "lowestDate": "2026-09-07",
-      "avgPrice": 745,
-      "timesChecked": 4,
-      "savingsPct": 19
-    },
-    {
-      "origin": "YWG",
-      "destination": "YOW",
-      "originCity": "Winnipeg",
-      "destinationCity": "Ottawa",
-      "lowestPrice": 195,
-      "lowestDate": "2026-08-24",
-      "avgPrice": 237,
-      "timesChecked": 3,
-      "savingsPct": 18
+      "avgPrice": 735,
+      "timesChecked": 5,
+      "savingsPct": 17
     },
     {
       "origin": "YEG",
       "destination": "PHX",
       "originCity": "Edmonton",
       "destinationCity": "Phoenix",
-      "lowestPrice": 238,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 285,
+      "lowestPrice": 227,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 273,
+      "timesChecked": 5,
+      "savingsPct": 17
+    },
+    {
+      "origin": "YEG",
+      "destination": "YYC",
+      "originCity": "Edmonton",
+      "destinationCity": "Calgary",
+      "lowestPrice": 122,
+      "lowestDate": "2026-09-07",
+      "avgPrice": 146,
       "timesChecked": 4,
       "savingsPct": 16
     },
@@ -195,18 +294,18 @@
       "destinationCity": "Minneapolis",
       "lowestPrice": 309,
       "lowestDate": "2026-08-24",
-      "avgPrice": 366,
-      "timesChecked": 4,
+      "avgPrice": 369,
+      "timesChecked": 5,
       "savingsPct": 16
     },
     {
-      "origin": "YYZ",
-      "destination": "YVR",
-      "originCity": "Toronto",
-      "destinationCity": "Vancouver",
-      "lowestPrice": 223,
-      "lowestDate": "2026-08-24",
-      "avgPrice": 262,
+      "origin": "YXE",
+      "destination": "YYZ",
+      "originCity": "Saskatoon",
+      "destinationCity": "Toronto",
+      "lowestPrice": 188,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 221,
       "timesChecked": 3,
       "savingsPct": 15
     },
@@ -222,46 +321,35 @@
       "savingsPct": 15
     },
     {
-      "origin": "YWG",
+      "origin": "YEG",
+      "destination": "YUL",
+      "originCity": "Edmonton",
+      "destinationCity": "Montreal",
+      "lowestPrice": 268,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 316,
+      "timesChecked": 3,
+      "savingsPct": 15
+    },
+    {
+      "origin": "YUL",
       "destination": "YYC",
-      "originCity": "Winnipeg",
+      "originCity": "Montreal",
       "destinationCity": "Calgary",
-      "lowestPrice": 167,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 197,
-      "timesChecked": 4,
+      "lowestPrice": 211,
+      "lowestDate": "2026-09-07",
+      "avgPrice": 247,
+      "timesChecked": 3,
       "savingsPct": 15
     },
     {
-      "origin": "YYC",
-      "destination": "FRA",
-      "originCity": "Calgary",
-      "destinationCity": "Frankfurt",
-      "lowestPrice": 1369,
+      "origin": "YYZ",
+      "destination": "YVR",
+      "originCity": "Toronto",
+      "destinationCity": "Vancouver",
+      "lowestPrice": 223,
       "lowestDate": "2026-08-24",
-      "avgPrice": 1617,
-      "timesChecked": 4,
-      "savingsPct": 15
-    },
-    {
-      "origin": "YXE",
-      "destination": "YYZ",
-      "originCity": "Saskatoon",
-      "destinationCity": "Toronto",
-      "lowestPrice": 204,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 238,
-      "timesChecked": 2,
-      "savingsPct": 14
-    },
-    {
-      "origin": "YYC",
-      "destination": "FCO",
-      "originCity": "Calgary",
-      "destinationCity": "Rome",
-      "lowestPrice": 1134,
-      "lowestDate": "2026-08-31",
-      "avgPrice": 1314,
+      "avgPrice": 260,
       "timesChecked": 4,
       "savingsPct": 14
     },
@@ -277,36 +365,14 @@
       "savingsPct": 13
     },
     {
-      "origin": "YWG",
-      "destination": "YVR",
-      "originCity": "Winnipeg",
-      "destinationCity": "Vancouver",
-      "lowestPrice": 179,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 205,
-      "timesChecked": 4,
-      "savingsPct": 13
-    },
-    {
       "origin": "YYC",
-      "destination": "YOW",
+      "destination": "YYJ",
       "originCity": "Calgary",
-      "destinationCity": "Ottawa",
-      "lowestPrice": 206,
-      "lowestDate": "2026-09-07",
-      "avgPrice": 237,
-      "timesChecked": 4,
-      "savingsPct": 13
-    },
-    {
-      "origin": "YEG",
-      "destination": "LAS",
-      "originCity": "Edmonton",
-      "destinationCity": "Las Vegas",
-      "lowestPrice": 415,
-      "lowestDate": "2026-08-24",
-      "avgPrice": 478,
-      "timesChecked": 4,
+      "destinationCity": "Victoria",
+      "lowestPrice": 124,
+      "lowestDate": "2026-08-31",
+      "avgPrice": 142,
+      "timesChecked": 5,
       "savingsPct": 13
     },
     {
@@ -321,46 +387,46 @@
       "savingsPct": 13
     },
     {
-      "origin": "YUL",
-      "destination": "YYZ",
-      "originCity": "Montreal",
-      "destinationCity": "Toronto",
-      "lowestPrice": 155,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 177,
-      "timesChecked": 3,
-      "savingsPct": 12
-    },
-    {
-      "origin": "YEG",
-      "destination": "YUL",
-      "originCity": "Edmonton",
-      "destinationCity": "Montreal",
-      "lowestPrice": 268,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 304,
-      "timesChecked": 2,
-      "savingsPct": 12
-    },
-    {
-      "origin": "YYZ",
-      "destination": "YOW",
-      "originCity": "Toronto",
-      "destinationCity": "Ottawa",
+      "origin": "YWG",
+      "destination": "YVR",
+      "originCity": "Winnipeg",
+      "destinationCity": "Vancouver",
       "lowestPrice": 179,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 201,
+      "timesChecked": 5,
+      "savingsPct": 11
+    },
+    {
+      "origin": "YYC",
+      "destination": "YOW",
+      "originCity": "Calgary",
+      "destinationCity": "Ottawa",
+      "lowestPrice": 206,
       "lowestDate": "2026-09-07",
-      "avgPrice": 202,
-      "timesChecked": 3,
+      "avgPrice": 232,
+      "timesChecked": 5,
+      "savingsPct": 11
+    },
+    {
+      "origin": "YYC",
+      "destination": "YLW",
+      "originCity": "Calgary",
+      "destinationCity": "Kelowna",
+      "lowestPrice": 108,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 122,
+      "timesChecked": 4,
       "savingsPct": 11
     },
     {
       "origin": "YEG",
-      "destination": "YYC",
+      "destination": "YVR",
       "originCity": "Edmonton",
-      "destinationCity": "Calgary",
-      "lowestPrice": 122,
-      "lowestDate": "2026-09-07",
-      "avgPrice": 135,
+      "destinationCity": "Vancouver",
+      "lowestPrice": 95,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 106,
       "timesChecked": 3,
       "savingsPct": 10
     },
@@ -376,47 +442,25 @@
       "savingsPct": 10
     },
     {
-      "origin": "YYZ",
-      "destination": "YYT",
-      "originCity": "Toronto",
-      "destinationCity": "St. John's",
-      "lowestPrice": 236,
-      "lowestDate": "2026-09-07",
-      "avgPrice": 262,
-      "timesChecked": 3,
-      "savingsPct": 10
+      "origin": "YVR",
+      "destination": "YOW",
+      "originCity": "Vancouver",
+      "destinationCity": "Ottawa",
+      "lowestPrice": 252,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 277,
+      "timesChecked": 4,
+      "savingsPct": 9
     },
     {
       "origin": "YYC",
-      "destination": "YLW",
-      "originCity": "Calgary",
-      "destinationCity": "Kelowna",
-      "lowestPrice": 108,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 120,
-      "timesChecked": 3,
-      "savingsPct": 10
-    },
-    {
-      "origin": "YWG",
-      "destination": "YYZ",
-      "originCity": "Winnipeg",
-      "destinationCity": "Toronto",
-      "lowestPrice": 140,
-      "lowestDate": "2026-08-24",
-      "avgPrice": 152,
-      "timesChecked": 3,
-      "savingsPct": 8
-    },
-    {
-      "origin": "YEG",
       "destination": "YVR",
-      "originCity": "Edmonton",
+      "originCity": "Calgary",
       "destinationCity": "Vancouver",
-      "lowestPrice": 102,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 111,
-      "timesChecked": 2,
+      "lowestPrice": 105,
+      "lowestDate": "2026-08-31",
+      "avgPrice": 114,
+      "timesChecked": 5,
       "savingsPct": 8
     },
     {
@@ -426,8 +470,8 @@
       "destinationCity": "Reykjavik",
       "lowestPrice": 1130,
       "lowestDate": "2026-08-24",
-      "avgPrice": 1225,
-      "timesChecked": 4,
+      "avgPrice": 1228,
+      "timesChecked": 5,
       "savingsPct": 8
     },
     {
@@ -442,47 +486,25 @@
       "savingsPct": 8
     },
     {
-      "origin": "YYC",
-      "destination": "YVR",
-      "originCity": "Calgary",
-      "destinationCity": "Vancouver",
-      "lowestPrice": 105,
-      "lowestDate": "2026-08-31",
-      "avgPrice": 113,
+      "origin": "YEG",
+      "destination": "YLW",
+      "originCity": "Edmonton",
+      "destinationCity": "Kelowna",
+      "lowestPrice": 114,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 122,
       "timesChecked": 4,
       "savingsPct": 7
     },
     {
-      "origin": "YYC",
-      "destination": "YYJ",
-      "originCity": "Calgary",
-      "destinationCity": "Victoria",
-      "lowestPrice": 124,
-      "lowestDate": "2026-08-31",
-      "avgPrice": 134,
+      "origin": "YWG",
+      "destination": "YYZ",
+      "originCity": "Winnipeg",
+      "destinationCity": "Toronto",
+      "lowestPrice": 140,
+      "lowestDate": "2026-08-24",
+      "avgPrice": 149,
       "timesChecked": 4,
-      "savingsPct": 7
-    },
-    {
-      "origin": "YLW",
-      "destination": "YYZ",
-      "originCity": "Kelowna",
-      "destinationCity": "Toronto",
-      "lowestPrice": 299,
-      "lowestDate": "2026-08-31",
-      "avgPrice": 321,
-      "timesChecked": 3,
-      "savingsPct": 7
-    },
-    {
-      "origin": "YHZ",
-      "destination": "YYZ",
-      "originCity": "Halifax",
-      "destinationCity": "Toronto",
-      "lowestPrice": 167,
-      "lowestDate": "2026-09-07",
-      "avgPrice": 177,
-      "timesChecked": 2,
       "savingsPct": 6
     },
     {
@@ -508,6 +530,17 @@
       "savingsPct": 6
     },
     {
+      "origin": "YLW",
+      "destination": "YYZ",
+      "originCity": "Kelowna",
+      "destinationCity": "Toronto",
+      "lowestPrice": 299,
+      "lowestDate": "2026-08-31",
+      "avgPrice": 317,
+      "timesChecked": 4,
+      "savingsPct": 6
+    },
+    {
       "origin": "YUL",
       "destination": "YWG",
       "originCity": "Montreal",
@@ -519,6 +552,17 @@
       "savingsPct": 6
     },
     {
+      "origin": "YHZ",
+      "destination": "YYZ",
+      "originCity": "Halifax",
+      "destinationCity": "Toronto",
+      "lowestPrice": 167,
+      "lowestDate": "2026-09-07",
+      "avgPrice": 176,
+      "timesChecked": 3,
+      "savingsPct": 5
+    },
+    {
       "origin": "YQR",
       "destination": "YYZ",
       "originCity": "Regina",
@@ -526,19 +570,19 @@
       "lowestPrice": 184,
       "lowestDate": "2026-09-14",
       "avgPrice": 193,
-      "timesChecked": 2,
+      "timesChecked": 3,
       "savingsPct": 5
     },
     {
-      "origin": "YEG",
-      "destination": "YLW",
-      "originCity": "Edmonton",
-      "destinationCity": "Kelowna",
-      "lowestPrice": 119,
-      "lowestDate": "2026-09-07",
-      "avgPrice": 125,
+      "origin": "YYZ",
+      "destination": "YEG",
+      "originCity": "Toronto",
+      "destinationCity": "Edmonton",
+      "lowestPrice": 247,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 256,
       "timesChecked": 3,
-      "savingsPct": 5
+      "savingsPct": 4
     },
     {
       "origin": "YYZ",
@@ -563,28 +607,6 @@
       "savingsPct": 4
     },
     {
-      "origin": "YVR",
-      "destination": "YOW",
-      "originCity": "Vancouver",
-      "destinationCity": "Ottawa",
-      "lowestPrice": 274,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 285,
-      "timesChecked": 3,
-      "savingsPct": 4
-    },
-    {
-      "origin": "YUL",
-      "destination": "YYC",
-      "originCity": "Montreal",
-      "destinationCity": "Calgary",
-      "lowestPrice": 211,
-      "lowestDate": "2026-09-07",
-      "avgPrice": 219,
-      "timesChecked": 2,
-      "savingsPct": 4
-    },
-    {
       "origin": "YYJ",
       "destination": "YWG",
       "originCity": "Victoria",
@@ -594,6 +616,28 @@
       "avgPrice": 308,
       "timesChecked": 2,
       "savingsPct": 4
+    },
+    {
+      "origin": "YLW",
+      "destination": "YVR",
+      "originCity": "Kelowna",
+      "destinationCity": "Vancouver",
+      "lowestPrice": 107,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 111,
+      "timesChecked": 2,
+      "savingsPct": 4
+    },
+    {
+      "origin": "YYC",
+      "destination": "CDG",
+      "originCity": "Calgary",
+      "destinationCity": "Paris",
+      "lowestPrice": 570,
+      "lowestDate": "2026-09-14",
+      "avgPrice": 587,
+      "timesChecked": 5,
+      "savingsPct": 3
     },
     {
       "origin": "YEG",
@@ -607,17 +651,6 @@
       "savingsPct": 3
     },
     {
-      "origin": "YYC",
-      "destination": "CDG",
-      "originCity": "Calgary",
-      "destinationCity": "Paris",
-      "lowestPrice": 570,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 584,
-      "timesChecked": 4,
-      "savingsPct": 2
-    },
-    {
       "origin": "YHZ",
       "destination": "YOW",
       "originCity": "Halifax",
@@ -625,19 +658,19 @@
       "lowestPrice": 273,
       "lowestDate": "2026-09-14",
       "avgPrice": 279,
-      "timesChecked": 2,
+      "timesChecked": 3,
       "savingsPct": 2
     },
     {
-      "origin": "YYZ",
-      "destination": "YEG",
-      "originCity": "Toronto",
-      "destinationCity": "Edmonton",
-      "lowestPrice": 259,
+      "origin": "YWG",
+      "destination": "YUL",
+      "originCity": "Winnipeg",
+      "destinationCity": "Montreal",
+      "lowestPrice": 347,
       "lowestDate": "2026-08-24",
-      "avgPrice": 260,
+      "avgPrice": 349,
       "timesChecked": 2,
-      "savingsPct": 0
+      "savingsPct": 1
     },
     {
       "origin": "YYT",
@@ -670,17 +703,6 @@
       "lowestDate": "2026-08-31",
       "avgPrice": 270,
       "timesChecked": 2,
-      "savingsPct": 0
-    },
-    {
-      "origin": "YWG",
-      "destination": "YUL",
-      "originCity": "Winnipeg",
-      "destinationCity": "Montreal",
-      "lowestPrice": 347,
-      "lowestDate": "2026-08-24",
-      "avgPrice": 347,
-      "timesChecked": 1,
       "savingsPct": 0
     },
     {
@@ -926,17 +948,6 @@
       "savingsPct": 0
     },
     {
-      "origin": "YLW",
-      "destination": "YVR",
-      "originCity": "Kelowna",
-      "destinationCity": "Vancouver",
-      "lowestPrice": 107,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 107,
-      "timesChecked": 1,
-      "savingsPct": 0
-    },
-    {
       "origin": "YYC",
       "destination": "YEG",
       "originCity": "Calgary",
@@ -1003,13 +1014,79 @@
       "savingsPct": 0
     },
     {
-      "origin": "YQR",
-      "destination": "YYJ",
-      "originCity": "Regina",
-      "destinationCity": "Victoria",
-      "lowestPrice": 206,
-      "lowestDate": "2026-09-14",
-      "avgPrice": 206,
+      "origin": "YYC",
+      "destination": "YYZ",
+      "originCity": "Calgary",
+      "destinationCity": "Toronto",
+      "lowestPrice": 193,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 193,
+      "timesChecked": 1,
+      "savingsPct": 0
+    },
+    {
+      "origin": "YUL",
+      "destination": "YVR",
+      "originCity": "Montreal",
+      "destinationCity": "Vancouver",
+      "lowestPrice": 288,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 288,
+      "timesChecked": 1,
+      "savingsPct": 0
+    },
+    {
+      "origin": "YVR",
+      "destination": "YHZ",
+      "originCity": "Vancouver",
+      "destinationCity": "Halifax",
+      "lowestPrice": 275,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 275,
+      "timesChecked": 1,
+      "savingsPct": 0
+    },
+    {
+      "origin": "YVR",
+      "destination": "YQR",
+      "originCity": "Vancouver",
+      "destinationCity": "Regina",
+      "lowestPrice": 223,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 223,
+      "timesChecked": 1,
+      "savingsPct": 0
+    },
+    {
+      "origin": "YYC",
+      "destination": "YHZ",
+      "originCity": "Calgary",
+      "destinationCity": "Halifax",
+      "lowestPrice": 349,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 349,
+      "timesChecked": 1,
+      "savingsPct": 0
+    },
+    {
+      "origin": "YYC",
+      "destination": "YQR",
+      "originCity": "Calgary",
+      "destinationCity": "Regina",
+      "lowestPrice": 330,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 330,
+      "timesChecked": 1,
+      "savingsPct": 0
+    },
+    {
+      "origin": "YLW",
+      "destination": "YXE",
+      "originCity": "Kelowna",
+      "destinationCity": "Saskatoon",
+      "lowestPrice": 229,
+      "lowestDate": "2026-09-21",
+      "avgPrice": 229,
       "timesChecked": 1,
       "savingsPct": 0
     }
