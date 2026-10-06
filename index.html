@@ -191,6 +191,12 @@
   @keyframes topBannerPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.015);}}
   .top-banner-pulse{animation:topBannerPulse 1.1s ease-in-out 2;}
 
+  @keyframes flameFlicker{0%,100%{transform:scale(1) rotate(-4deg);}20%{transform:scale(1.18) rotate(5deg);}40%{transform:scale(0.9) rotate(-7deg);}60%{transform:scale(1.12) rotate(4deg);}80%{transform:scale(0.96) rotate(-3deg);}}
+  .flame-flicker{display:inline-block;animation:flameFlicker 1.3s ease-in-out infinite;transform-origin:50% 90%;}
+
+  @keyframes badgeGlow{0%,100%{box-shadow:0 2px 6px rgba(0,0,0,0.25);}50%{box-shadow:0 2px 16px rgba(255,150,40,0.85),0 2px 6px rgba(0,0,0,0.25);}}
+  .badge-glow{animation:badgeGlow 1.8s ease-in-out infinite;}
+
 </style>
 </head>
 <body>
@@ -249,7 +255,7 @@
       once both have aged out. Update FEATURE below for each new launch. -->
   <div id="topBanner" style="display:none;border-radius:14px;padding:16px 24px;margin:18px 0 30px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 8px 22px rgba(0,0,0,0.18);">
     <div style="display:flex;align-items:center;gap:12px;flex:1;min-width:220px;flex-wrap:wrap;">
-      <span id="topBannerTag" style="display:inline-flex;align-items:center;background:var(--tan-deep);color:#fff;padding:5px 14px;border-radius:14px;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.25);"></span>
+      <span id="topBannerTag" class="badge-glow" style="display:inline-flex;align-items:center;gap:4px;background:var(--tan-deep);color:#fff;padding:5px 14px;border-radius:14px;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap;"></span>
       <span id="topBannerText" style="color:#fff;font-size:0.95rem;font-weight:700;"></span>
     </div>
     <a id="topBannerLink" href="#" style="background:#fff;padding:10px 22px;border-radius:20px;font-weight:800;font-size:0.87rem;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.2);"></a>
@@ -508,7 +514,7 @@ document.addEventListener('click', function(e) {
     if (!banner) return;
     banner.style.display = 'flex';
     banner.style.background = cfg.bg;
-    tagEl.textContent = cfg.tag;
+    tagEl.innerHTML = cfg.tag.replace(/^(\S+)/, '<span class="flame-flicker">$1</span>');
     textEl.textContent = cfg.text;
     linkEl.href = cfg.href;
     linkEl.textContent = cfg.cta;
