@@ -459,9 +459,15 @@
 
 <script>
 // Seasonal hero
+function getThanksgivingMonday(year) {
+  var oct1 = new Date(year, 9, 1);
+  return 1 + (1 - oct1.getDay() + 7) % 7 + 7;
+}
 function getSeason() {
   var d = new Date(); var m = d.getMonth()+1; var day = d.getDate();
   if (m===7&&day===1) return {img:'season-canada-day.png',bubble:'Happy Canada Day! Celebrating with deals so good, you will have money left for fireworks.'};
+  var thanksMon = getThanksgivingMonday(d.getFullYear());
+  if (m===10&&day>=thanksMon-2&&day<=thanksMon) return {img:'season-fall.png',bubble:'Happy Thanksgiving! Grateful for cheap flights, honestly.'};
   if (m===10&&day>=24) return {img:'season-halloween.png',bubble:'Spooktacular deals this week — these prices are scarier than your costume.'};
   if (m===12&&day>=15) return {img:'season-christmas.png',bubble:'Tis the season to travel! Gift yourself a flight this holiday.'};
   if (m===2&&day===14) return {img:'season-valentine.png',bubble:'Treat yourself this Valentine\'s Day. You deserve a trip more than flowers.'};
