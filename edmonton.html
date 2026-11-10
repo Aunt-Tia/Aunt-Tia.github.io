@@ -150,7 +150,8 @@ function formatDate(d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateStr
 function noDeals(msg) { return '<div style="grid-column:1/-1;text-align:center;padding:40px"><p style="color:var(--sky-deep)">' + msg + '</p></div>'; }
 
 function buildDomCard(d) {
-  return '<div class="deal-card"><div class="deal-top"><div class="deal-route">' + d.origin + ' to ' + d.destination + '</div><div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div><div class="deal-price">$' + d.price + ' CAD</div><div style="font-size:0.72rem;opacity:0.8">roundtrip</div></div><div class="deal-body"><div class="deal-meta">Around ' + formatDate(d.departDate) + '</div>' + (d.bubble ? '<div class="deal-note">' + d.bubble + '</div>' : '') + '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
+  var stopsHtml = typeof d.stops === 'number' ? '<div style="font-size:0.72rem;font-weight:700;margin-top:4px;opacity:0.9;">' + (d.stops === 0 ? '✓ Direct' : d.stops + ' stop' + (d.stops > 1 ? 's' : '')) + '</div>' : '';
+  return '<div class="deal-card"><div class="deal-top"><div class="deal-route">' + d.origin + ' to ' + d.destination + '</div><div class="deal-cities">' + d.originCity + ' to ' + d.destinationCity + '</div><div class="deal-price">$' + d.price + ' CAD</div><div style="font-size:0.72rem;opacity:0.8">roundtrip</div>' + stopsHtml + '</div><div class="deal-body"><div class="deal-meta">Around ' + formatDate(d.departDate) + '</div>' + (d.bubble ? '<div class="deal-note">' + d.bubble + '</div>' : '') + '<a href="' + d.url + '" class="deal-link" target="_blank" rel="noopener">Book this flight</a></div></div>';
 }
 
 function buildIntlCard(d) {
